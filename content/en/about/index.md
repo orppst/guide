@@ -31,6 +31,6 @@ There is an experimental deployment at
 # History
 {.text-center}
 
-Polaris was created as part of the [Opticon RadioNet Pilot project](https://www.orp-h2020.eu)
+Polaris was created as part of the [<img src="ORP_logo.png">](https://www.orp-h2020.eu)
 
 {{% /blocks/section %}}

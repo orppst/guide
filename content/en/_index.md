@@ -27,7 +27,7 @@ In addition it provides components that enable the export of proposals and  to a
 {{% blocks/feature icon="fa-lightbulb" title="Multi Telescope Support!" %}}
 Polaris can help you create observing proposals that can be submitted to multiple observatories.
 
-Please follow this space for updates!
+Please follow [the blog](blog) for updates!
 {{% /blocks/feature %}}
 
 {{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/orppst/" %}}
@@ -44,8 +44,10 @@ For announcement of latest features etc.
 
 
 {{% blocks/section %}}
-This is the second section
+
 {.h1 .text-center}
+
+<img src="eu-flag.jpg" style="max-height: 2em;width: auto" >  This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 101004719
 {{% /blocks/section %}}
 
 
