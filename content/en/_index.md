@@ -47,7 +47,7 @@ For announcement of latest features etc.
 
 {.h1 .text-center}
 
-<img src="eu-flag.jpg" style="max-height: 2em;width: auto" >  This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 101004719
+<img src="eu-flag.jpg" style="max-height: 2em;width: auto" alt="EU Flag">  This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 101004719
 {{% /blocks/section %}}
 
 

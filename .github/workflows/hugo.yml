@@ -48,6 +48,13 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: download openapi definition
+        uses: Legit-Labs/action-download-artifact@v2
+        with:
+          workflow: gradle.yml
+          name: openapi
+          path: ./static/openapi
+          repo: https://github.com/orppst/pst-api-service
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
