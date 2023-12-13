@@ -54,7 +54,7 @@ jobs:
           workflow: gradle.yml
           name: openapi
           path: ./static/openapi
-          repo: https://github.com/orppst/pst-api-service
+          repo: orppst/pst-api-service
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
