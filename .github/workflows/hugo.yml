@@ -53,7 +53,7 @@ jobs:
         with:
           workflow: gradle.yml
           name: openapi
-          path: ./static/openapi
+          path: ./static/openapi/
           repo: orppst/pst-api-service
       - name: Build with Hugo
         env:
