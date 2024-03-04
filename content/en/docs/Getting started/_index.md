@@ -1,35 +1,33 @@
 ---
 title: Getting Started
-description: What does your user need to know to try your project?
+description: Prerequisites, Installation, and Core Setup
 categories: [Examples, Placeholders]
 tags: [test, docs]
 weight: 2
 ---
 
-{{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
-
-Information in this section helps your user try your project themselves.
-
-* What do your users need to do to start using your project? This could include downloading/installation instructions, including any prerequisites or system requirements.
-
-* Introductory “Hello World” example, if appropriate. More complex tutorials should live in the Tutorials section.
-
-Consider using the headings below for your getting started page. You can delete any that are not applicable to your project.
-
 ## Prerequisites
 
-Are there any system requirements for using your project? What languages are supported (if any)? Do users need to already have any software or tools installed?
+**To be confirmed**
 
 ## Installation
+### For users
+[Front end GUI](https://github.com/orppst/pst-gui)
 
-Where can your user find your project code? How can they install it (binaries, installable package, build from source)? Are there multiple options/versions they can install and how should they choose the right one for them?
+[Front end CLI](https://github.com/orppst/pst-cli-app) - under development
+
+### For Developers 
+[Overarching project](https://github.com/orppst)
+
+[Back end API](https://github.com/orppst/pst-api-service)
 
 ## Setup
 
-Is there any initial setup users need to do after installation to try your project?
+Go to the application URI (TBC) and register as a new user. 
+Then login with your new credentials and provide use with details of your organisation/institute.
 
-## Try it out!
+## Get started
 
-Can your users test their installation, for example by running a command or deploying a Hello World example?
+Start by going to the **Creating a Proposal** page.
+
+
