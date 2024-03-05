@@ -13,18 +13,18 @@ If you haven't registered with and logged-in to Polaris please do so [now](tbc).
 
 ##  Step 1: Click the **Create a new proposal** button
 
-<img src="/images/get_started_create_proposal.png" style="width: max-content" alt="polaris landing page, highlighting the create a new proposal button">
+<img src="/images/getting-started/proposal_create.png" style="width: max-content" alt="polaris landing page, highlighting the create a new proposal button">
 <br />
 <br />
 
 ## Step 2: Fill in the proposal details form and click **Create**
 
-<img src="/images/get_started_create_proposal_details.png" style="width: fit-content" alt="create proposal details"> 
+<img src="/images/getting-started/proposal_create_details.png" style="width: fit-content" alt="create proposal details"> 
 <br />
 <br />
 
 The basic details of an **Observing Proposal** are the title, a brief summary, and the **Kind** of your proposal 
-either _STANDARD_, _SURVEY_, or _T.O.O._ (target-of-opportunity). These fields can be modified after you create 
+either _STANDARD_, _SURVEY_, or _T.O.O._ (target-of-opportunity). These attributes can be changed after you create 
 the proposal.
 
 ## The Proposal Overview
@@ -33,7 +33,7 @@ Now that you have a created a new proposal you can see its **Overview** by click
 menu for the relevant proposal in the navigation pane on the left, and clicking on the _Overview_ 
 tab.
 
-<img src="/images/get_started_the_proposal_overview.png" style="width: fit-content" alt="the proposal overview">
+<img src="/images/getting-started/proposal_overview.png" style="width: fit-content" alt="the proposal overview">
 <br />
 <br />
 
@@ -47,7 +47,7 @@ username is also _PI_; nobody said we had to be inventive).
 
 If you now try to go to the _Observations_ tab you will be presented with the following page:
 
-<img src="/images/get_started_observation_missing_target_goal.png" style="width: fit-content" alt="trying to add observation before adding targets and technical goals">
+<img src="/images/getting-started/observations_missing_target_goal.png" style="width: fit-content" alt="trying to add observation before adding targets and technical goals">
 <br />
 <br />
 
