@@ -1,23 +1,25 @@
 ---
-title: Creating a Proposal
+title: Creating Proposals
 date: 2023-11-01
 description: >
-   _Quick start guide to creating a new proposal using Polaris_
+   _Quick start guide to creating a new **Proposal** using Polaris_
 categories: [Examples]
 tags: [test, sample, docs]
 ---
 
-###### Step 0: Login
+###### First, Login
 
 If you haven't registered with and logged-in to Polaris please do so [now](tbc).
 
-##  Step 1: Click the **Create a new proposal** button
+##  Click the **Create a new proposal** button
 
 <img src="/images/getting-started/proposal_create.png" style="width: max-content" alt="polaris landing page, highlighting the create a new proposal button">
 <br />
 <br />
 
-## Step 2: Fill in the proposal details form and click **Create**
+This will bring up the new **Proposal** details form. 
+
+## Fill in the proposal details form and click **Create**
 
 <img src="/images/getting-started/proposal_create_details.png" style="width: fit-content" alt="create proposal details"> 
 <br />
@@ -56,5 +58,5 @@ Goal** before you can generate an **Observation** for your proposal. Notice that
 screenshot is a link to take you to the corresponding page in the App. 
 
 For the next steps in this guide, please follow either the **Adding Targets** link or the **Adding Technical Goals** 
-link, the order here does not matter. The **Build an Observation** link assumes you have added at least one target 
+link, the order here does not matter. The **Building Observations** page assumes you have added at least one target 
 and at least one technical goal to your proposal.

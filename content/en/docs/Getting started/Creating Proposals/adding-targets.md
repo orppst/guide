@@ -22,11 +22,11 @@ To add a **Target** click the _Add +_ button, which will bring up the _New Targe
 <br />
 
 In the screenshot you will see we have added the [Aladin Lite Sky Atlas](https://aladin.cds.unistra.fr/),
-and we have looked up the _Crab Nebula_ using the **Lookup** function. This fills in the corresponding 
+and we have found the _Crab Nebula_ using the **Lookup** function. This fills in the corresponding 
 positional and coordinate system data for the named target, and displays the target in the Sky Atlas. 
-Notice that the backend uses [Simbad](https://simbad.cds.unistra.fr/simbad/) to search for the named 
-target, such that the name must exist in their databases to be successful; an appropriate error 
-notification is displayed if the named target cannot be found. 
+Notice that the backend uses [Simbad](https://simbad.cds.unistra.fr/simbad/) to search for the named target, such that the name must 
+exist in their databases to be successful; an appropriate error notification is displayed if the 
+named target cannot be found. 
 
 You may also simply click anywhere on the Sky Atlas and the corresponding positional details will be 
 updated in the RA and DEC fields (notice that these are currently displayed as degrees only, we have 
@@ -54,5 +54,5 @@ to build an **Observation** for your proposal.
 # Next Step
 
 If you haven't already added a **Technical Goal** then please follow the guide [here](../adding-technical-goals).
-If you have now added at least one **Target** and one **Technical Goal** to your proposal then please follow the
-link to [**Building Observations**](../build-observation).
+If you have now added at least one **Target** and one **Technical Goal** to your proposal then please 
+follow the link to [**Building Observations**](../build-observation).

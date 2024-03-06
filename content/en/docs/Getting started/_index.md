@@ -28,7 +28,7 @@ Then login with your new credentials and provide use with details of your organi
 
 ## Get started
 
-Start by going to the **Creating a Proposal** page. 
+Start by going to the **Creating Proposals** page. 
 
 _Please note that the screenshots in this guide were taken using an alpha version of Polaris so may contain 
 some stylistic and naming differences to the version you are using._

@@ -55,6 +55,14 @@ As with **Technical Goals** you may _Edit_ and _Copy_ **Observations** to avoid 
 **Observations** that have similar attributes. For example, using the same **Target** but for different types,
 _Target_ or _Calibration_, of **Observation** with perhaps the same **Technical Goal** and/or timing constraints.
 
+With an **Observation** now built both the **Target** and the **Technical Goal** to which is refers have their 
+_Delete_ button disabled. This prevents you from deleting either of these things while they are actively pointed 
+to by an **Observation**. In order to re-enable the _Delete_ button on **Targets** and **Technical Goals** you 
+must first delete all **Observations** that refer to them. 
+
 In this alpha version of Polaris, once you have an **Observation** with at least one **Timing Window** in your 
 **Proposal** it will pass server side validation checks, and you may submit it for review. In subsequent versions,
 you will also have to provide both **Scientific** and **Technical Justifications** to pass validation checks.
+
+To see how to submit your proposal for review please follow the guide at 
+[**Submitting Proposals**](../../submitting-proposals)
