@@ -24,7 +24,8 @@ weight: 2
 ## Setup
 
 Go to the application URI (TBC) and register as a new user. 
-Then login with your new credentials and provide use with details of your organisation/institute.
+Then login with your new credentials where you will be asked to provide your organisation details by either selecting 
+from a list of existing institutions or supplying information about your organisation if not present in the list.
 
 ## Get started
 

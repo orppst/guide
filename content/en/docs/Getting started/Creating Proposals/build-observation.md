@@ -62,7 +62,8 @@ must first delete all **Observations** that refer to them.
 
 In this alpha version of Polaris, once you have an **Observation** with at least one **Timing Window** in your 
 **Proposal** it will pass server side validation checks, and you may submit it for review. In subsequent versions,
-you will also have to provide both **Scientific** and **Technical Justifications** to pass validation checks.
+you will also have to provide both **Scientific** and **Technical Justifications** to pass validation checks, and
+it is likely more things will be added to the validation check in the future.
 
 To see how to submit your proposal for review please follow the guide at 
 [**Submitting Proposals**](../../submitting-proposals)

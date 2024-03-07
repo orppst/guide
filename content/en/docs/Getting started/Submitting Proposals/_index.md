@@ -35,7 +35,7 @@ Server side validation checks currently include:
 
 As we develop the server side validation checks this list will grow. For example, we'd expect that a **Proposal** 
 must have a **Scientific Justification** and a **Technical Justification** to be valid for review. Indeed, we 
-expect this list to grow as we put Polaris in to beta-testing.
+expect this list to expand significantly as we put Polaris in to beta-testing.
 
 If a **Proposal** doesn't pass the validation checks then you will be presented with the following page for the 
 _Submit_ tab of your proposal, which lists the problems.
