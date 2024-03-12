@@ -19,7 +19,7 @@ Polaris provides a web UI for both submitting and managing astronomical observin
 multiple telescopes.
 
 
-In addition it provides components that enable the export of proposals and  to allow their manipulation off-line
+In addition, it provides components that enable the export of proposals and  to allow their manipulation off-line
 {{% /blocks/lead %}}
 
 
