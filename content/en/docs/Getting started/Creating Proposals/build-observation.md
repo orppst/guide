@@ -52,8 +52,12 @@ bring you back to the _Observations_ summary page, that will now contain your ne
 <br />
 
 As with **Technical Goals** you may _Edit_ and _Copy_ **Observations** to avoid having to repeat data entry for
-**Observations** that have similar attributes. For example, using the same **Target** but for different types,
-_Target_ or _Calibration_, of **Observation** with perhaps the same **Technical Goal** and/or timing constraints.
+**Observations** that have similar attributes. Please note that you cannot change the 'type', target or calibration,
+of an _existing_ **Observation**, this includes copies. To create a different type of **Observation**, perhaps with
+the same target and same technical goal as an existing **Observation**, you must create a new **Observation**. This
+restriction is rooted in the backend and the data model (it would mean conversion between sibling class types in 
+the Java API, which is not straightforward especially when combined with database persistence).
+
 
 With an **Observation** now built both the **Target** and the **Technical Goal** to which is refers have their 
 _Delete_ button disabled. This prevents you from deleting either of these things while they are actively pointed 
