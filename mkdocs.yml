@@ -1,0 +1,48 @@
+site_name: Polaris
+repo_url: https://github.com/orppst/guide
+
+nav:
+  - Home: index.md
+  - Observer:
+      - Getting Started: Observer/index.md
+      - Creating Proposals:
+          - Starting : Observer/Creating Proposals/index.md
+          - Adding Targets: Observer/Creating Proposals/adding-targets.md
+          - Adding Technical Goals: Observer/Creating Proposals/adding-technical-goals.md
+          - Building an Observation: Observer/Creating Proposals/build-observation.md
+      - Submitting Proposals:
+          - Submitting: Observer/Submitting Proposals/index.md
+  - TAC:
+      - Getting Started: TAC/index.md
+  - Observatory:
+      - Getting Started: Observatory/index.md
+  - Developer:
+      - Getting Started: Developer/index.md
+      - Reference:
+          - Use Cases: Developer/use-cases.md
+          - Architecture: Developer/architecture.md
+          - API: Developer/api.md
+      - Deployment:
+          - Getting Started: Deployment/index.md
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - content.action.edit
+  logo: assets/logo.svg
+  favicon: assets/icons/polaris_square_icon.png
+
+markdown_extensions:
+  - tables
+  - footnotes
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search
+
+
