@@ -10,7 +10,7 @@ You can find detailed theme instructions in the [mkdodcs material site](https://
 pip install plantuml-markdown 
 ```
 
-https://github.com/neurobin/mdx_include - proper extension structure -> https://github.com/mikitex70/plantuml-markdown need that doing...
+https://github.com/neurobin/mdx_include - proper extension structure -> https://github.com/mikitex70/plantuml-markdown need that doing... https://python-markdown.github.io/extensions/api/
 
 ## Running the website locally
 

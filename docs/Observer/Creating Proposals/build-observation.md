@@ -56,4 +56,4 @@ you will also have to provide both **Scientific** and **Technical Justifications
 it is likely more things will be added to the validation check in the future.
 
 To see how to submit your proposal for review please follow the guide at 
-[**Submitting Proposals**](../../submitting-proposals)
+[**Submitting Proposals**](../Submitting%20Proposals/index.md)

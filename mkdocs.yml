@@ -36,6 +36,9 @@ theme:
 markdown_extensions:
   - tables
   - footnotes
+# TODO add this once https://github.com/mikitex70/plantuml-markdown/pull/94 has been done
+#  - plantuml_markdown:
+#      server: https://www.plantuml.com/plantuml  # PlantUML server, for remote rendering
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

@@ -39,6 +39,6 @@ similar _Performance Parameters_ and/or _Spectral Windows_ without having to re-
 
 ## Next Step
 
-If you haven't already added a **Target** then please follow the guide [here](../adding-targets).
+If you haven't already added a **Target** then please follow the guide [here](adding-targets.md).
 If you have now added at least one **Target** and one **Technical Goal** to your proposal then please follow the
-link to [**Building Observations**](../build-observation).
+link to [**Building Observations**](build-observation.md).

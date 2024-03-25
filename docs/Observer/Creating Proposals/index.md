@@ -1,7 +1,7 @@
 
 ## First, Login
 
-If you haven't registered with and logged-in to Polaris please do so [now](tbc).
+If you haven't registered with and logged-in to Polaris please do so [now](https://kilburn.jb.man.ac.uk/pst/gui/tool/).
 
 ##  Click the **Create a new proposal** button
 

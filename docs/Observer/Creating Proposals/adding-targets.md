@@ -41,6 +41,6 @@ to build an **Observation** for your proposal.
 
 ## Next Step
 
-If you haven't already added a **Technical Goal** then please follow the guide [here](../adding-technical-goals).
+If you haven't already added a **Technical Goal** then please follow the guide [here](adding-technical-goals.md).
 If you have now added at least one **Target** and one **Technical Goal** to your proposal then please 
-follow the link to [**Building Observations**](../build-observation).
+follow the link to [**Building Observations**](build-observation.md).
