@@ -1,0 +1,50 @@
+{% extends "main.html" %}
+{% block tabs %}
+
+  <style>
+    .greeting {
+      background-image: url(/assets/orp_background_image_small.png);
+      height: 100%;
+
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: black;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      color: white;
+
+
+    }
+    .polarislogo {
+      display: flex;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      width:50%;
+
+    }
+    .intromessage{
+
+      color: white;
+      justify-content: center;
+      font-size: 4vw;
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+  </style>
+  <div class="greeting">
+    <img class="polarislogo" src="/assets/polaris4.png">
+    <div class="intromessage">
+      <a href="/prototype_information/">Read More</a>
+    </div>
+    <div class="intromessage"><a href="https://kilburn.jb.man.ac.uk/pst/gui/tool/">Demo</a></div>
+  </div>
+
+
+{% endblock %}
+{% block footer %}{% endblock %}

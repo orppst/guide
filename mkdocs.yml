@@ -32,6 +32,9 @@ theme:
     - content.action.edit
   logo: assets/logo.svg
   favicon: assets/icons/polaris_square_icon.png
+  palette:
+    primary: black
+  custom_dir: theme_overrides
 
 markdown_extensions:
   - tables

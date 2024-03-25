@@ -1,3 +1,8 @@
+---
+title: Welcome to Polaris
+template: home.html
+---
+
 # Welcome to Polaris
 
 Polaris is a toolkit for creating and managing astronomical observing proposals.
