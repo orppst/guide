@@ -1,8 +1,4 @@
-+++
-title = "Polaris REST API"
-type = "swagger"
-weight = 1
-description = "Reference for the Polaris API"
-+++
+# API
 
-{{< swaggerui src="../../../openapi/openapi.yaml" >}}
+A swagger Ui for the deployed api is available at https://kilburn.jb.man.ac.uk/pst/api/q/swagger-ui/
+
