@@ -1,5 +1,6 @@
 site_name: Polaris
 repo_url: https://github.com/orppst/guide
+edit_uri: edit/main/docs/
 
 nav:
   - Home: index.md
