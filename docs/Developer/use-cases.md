@@ -18,6 +18,7 @@ actor :Observatory Admin: as obsadmin
 actor :TAC member: as tacmem
 actor :TAC Chair: as tacchair
 actor :Reviewer: as rev
+actor :External Reviewer: as extrev
 actor :CO I : as coi
 actor :Principal Investigator: as pi
 usecase "deploy the system" as UC0
@@ -43,6 +44,7 @@ obsadmin --> UC3
 obsadmin --> UC4
 user ..>pi
 user ..>coi
+user ..>extrev
 user ..>tacmem
 user ..>obsadmin
 tacmem ..>rev
@@ -60,6 +62,8 @@ tacchair-->UC12
 tacchair-->UC13
 rev-->UC10
 rev-->UC11
+extrev -->UC10
+extrev -->UC11
 ```
 
 ## Digging down
@@ -115,7 +119,7 @@ The proposals can be distributed to the TAC - this might
 
 ### score proposals
 
-There might be a scoring system that allows people outside the TAC to score as well.
+There might be a scoring system that allows people outside the TAC to score as well. See the external reviewer.
 
 ### assign observing time
 

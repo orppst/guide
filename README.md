@@ -25,7 +25,7 @@ You can find out more about how to install mkdocs material for your environment 
 Once you've made your working copy of the site repo, from the repo root folder, run:
 
 ```bash
-mkdocs server
+mkdocs serve
 ```
 
 and navigate to http://127.0.0.1:8000/
