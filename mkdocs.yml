@@ -26,6 +26,12 @@ nav:
           - API: Developer/api.md
       - Deployment:
           - Getting Started: Deployment/index.md
+  - Design:
+      - Approach: Design/Approach.md
+      - Purpose and scope: Design/PurposeAndScope.md
+      - Use cases: Design/UseCases.md
+      - Business rules: Design/BusinessRules.md
+      - Non-functional requirements: Design/NFRs.md
 theme:
   name: material
   features:
