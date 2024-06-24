@@ -26,16 +26,42 @@ nav:
           - API: Developer/api.md
       - Deployment:
           - Getting Started: Deployment/index.md
+  # 2024-06-24 mwa design and proj mgt
+  - Design:
+      - Approach: Design/Approach.md
+      - Purpose and Scope: Design/PurposeAndScope.md
+      - Business Requirements: Design/BusinessRequirements.md
+      - Business Rules: Design/BusinessRules.md
+      - Components: Design/Components.md
+      - Non-functional Requirements: Design/NFRs.md
+  - Project Management: Project Management/ProjectManagement.md
+  # 2024-06-24 mwa
 theme:
   name: material
   features:
     - navigation.instant
     - navigation.tabs
     - content.action.edit
+    - toc.follow # 2024-06-24 mwa
   logo: assets/logo.svg
   favicon: assets/icons/polaris_square_icon.png
   palette:
-    primary: black
+# 2024-06-24 mwa colour scheme
+#   primary: black
+    - scheme: default
+      toggle:
+         icon: material/toggle-switch-off-outline
+         name: Switch to dark mode
+      primary: teal
+      accent: purple
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+      primary: teal
+      accent: lime
+# 2024-06-24 mwa
+
   custom_dir: theme_overrides
 
 markdown_extensions:
