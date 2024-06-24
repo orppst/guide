@@ -4,7 +4,7 @@ on:
 permissions:
   contents: write
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -12,6 +12,5 @@ jobs:
         with:
           python-version: 3.x
           cache: 'pip'
-      - run: pip install mkdocs-material plantuml-markdown
       - name: test site
         run: mkdocs build
