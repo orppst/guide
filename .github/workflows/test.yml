@@ -1,9 +1,6 @@
-name: site deploy
+name: site test
 on:
-  push:
-    branches:
-      - master
-      - main
+  pull_request:
 permissions:
   contents: write
 jobs:
@@ -16,5 +13,5 @@ jobs:
           python-version: 3.x
           cache: 'pip'
       - run: pip install mkdocs-material plantuml-markdown
-      - name: Deploy site
-        run: mkdocs gh-deploy --force
+      - name: test site
+        run: mkdocs build
