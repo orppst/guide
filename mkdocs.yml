@@ -52,13 +52,13 @@ theme:
       toggle:
          icon: material/toggle-switch-off-outline
          name: Switch to dark mode
-      primary: teal
-      accent: purple
+      primary: cyan
+      accent: deep orange
     - scheme: slate
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-      primary: teal
+      primary: amber
       accent: lime
 # 2024-06-24 mwa
 
