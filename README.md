@@ -2,25 +2,23 @@
 
  This **Polaris proposal tool documentation** uses the mkdocs material theme which in turn requires python to be installed.
 
-You can find detailed theme instructions in the [mkdodcs material site](https://squidfunk.github.io/mkdocs-material/).
+You can find detailed theme instructions in the [mkdodcs material site](https://squidfunk.github.io/mkdocs-material/). However, all of the necessary packages can be installed with
 
 ```shell
-pip install mkdocs-material
+pip install -r requirements.txt
 ```
 
 ## plantuml
 
-Various diagrams are created using plantuml - the markdown plugin for that can be installed with.
+Various diagrams are created using [plantuml](https://plantuml.com). The way that this is integrated with markdown is like
 
-```shell
-pip install plantuml-markdown 
-```
+    ```plantuml id="myDiag" format="png" classes="uml myDiagram" alt="My super diagram placeholder" title="My super diagram" width="300px" height="300px"
+      Goofy ->  MickeyMouse: calls
+      Goofy <-- MickeyMouse: responds
+    ```
+
 
 ## Running the website locally
-
-Building and running the site locally requires python with the `mkdocs-material`  package installed.
-You can find out more about how to install mkdocs material for your environment in the
-[Getting started](https://squidfunk.github.io/mkdocs-material/getting-started/) guide.
 
 Once you've made your working copy of the site repo, from the repo root folder, run:
 
