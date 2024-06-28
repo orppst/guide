@@ -24,18 +24,18 @@ nav:
           - Architecture: Developer/architecture.md
           - Data Model: Developer/ProposalDM.md
           - API: Developer/api.md
+          - Design:
+              - Approach: Design/Approach.md
+              - Purpose and Scope: Design/PurposeAndScope.md
+              - Business Requirements: Design/BusinessRequirements.md
+              - Business Rules: Design/BusinessRules.md
+              - Components: Design/Components.md
+              - Non-functional Requirements: Design/NFRs.md
+          - Project Management:
+              - Project Management: Project Management/ProjectManagement.md
+              - Delivery Plan: Project Management/DeliveryPlan.md
       - Deployment:
           - Getting Started: Deployment/index.md
-  # 2024-06-24 mwa design and proj mgt
-  - Design:
-      - Approach: Design/Approach.md
-      - Purpose and Scope: Design/PurposeAndScope.md
-      - Business Requirements: Design/BusinessRequirements.md
-      - Business Rules: Design/BusinessRules.md
-      - Components: Design/Components.md
-      - Non-functional Requirements: Design/NFRs.md
-  - Project Management: Project Management/ProjectManagement.md
-  # 2024-06-24 mwa
 theme:
   name: material
   features:
