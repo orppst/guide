@@ -1,0 +1,278 @@
+README ADASS2024.tar
+Last updated: 2024-09-20 by Peter Teuben, Tyler Linder, and Rob Seaman
+
+
+Table of contents
+=================
+
+  * Introduction
+  * STEP 1: Prepare your manuscript 
+  * STEP 2: Check your manuscript
+  * STEP 3: Package and submit your paper
+  * File index
+  * Github
+
+
+Introduction
+============
+
+This package of files is supplied to help you prepare papers for submission in 
+the Proceedings for the ADASS 2024 conference hosted by the Institute of Space
+Science and Astronomy at the University of Malta. Please follow the stepwise 
+instructions below carefully, because the manuscript needs to be delivered to 
+ASP in print quality. The more issues are solved early on in the process, the 
+more time we all save.
+
+The instructions below are intended to guide you through the process of preparing 
+and submitting your contribution. We realise it is a lot of information and some
+of it is duplicated. If you need additional help, please see the list of documents
+below. From "too much" to "too little" information, we provide the following 
+help documents in this tar file (except for your personal template):
+
+   1. manual2010.pdf             (ASP Instructions for Authors and Editors)
+   2. ManuscriptInstructions.pdf (Guidelines for preparing an ADASS paper)
+   3. README                     (This file)
+   4. ADASS_template.tex         (The general ADASS template)
+   5. PID.tex                    (Your personalized ADASS template for your PID, e.g. P12
+
+At the end of this README, we also provide a file index with a short description of 
+all the files present in the ADASS2024.tar file. 
+
+
+STEP 1: Prepare your manuscript
+===============================
+
+The best usage is to prepare your paper in this Author_Template directory. If you
+author two papers, that will work too, but preparing your tar or zip file is
+much easier if you use a separate Author_Template directory for each paper.
+
+Read the ManuscriptInstructions.pdf file. The ADASS_template.tex file gives you 
+a basic template for your ADASS paper. For additional details look in the 
+first section of the ASP's "Instructions for Authors and Editors" (manual2010.pdf), 
+but note that this is now some years old and current requirements have changed 
+slightly. In particular, ADASS papers that cite references MUST supply these 
+references in a .bib BibTeX file like the example.bib file provided here.
+
+You will need to run LaTeX on your .tex file, then run BibTeX to process the
+references, and then will need to run LaTeX again up to three times to get all
+the cross-references right. We recommend that you use the provided Makefile 
+(see next subsection), but if you prefer building manually that should work as 
+well. ASP does not use pdflatex, so try and stick to latex (we only allow EPS 
+figures, not PNG or JPG; see below).
+
+Editing your paper in overleaf (https://www.overleaf.com/) is also known to work:
+simply upload (as a ZIP file is the easiest) the template, the two asp2014 files,
+and optionally your BIB file and EPS figures. Don't start from scratch, or your file
+will be likely named main.tex. See below if you like the "make" shortcuts.
+
+
+A note about Paper IDs
+----------------------
+
+Each paper will be assigned an ID known as a PID. The PID syntax in 2024 is XNN
+where X is one of:
+    - I for invited talk
+    - C for contributed talk
+    - P for poster
+    - F for focus demo
+    - B for BoF
+    - T for tutorial
+and NN is a two-digit number.
+
+In this document, we will be using P12 as an example PID.
+
+Using the provided Makefile
+---------------------------
+
+We provide a Makefile to help you build, check and package your paper in the 
+correct way. To use it, you need to edit the makedefs file in this directory,
+or use your personalized one.
+In the makedefs file, you can define the P, V, A, E and FIGS macros, for example:
+
+# Your proceedings PID (paper ID) code:
+P = P12
+
+# Your version # (1,2,..) since you can only upload unique files
+V = 1
+
+# Your last name, e.g. Teuben
+A = Teuben
+
+# Your contact email address for submission issues
+E = teuben@gmail.com
+
+# Your EPS figures (leave blank if you don't have any)
+FIGS = P12_*.eps
+
+Please edit the makedefs file and NOT the Makefile directly. The entries in the
+makedefs file will override the ones set in the Makefile. When set correctly,
+you should be able to run the following make commands:
+
+    make pdf      : Build the PDF file (possibly twice to rid some errors)
+    make check    : Check the manuscript for issues
+    make tar      : Build the tar file for submission
+    make all      : Do all of the above
+    make overleaf : Prepare a ZIP file to bootstrap your overleaf project
+
+For overleaf users, you can add your modified makedefs file to
+complete and track the files you will modify. You can then use
+https://git.overleaf.com/<MAGIC_NUMBER> to clone the repo locally, and
+merge it with the other files that the ADASS editors have prepared for
+you (but you should not modify).  Then you can create the ZIP or TAR
+file for uploading your proceedings contribution. You can even bypass
+overleaf work and do the usual git pull/push to update, which can be
+useful for those who prefer to work on the desktop. But check with
+your co-authors to avoid a conflict.
+
+Adding subject index entries
+----------------------------
+
+It will help the ADASS editors if you add subject index entries for important
+terms mentioned in your paper. The Index.py script can help to generate these,
+and full details can be found in an appendix in ManuscriptInstructions.pdf.
+
+In your document they should appear a commented \ssindex{} entries, e.g.
+
+   %\ssindex{foobar}
+
+You can also use the following word-cloud type command chain in unix:
+
+    detex $(P).tex | grep -o -E '\w+' | sort | uniq -c | sort -n
+
+If your "unix" doesn't have detex, use cat.
+
+Adding ASCL index entries
+-------------------------
+
+It will help the ADASS editors if you add ASCL index entries for codes that
+you are mentioning in your paper. The ascl.py script can help to generate these,
+but it known to give lots of false positives. Nonetheless, you can cut and paste
+the correct ones (as a latex comment) in your document, e.g.
+
+   %\ooindex{TOPCAT, ascl:1101.010}
+
+
+STEP 2: Check your manuscript
+=============================
+
+Your paper should typeset without generating any LaTeX errors or warnings. 
+Overfull hbox warnings in particular need to be fixed. (In some cases underfull
+hbox and vbox warnings may be tolerable.)
+
+The 'make check' command runs a python script which looks for a number of common
+problems that have been found in submitted papers. You should run it on your
+paper before packaging it up for submission, and should fix any problems it 
+finds. This test is a copy of a basic paper checking program that will be run 
+by the ADASS editors on all submitted papers.
+
+It is also possible to run the check manually with the PaperCheck.py script. The 
+header comments in PaperCheck.py describe how to run it in detail, but essentially 
+all you have to do is:
+
+    PaperCheck.py Paper Author
+
+where Paper is the identifier for your paper, eg O10-3 or P08-2 etc, and
+Author is the surname of the first author of the paper.
+
+
+STEP 3: Package and submit your paper
+=====================================
+
+You should create a .tar file with a name based on the identifier for your paper and 
+including a version number, starting at 1.
+e.g. example P12_v1.tar. This should contain:
+
+  - The .tex LaTeX file
+  - The .bib file defining any cited references
+  - And .eps graphics files used by the paper
+  - The makedefs file 
+  - The resulting .pdf file for the paper, so we can see how you got it.
+  - A signed copyright form.
+
+The provided Makefile could help you to build, check and package the paper. 
+Make sure that you have edited the makedefs file, where the macros P, A, E, V 
+and FIGS should be defined. This makedefs file is automatically included in 
+your tar/zip file.
+
+The command to build, check, and package the manuscript is:
+
+      make pdf check tar
+
+If there are problems typesetting your paper, your copy of the .pdf file for
+the paper will at least show the editors what you expected it to look like. If
+you have already supplied a paper copy of the copyright form, you do not need
+to include this. Note that electronic signatures are not acceptable - sign the
+form and scan it.
+
+(Zip files are also acceptable, using the same naming convention, e.g. P12_v1.zip.)
+
+Submit the paper
+----------------
+
+Submit the .tar file as instructed on the ADASS 2024 web site. If you need to
+submit a revised version, submit ALL the required files in a new .tar file - do
+not just submit the modified files - and append a version number to the name,
+e.g. P12_v2.tar. This version is defined in the V= parameter in the makedefs file.
+
+To sum up, here is an example of the files (no sub-directories please) that the editors
+like to see:
+
+   P12.tex
+   P12.bib
+   P12_f1.eps
+   P12_f2.eps
+   makedefs
+   P12.pdf
+
+you really don't need to send us *any* other type files. Save the electrons!
+
+
+File index
+==========
+
+The ADASS2024.tar package contains the following files:
+
+README                     - this file.
+Makefile                   - useful for those who like terminal commands
+makedefs                   - author macros to be included by the Makefile
+
+ManuscriptInstructions.pdf - Guidelines for preparing an ADASS paper
+
+ADASS_template.tex         - an example template file for an ADASS 2018 paper.
+example.bib                - an example BibTeX file used by ADASS_template.tex
+example.eps                - an example graphics file used by ADASS_template.tex
+
+ADASS_template.pdf         - the result of running LaTeX on ADASS_template.tex
+
+asp2014.bst                - the required ASP bibliography style file.
+asp2014.sty                - the required ASP LaTeX style file.
+
+PaperCheck.py              - a Python script used to check an ADASS paper
+Index.py                   - a Python script used to generate subject index entries
+Aindex.py                  - a Python script used helping to ...
+FixUnprintable.py          - a Python script used helping to ...
+ascl.py                    - a python script to suggest ASCL entries
+AdassChecks.py             - a Python module used by PaperCheck.py
+TexScanner.py              - a Python module used by AdassChecks.py
+AdassConfig.py             - a Python module used by Index.py
+AdassIndex.py              - a Python module used by Index.py
+
+subjectKeywords.txt        - set of recent subject index entries, used by Index.py
+asclKeywords.txt           - list of ASCL codes for the ascl.py checker
+
+manual2010.pdf             - The ASP "Instructions for Authors and Editors".
+copyrightform.pdf          - The ASP copyright form
+
+
+Github
+======
+
+Although each ADASS conference will draw its proceedings preparation package, the original github
+repo from which that package is drawn, is available on https://github.com/astroumd/ADASSProceedings
+Typically each year will develop the new release on a branch (e.g. "2024" for the Malta version)
+and merge this back to the master for the next year team goes to work.
+
+Authors will not need to know about that, but you may run into some editor specific comments or
+commands in the Makefile or the python scripts. 
+
+good luck!
