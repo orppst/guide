@@ -7,13 +7,30 @@ The application will be known as the Polaris Proposal Submission Tool (Polaris).
 
 ## **Overall scope and goals**
 
-Polaris will be used for the following activities:-
+Polaris will manage the following activities:-
 
-Participating observatories publish their future observing cycles, typically of six months duration. Each observatory maintains an inventory of available resources.
+* Participating observatories publish their future observing cycles, typically of six months duration. Each observatory maintains an inventory of available resources.
 
-Astronomers create, maintain, and submit observing proposals for one of those cycles. They may submit their proposals to more than one observatory and may also create another proposal from an existing one, submitting it after editing.
+* Astronomers create, maintain, and submit observing proposals for one of those cycles. 
 
-TAC nominated reviewers discover and read astronomers’ submitted proposals and assign to them a score which will determine whether or not observing time is allocated. The final decision regarding observing time allocation rests with the TAC. In the event of an observing cycle being oversubscribed, the TAC may revoke any allocation.
+* * Their proposal will include sufficient scientific and technical details for the TAC to be able to make an informed decision about the proposal, but no more. 
+
+* * They may submit their proposals to more than one observatory and may also create another proposal from an existing one, submitting it after editing.
+
+* TAC nominated reviewers discover and read astronomers’ submitted proposals and assign to them a score which will determine whether or not observing time is allocated. The final decision regarding observing time allocation rests with the TAC. In the event of an observing cycle being oversubscribed, the TAC may revoke any allocation.
+
+Polaris will *not* manage the following activities
+
+* Providing full configuration details to enable the observatory equipment to fulfil the observation needs of the proposal
+
+* * These will be provided independently by the astronomer once the TAC have agreed to allocate time and resources to the proposal
+
+* Scheduling of resources at an observatory following allocation of time to a proposal by the TAC
+
+* Managing proposal state beyond completion
+
+* * There are complicated rules around publication accessibility
+
 
 The desired outcomes are that astronomers are able to make their observations using their nominated observatory’s resources, and that the observatory's resources are used effectively.
 
@@ -33,9 +50,10 @@ The desired outcomes are that astronomers are able to make their observations us
 | Allocate time for a submitted proposal                                                   | Must  - NB Polaris captures this decision but does not have access to the observatory schedules in order to make it |
 | Assign roles to users                                                                    | Must                                                                                                                |
 | Automate scheduling of proposals                                                         | Won’t – it does provide the input data for a scheduling tool however.                                               |
+| Capture all technical configurations necessary to operate the observatory equipment      | Won't                                                                                                               |
 | Capture observatory details, eg location, equipment, availability, observing cycles, etc | Must                                                                                                                |
-| Capture state of a completed proposal                                                    | Could                                                                                                               |
-| Capture published state of a completed proposal                                          | Won't - there are complicated rules around publication accessibility                                                |
+| Capture published state of a completed proposal                                          | Won't                                                                                                               |
+| Capture state of a submitted proposal                                                    | Could                                                                                                               |
 | Capture system details, eg users and roles                                               | Must                                                                                                                |
 | Clone a proposal                                                                         | Must                                                                                                                |
 | Communicate with users                                                                   | Should                                                                                                              |
