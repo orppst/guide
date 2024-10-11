@@ -73,14 +73,14 @@
 
 
 \begin{abstract}
-    We are developing a new, open source proposal tool called Polaris as a deliverable of the Horizon 2020 OPTICON
-    RadioNet Pilot project.
-    This tool has been built on top of the Proposal Data Model, defined in the IVOA standard VO-DML. Although this
-    is an important part of the tool, this paper will in particular focus on the technologies used build and
-    develop Polaris itself.
+    We are developing a new, open source proposal tool called \emph{Polaris} as a deliverable of the Horizon
+    2020 OPTICON RadioNet Pilot project.
+    This tool has been built on top of the Proposal Data Model, defined in the IVOA standard VO-DML\@.
+    Although this is an important part of the tool, this paper will in particular focus on the technologies
+    used build and develop Polaris itself.
 
-    We strove to keep the code as lean as possible by utilising code generation and by using existing libraries and
-    frameworks.
+    We strove to keep the code as lean as possible by utilising code generation and by using existing
+    libraries and frameworks.
     The functionality of the tool is exposed as a RESTful API in a microservices architecture deployed
     on Kubernetes.
     We have developed a web-based GUI frontend to access our API. It has been written in Typescript
@@ -88,8 +88,8 @@
     We are also actively developing a CLI in Java to provide companion access to the API\@.
 
     The API, GUI and CLI are maintained in open-source repositories on GitHub.
-    This allows others to contribute to the development of Polaris or fork the projects to change the tool to suit
-    their needs.
+    This allows others to contribute to the development of Polaris or fork the projects to change the tool
+    to suit their needs.
 \end{abstract}
 
 % These lines show examples of subject index entries. At this stage these have to commented
@@ -108,33 +108,41 @@
 
 
 \section{Motivation}\label{sec:motivation}
-North Star is dead.\footnote{ technically ``end-of-life'' but that just doesn't have the same ... drama}
-North Star is the name of a current observation proposal tool used both by the radio and optical astronomy communities.
+\emph{North Star} is dead.\footnote{ technically ``end-of-life'', but that just doesn't have the same ... drama}
+\emph{North Star} is the name of a current observation proposal tool used both by the radio and optical
+astronomy communities.
 It is no longer actively developed or maintained, it is outdated, and in need of replacement.
 
-The Opticon RadioNet Pilot (ORP) aims to support and develop seamless access to radio and optical, ground-based
-astronomy facilities across Europe and the rest of the world.
-The ORP attempts to deliver on this aim by developing common standards for observation requests and specifications,
-as well as a common framework for data access and processing.
-As part of work-package JA2.1 of this pilot we are developing a new open source proposal tool that provides a single
-access point for the community to create, edit, and submit observation requests to various astronomy facilities.
+The Opticon RadioNet Pilot (ORP) aims to support and develop seamless access to radio and optical,
+ground-based astronomy facilities across Europe and the rest of the world.
+The ORP attempts to deliver on this aim by developing common standards for observation requests and
+specifications,as well as a common framework for data access and processing.
+As part of work-package JA2.1 of this pilot we are developing a new open source proposal tool that provides
+a single access point for the community to create, edit, and submit observation requests to various astronomy
+facilities.
 The tool also strives to provide a uniform and useful interface for reviewing and allocating proposals by the
 time-allocation-committees (TAC) at the relevant astronomy facilities.
 
 To avoid the mistakes of the past we set out to develop a proposal tool with an open source philosophy, making
 paramount the ideas of code readability, maintainability, extensibility and scalability.
+We also hope that our efforts will produce a tool that has longevity.
 To that end, our code base is currently version controlled in a private repository on
 GitHub~\url{https://github.com/orppst}.
-Our intention is to allow the user community to contribute to the projects, either directly by writing and editing
-source code, via feedback in terms of bug-fixes and feature requests, or to fork the projects to better tailor
-them to their own needs.
+Our intention is to allow the user community to contribute to the projects, either directly by writing and
+editing source code, via feedback in terms of bug-fixes and feature requests, or to fork the projects to
+better tailor them to their own needs.
 
 As a nod to the outgoing proposal tool, and perhaps signifying progress, we are calling this new proposal tool
-Polaris.\footnote{North Star++ felt a bit too ``on-the-nose''.}
+\emph{Polaris}.\footnote{\emph{North Star++} felt a bit too ``on-the-nose''.}
 
-\section{Architecture}\label{sec:architecture}
+We are aware of other such efforts to create observation proposal preparation tools.
+Notably, the European Southern Observatory (ESO), and the Square Kilometer Array Observatory (SKAO) have
+their own proposal preparation tools under development. [refs???]
+Our tool is built on top of the International Virtual Observatory Alliance (IVOA) Virtual
+Observatory Data Modelling Language (VO-DML).
+As such, we are confident that \emph{Polaris} can export and import proposals to and from other tools using
+VO-DML as their underpinning data modelling language with minimal manual intervention.
 
-%TODO: eps figures of architecure/s
 
 \section{Technologies}\label{sec:technologies}
 
@@ -159,18 +167,34 @@ OpenApi-codegen \url{https://github.com/fabien0102/openapi-codegen}  - blah.
 
 \subection{Mantine: a React components library}
 
-Mantine\footnote{named after a Pok\'emon} \url{https://mantine.dev/} is a React components library that provides
-many customisable components and hooks, based in TypeScript, to quickly and easily build accessible frontend web
-applications.
-It is an open source project that is actively developed and maintained on GitHub.
-Although there are several choices when it comes to choosing a TypeScript library to develop a frontend, web based,
-GUI application (including not choosing one at all), we have found Mantine to be an intuitive, comprehensive, well
-documented, and performant library to use.
+Mantine\footnote{named after a Pok\'emon} \url{https://mantine.dev/} is a React components library that
+provides many customisable components and hooks, based in TypeScript, to quickly and easily build accessible
+frontend web applications.
+It is an open source project that, at time of writing, is actively developed and maintained on GitHub.
+Although there are several choices when it comes to choosing a TypeScript library to develop a frontend,
+web based, GUI application (including not choosing one at all), we have found Mantine to be an intuitive,
+comprehensive, well documented, and performant library to use.
 
 %TODO: mention 'Vite' here?
 
+\section{Architecture}\label{sec:architecture}
+
+%TODO: eps figures of architecure/s
+
+%TODO; flesh this out
+The API is written in Java using RESTful architecture.
+It interfaces with the PostgreSQL database via the Hibernate query language.
+The database schemas are generated from the Proposal Data Model, written in VO-DML, and provides the
+definitions of the Java classes and types we can work with in the implementation of the API\@.
+We provide a separate ``document store'' volume to the database to house supporting documents pertinent
+to the proposals.
+Authorisation to the API is done using KeyCloak and an OIDC server.
+You can sign-on to \emph{Polaris} using your orcid ID\@.
+
 
 \section{Polaris}\label{sec:polaris}
+
+\subsection{Use Cases}\label{subsec:use-cases}
 
 \subsection{Proposal Editor}\label{subsec:proposal-editor}
 
@@ -180,6 +204,29 @@ documented, and performant library to use.
 
 %TODO: eps figures / screen shots of reviewing/allocating a proposal
 
+\section{Future Developments}\label{sec:future-developments}
+Features under development:
+\begin{itemize}
+    \item integration of specific Observatory capabilities
+    \item spectral line lookup service (probably utilising Splatalogue \url{https://splatalogue.online/#/home})
+    \item cone search and attributes search for observation targets (extending our SIMBAD search interface)
+    \item specification of observation ``fields''
+    \item user help guide to completing proposals
+\end{itemize}
+Please notice that this list is not exhaustive, not written in any particular order, and may very well be
+out-of-date by the time this paper is published.\footnote{It certainly should be if we're doing our jobs
+properly.}
+An active list of ``Issues'' (bugs and feature requests) is maintained on the GitHub repository sites, which
+are updated regularly as bugs are fixed and features added.
+
+
+\section{Summary}\label{sec:summary}
+In summary, we have created a full-stack, web-based, open source observation proposal tool, \emph{Polaris},
+for use within both the radio and optical astronomy communities.
+We have approached the design of the application with extensibility and longevity at the forefront of
+our plans.
+\emph{Polaris} will replace \emph{North Star} as the de facto observation proposal preparation tool for
+the \emph{eMerlin} facility in the near future.
 
 \acknowledgements This work is funded by the Horizon 2020 Opticon RadioNet Pilot
 
