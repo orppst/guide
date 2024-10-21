@@ -108,7 +108,7 @@
 
 
 \section{Motivation}\label{sec:motivation}
-\emph{North Star} is dead.\footnote{ technically ``end-of-life'', but that just doesn't have the same ... drama}
+\emph{North Star} is dead.\footnote{ technically ``end-of-life'', but that just doesn't have the same ring to it.}
 \emph{North Star} is the name of a current observation proposal tool used both by the radio and optical
 astronomy communities.
 It is no longer actively developed or maintained, it is outdated, and in need of replacement.
@@ -136,8 +136,8 @@ As a nod to the outgoing proposal tool, and perhaps signifying progress, we are 
 \emph{Polaris}.\footnote{\emph{North Star++} felt a bit too ``on-the-nose''.}
 
 We are aware of other such efforts to create observation proposal preparation tools.
-Notably, the European Southern Observatory (ESO), and the Square Kilometer Array Observatory (SKAO) have
-their own proposal preparation tools under development. [refs???]
+Notably, the European Southern Observatory (ESO), the Square Kilometer Array Observatory (SKAO), and ASTRON
+have their own proposal preparation tools under development. [refs???]
 Our tool is built on top of the International Virtual Observatory Alliance (IVOA) Virtual
 Observatory Data Modelling Language (VO-DML).
 As such, we are confident that \emph{Polaris} can export and import proposals to and from other tools using
@@ -147,7 +147,7 @@ VO-DML as their underpinning data modelling language with minimal manual interve
 \section{Technologies}\label{sec:technologies}
 
 In modern development of ``full stack'' applications, there is an extensive choice in how you set up your
-architecture, the libraries and frameworks you can work with, and how it gets deployed on your systems.
+architecture, the libraries and frameworks you can work with, and how it is deployed on your systems.
 
 In this section we discuss the technologies we choose to develop Polaris.
 
@@ -188,6 +188,9 @@ The database schemas are generated from the Proposal Data Model, written in VO-D
 definitions of the Java classes and types we can work with in the implementation of the API\@.
 We provide a separate ``document store'' volume to the database to house supporting documents pertinent
 to the proposals.
+This includes, but is not limited to, related proposals, published papers and posters, images, and text
+files.
+
 Authorisation to the API is done using KeyCloak and an OIDC server.
 You can sign-on to \emph{Polaris} using your orcid ID\@.
 
@@ -196,13 +199,39 @@ You can sign-on to \emph{Polaris} using your orcid ID\@.
 
 \subsection{Use Cases}\label{subsec:use-cases}
 
-\subsection{Proposal Editor}\label{subsec:proposal-editor}
+\emph{Polaris} is split into two main ``views'': the Proposal Editor View, and the Proposals Review
+and Allocation View.
+
+
+\subsubsection{Proposal Editor}\label{subsubsec:proposal-editor}
 
 %TODO: eps figures / screen shots of creating/editing a proposal
 
-\subsection{Proposal Review and Allocation}\label{subsec:proposal-review-and-allocation}
+The Editor View is where a Principal Investigator (PI) or a Co-Investigator (CI) or investigators may create,
+edit, and submit proposals to the various observation proposal cycles that the tool supports.
+Observational targets may be looked-up by using an interface to SIMBAD, and in combination with user
+supplied desired technical goals (resolution, scale, sensitivity etc.), can be used to create observation
+schedules including both the main and calibrator targets.
+The investigators may provide either plain text (ascii), restructured text (RST), or LaTeX format scientific
+and technical justifications for their proposals.
+A LaTeX ``service'' is provided to compile investigator's text along with uploaded images and bibliography,
+into a PDF document.
+
+
+\subsubsection{Proposal Review and Allocation}\label{subsubsec:proposal-review-and-allocation}
 
 %TODO: eps figures / screen shots of reviewing/allocating a proposal
+
+The Review and Allocation View is where the TAC may view and/or export submitted proposals for review.
+Here the reviewers may supply comments and assign a score to submitted proposals that allows for a decision
+to be made about the suitability of the proposal in the given observation cycle.
+Should a proposal pass the review, it may then be allocated ``resource'' from the pool or pools of resource
+associated with that cycle.
+Notice that we assume ``resource'' to be a general, abstract concept, typically observation
+time, but could also refer to other ``types'' of resource for example, compute resource, or money, or
+whatever is appropriate for the observation cycle.
+
+
 
 \section{Future Developments}\label{sec:future-developments}
 Features under development:
