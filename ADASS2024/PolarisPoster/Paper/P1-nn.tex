@@ -108,7 +108,8 @@
 
 
 \section{Motivation}\label{sec:motivation}
-\emph{North Star} is dead.\footnote{ technically ``end-of-life'', but that just doesn't have the same ring to it.}
+\emph{North Star} is dead.\footnote{ technically ``end-of-life'', but that just doesn't have the same ring
+to it.}
 \emph{North Star} is the name of a current observation proposal tool used both by the radio and optical
 astronomy communities.
 It is no longer actively developed or maintained, it is outdated, and in need of replacement.
@@ -136,8 +137,11 @@ As a nod to the outgoing proposal tool, and perhaps signifying progress, we are 
 \emph{Polaris}.\footnote{\emph{North Star++} felt a bit too ``on-the-nose''.}
 
 We are aware of other such efforts to create observation proposal preparation tools.
-Notably, the European Southern Observatory (ESO), the Square Kilometer Array Observatory (SKAO), and ASTRON
-have their own proposal preparation tools under development. [refs???]
+Notably, the European Southern Observatory (ESO), the Square Kilometer Array Observatory (SKAO), and the
+Netherlands Institute for Radio Astronomy (a.k.a.\ ASTRON) each have their own proposal preparation tools
+under development.
+[refs???]
+
 Our tool is built on top of the International Virtual Observatory Alliance (IVOA) Virtual
 Observatory Data Modelling Language (VO-DML).
 As such, we are confident that \emph{Polaris} can export and import proposals to and from other tools using
@@ -157,7 +161,7 @@ Quarkus \url{https://quarkus.io/} describes its self as a ``Supersonic Subatomic
 ``container-first'' philosophy to develop applications with low memory usage and fast startup times.
 It is an open source project with a large community of developers and contributors.
 
-%TODO: more reasons for using quarkus
+%TODO: more reasons for using quarkus, inlcuding outline of Kubernetes?
 Blah, blah, blah.
 
 \subsection{OpenAPI: code generation}\label{subsec:openapi-code-generation}
@@ -202,7 +206,6 @@ You can sign-on to \emph{Polaris} using your orcid ID\@.
 \emph{Polaris} is split into two main ``views'': the Proposal Editor View, and the Proposals Review
 and Allocation View.
 
-
 \subsubsection{Proposal Editor}\label{subsubsec:proposal-editor}
 
 %TODO: eps figures / screen shots of creating/editing a proposal
@@ -212,10 +215,10 @@ edit, and submit proposals to the various observation proposal cycles that the t
 Observational targets may be looked-up by using an interface to SIMBAD, and in combination with user
 supplied desired technical goals (resolution, scale, sensitivity etc.), can be used to create observation
 schedules including both the main and calibrator targets.
-The investigators may provide either plain text (ascii), restructured text (RST), or LaTeX format scientific
-and technical justifications for their proposals.
-A LaTeX ``service'' is provided to compile investigator's text along with uploaded images and bibliography,
-into a PDF document.
+The investigators may provide scientific and technical justifications for their proposals in either plain text
+(ascii), restructured text (RST), or LaTeX format.
+A LaTeX ``service'' is provided to compile investigator's LaTeX formatted text, along with uploaded image
+and bibliography files, into a PDF document.
 
 
 \subsubsection{Proposal Review and Allocation}\label{subsubsec:proposal-review-and-allocation}
@@ -223,14 +226,13 @@ into a PDF document.
 %TODO: eps figures / screen shots of reviewing/allocating a proposal
 
 The Review and Allocation View is where the TAC may view and/or export submitted proposals for review.
-Here the reviewers may supply comments and assign a score to submitted proposals that allows for a decision
-to be made about the suitability of the proposal in the given observation cycle.
-Should a proposal pass the review, it may then be allocated ``resource'' from the pool or pools of resource
-associated with that cycle.
+Here the reviewers may supply comments about, and assign a score to submitted proposals that allows for
+a decision to be made about the suitability of the proposal in the given observation cycle.
+Should a proposal pass the review, it may then be allocated an amount of programmatically defined ``resource''
+from the pool or pools of ``resources'' associated with that cycle.
 Notice that we assume ``resource'' to be a general, abstract concept, typically observation
-time, but could also refer to other ``types'' of resource for example, compute resource, or money, or
-whatever is appropriate for the observation cycle.
-
+time, but could also refer to other types of resource for example, compute resource, or
+whatever is appropriate for the observation cycle as defined by the TAC.\@
 
 
 \section{Future Developments}\label{sec:future-developments}
