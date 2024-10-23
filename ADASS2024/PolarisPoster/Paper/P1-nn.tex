@@ -76,10 +76,10 @@
     We are developing a new, open source proposal tool called \emph{Polaris} as a deliverable of the Horizon
     2020 OPTICON RadioNet Pilot project.
     This tool has been built on top of the Proposal Data Model, defined in the IVOA standard VO-DML\@.
-    Although this is an important part of the tool, this paper will in particular focus on the technologies
+    Although an important part of the tool, this paper will focus on the technologies 
     used build and develop Polaris itself.
 
-    We strove to keep the code as lean as possible by utilising code generation and by using existing
+    We strove to keep the code as lean as possible by utilising code generation and using existing
     libraries and frameworks.
     The functionality of the tool is exposed as a RESTful API in a microservices architecture deployed
     on Kubernetes.
@@ -108,16 +108,16 @@
 
 
 \section{Motivation}\label{sec:motivation}
-\emph{North Star} is dead.\footnote{ technically ``end-of-life'', but that just doesn't have the same ring
+\emph{NorthStar} is dead.\footnote{ technically ``end-of-life'', but that just doesn't have the same ring
 to it.}
-\emph{North Star} is the name of a current observation proposal tool used both by the radio and optical
+\emph{NorthStar} is the name of a current observation proposal tool used both by the radio and optical
 astronomy communities.
 It is no longer actively developed or maintained, it is outdated, and in need of replacement.
 
 The Opticon RadioNet Pilot (ORP) aims to support and develop seamless access to radio and optical,
 ground-based astronomy facilities across Europe and the rest of the world.
 The ORP attempts to deliver on this aim by developing common standards for observation requests and
-specifications,as well as a common framework for data access and processing.
+specifications, as well as a common framework for data access and processing.
 As part of work-package JA2.1 of this pilot we are developing a new open source proposal tool that provides
 a single access point for the community to create, edit, and submit observation requests to various astronomy
 facilities.
@@ -162,7 +162,10 @@ Quarkus \url{https://quarkus.io/} describes its self as a ``Supersonic Subatomic
 It is an open source project with a large community of developers and contributors.
 
 %TODO: more reasons for using quarkus, inlcuding outline of Kubernetes?
-Blah, blah, blah.
+Using Quarkus allows us to concentrate our development effort on the business logic, UX and GUI without 
+having to spend time on much of the underlying boiler plate work.  Combining Quarkus with Kubernetes is 
+relatively seamless and means Polaris can be deployed on any standard Kubernetes cluster for high 
+resilience and scalability. 
 
 \subsection{OpenAPI: code generation}\label{subsec:openapi-code-generation}
 
