@@ -123,23 +123,20 @@ facilities.
 The tool also strives to provide a uniform and useful interface for reviewing and allocating proposals by the
 time-allocation-committees (TAC) at the relevant astronomy facilities.
 
-To avoid the mistakes of the past we set out to develop a proposal tool with an open source philosophy, making
-paramount the ideas of code readability, maintainability, extensibility and scalability.
-We also hope that our efforts will produce a tool that has longevity.
+To avoid the mistakes of the past we set out to develop a proposal tool with a modern, open source philosophy.
 To that end, our code base is currently version controlled in a private repository on
-GitHub~\footnote{\url{https://github.com/orppst}}.
+GitHub~\footnote{\url{https://github.com/orppst}} that we hope remains active for the foreseeable future.
 Our intention is to allow the user community to contribute to the projects, either directly by writing and
 editing source code, via feedback in terms of bug-fixes and feature requests, or to fork the projects to
 better tailor them to their own needs.
 
 As a nod to the outgoing proposal tool, and perhaps signifying progress, we are calling this new proposal tool
-\emph{Polaris}(\emph{North Star++} felt a bit too ``on-the-nose'').
+\emph{Polaris} (\emph{North Star++} felt a bit too ``on-the-nose'').
 
 We are aware of other such efforts to create observation proposal preparation tools.
 Notably, the European Southern Observatory (ESO), the Square Kilometer Array Observatory (SKAO), and the
 Netherlands Institute for Radio Astronomy (a.k.a.\ ASTRON) each have their own proposal preparation tools
 under development.
-[refs???]
 
 Our tool is built on top of the International Virtual Observatory Alliance (IVOA) Virtual
 Observatory Data Modelling Language (VO-DML).
@@ -148,10 +145,6 @@ VO-DML as their underpinning data modelling language with minimal manual interve
 
 \section{Architecture}\label{sec:architecture}
 
-\articlefigure[scale=0.3]{P1-nn_architecture.eps}{architectureFigure}{Polaris microservices that can be run on Kubernetes clusters}
-
-\clearpage
-
 Figure~\ref{architectureFigure} shows a diagram representing the architecture of \emph{Polaris}.
 The functionality of the tool is exposed as a RESTful Application Programming Interface (API) in a
 microservices architecture deployed on Kubernetes.
@@ -159,13 +152,15 @@ The API connects with a Postgres database using the Hibernate query language, an
 from the Proposal Data Model, provide the Java class definitions we can work with when writing the implementation
 of the API calls.
 
+\articlefigure[scale=0.4]{P1-nn_architecture.eps}{architectureFigure}{Polaris microservices that can be run on Kubernetes clusters}
+
+\clearpage
+
 We have created a web-based Graphical User Interface (GUI) frontend to access our API that has been
 written in Typescript using the React framework.
-The TypeScript is transpiled to JavaScript, which calls the REST end-points defined in the API, and produces the
+The TypeScript is transpiled to JavaScript, which calls the REST endpoints defined in the API, and produces the
 HTML for the application.
-Quarkus comes with a built-in development mode that allows live updates to source, resource, and
-configuration files that are automatically reflected in the running application, spanning the UI, the API,
-and the database.
+
 The GUI accesses the SIMBAD Table Access Protocol (TAP) service as an aid to observational target lookup.
 We are also actively developing a command line interface CLI, written in Java, to provide a companion access to
 the API. The intention of this CLI is to provide convenient access for administrators to the configurable parts of
@@ -175,31 +170,40 @@ Authorisation to the API is done using KeyCloak and an OpenID Connect (OIDC) ser
 You can sign-on to \emph{Polaris} using your orcid ID\@.
 
 
-\section{Technologies}\label{sec:technologies}
+\section{Technologies Used}\label{sec:technologies-used}
 
 In modern development of ``full stack'' applications, there is an extensive choice in how you set up your
 development environment, and how the application is packaged for deployment.
 
-In this section we discuss the technologies we choose to develop Polaris.
+Let's face it, software developers are lazy beasts.
+The less code they have to type the happier, in general, they are.
+If code can be automatically generated, with little to no human intervention then we are all for it (looking at you
+ChatGPT).
+
+In this section we discuss the technologies we choose to develop Polaris, bearing in mind this ``lazy'' attitude.
 
 \subsection{Quarkus: a Kubernetes-native Java framework}\label{subsec:quarkus}
 
-Quarkus \url{https://quarkus.io/} describes its self as a ``Supersonic Subatomic Java'', designed around a
-``container-first'' philosophy to develop applications with low memory usage and fast startup times.
+Quarkus\footnote{\url{https://quarkus.io/}}, a ``Supersonic Subatomic Java'', is designed around a
+container-first philosophy to develop applications with low memory usage and fast startup times.
 It is an open source project with a large community of developers and contributors, and a vast ecosystem
 of extensions and plugins.
-We use Quarkus to help configure and build both the backend service (API, database) and the frontend clients
-(GUI, CLI).
 
 Using Quarkus allows us to concentrate our development effort on the business logic, user experience, and GUI
 without having to spend time on much of the underlying boilerplate work.
 Combining Quarkus with Kubernetes is relatively seamless and means Polaris can be deployed on any standard
 Kubernetes cluster for high resilience and scalability.
 
+Quarkus comes with a built-in development mode that allows developers to update source, resource, and
+configuration files that are then automatically reflected in the running application.
+
 \subsection{OpenAPI: code generation}\label{subsec:openapi-code-generation}
 
-%TODO: reasons for using this code generator
-OpenApi-codegen \url{https://github.com/fabien0102/openapi-codegen}  - blah.
+OpenApi-codegen\footnote{\url{https://github.com/fabien0102/openapi-codegen}} can automatically generate
+the functional components and type schemas from our Java API code to be used in the Typescript GUI\@.
+In other words, it creates from our API the ``fetch'' calls to the REST endpoints.
+OpenApi-codegen is relatively easy to use and required only a moderate amount of developer effort
+required to intervene when it did not do quite the right thing.
 
 \subsection{Mantine: a React components library}\label{subsec:mantine:-a-react-components-library}
 
@@ -207,47 +211,7 @@ Mantine\footnote{\url{https://mantine.dev/} - named after a Pok\'emon.} is a Rea
 provides many customisable components and hooks, based in TypeScript, to quickly and easily build accessible
 frontend web applications.
 It is an open source project that, at time of writing, is actively developed and maintained on GitHub.
-Although there are several choices when it comes to selecting a TypeScript library to develop a frontend,
-web based, GUI application (including not choosing one at all), we have found Mantine to be an intuitive,
-comprehensive, well documented, and performant library to use.
-
-%TODO: mention 'Vite' here?
-
-\section{Polaris}\label{sec:polaris}
-
-\subsection{Use Cases}\label{subsec:use-cases}
-
-\emph{Polaris} is split into two main ``views'': the Proposal Editor View, and the Proposals Review
-and Allocation View.
-
-\subsubsection{Proposal Editor}\label{subsubsec:proposal-editor}
-
-%TODO: eps figures / screen shots of creating/editing a proposal
-
-The Editor View is where a Principal Investigator (PI) or a Co-Investigator (CI) or investigators may create,
-edit, and submit proposals to the various observation proposal cycles that the tool supports.
-Observational targets may be looked-up by using an interface to SIMBAD, and in combination with user
-supplied desired technical goals (resolution, scale, sensitivity etc.), can be used to create observation
-schedules including both the main and calibrator targets.
-The investigators may provide scientific and technical justifications for their proposals in either plain text
-(ascii), restructured text (RST), or LaTeX format.
-A LaTeX ``service'' is provided to compile investigator's LaTeX formatted text, along with uploaded image
-and bibliography files, into a PDF document.
-
-
-\subsubsection{Proposal Review and Allocation}\label{subsubsec:proposal-review-and-allocation}
-
-%TODO: eps figures / screen shots of reviewing/allocating a proposal
-
-The Review and Allocation View is where the TAC may view and/or export submitted proposals for review.
-Here the reviewers may supply comments about, and assign a score to submitted proposals that provides a means
-to make a decision about the suitability of the proposal in the given observation cycle.
-Should a proposal pass the review, it may then be allocated an amount of programmatically defined ``resource''
-from the pool or pools of ``resources'' associated with that cycle.
-Notice that we assume ``resource'' to be a general, abstract concept, typically observation
-time, but could also refer to other types of resource for example, compute resource, or
-whatever is appropriate for the observation cycle as defined by the TAC.\@
-
+We have found Mantine to be an intuitive, comprehensive, well documented, and performant library.
 
 \section{Future Developments}\label{sec:future-developments}
 
@@ -256,23 +220,16 @@ A centralised repository/database of observatories and their instruments/detecto
 A standardised list of global astronomy facilities.
 Single-sign on feature or service for astronomy.
 
-An active list of ``Issues'' (bugs and feature requests) is maintained on the GitHub repository sites, which
-are updated regularly as bugs are fixed and features added.
-
-
 \section{Summary}\label{sec:summary}
 In summary, we have created a full-stack, web-based, open source observation proposal tool, \emph{Polaris},
-for use within both the radio and optical astronomy communities.
-We have approached the design of the application with extensibility and longevity at the forefront of
-our plans.
-We hope that the radio and optical astronomy communities find our proposal preparation tool useful.
+for intended use within both the radio and optical astronomy communities.
 It is our hope that those communities contribute to the development of \emph{Polaris} such that it remains an
 active project on GitHub, and continues to mature into the foreseeable future at least.
 
-\emph{Polaris} will replace \emph{North Star} as the de facto observation proposal preparation tool for
+\emph{Polaris} will replace \emph{NorthStar} as the de facto observation proposal preparation tool for
 the \emph{eMerlin} facility in the near future.
 
-\acknowledgements This work has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 101004719.
+\acknowledgements This work has received funding from the European Union's Horizon 2020 research and innovation programme, grant agreement No 101004719.
 We would also like to acknowledge the individual contributions of Allan Stokes and Michael Ahearn to the development of our frontend GUI\@.
 
 \bibliography{example}  % For BibTex
