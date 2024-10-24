@@ -3,7 +3,7 @@
 main: poster.pdf
 
 poster.pdf: FORCE
-	latexmk -pdflatex='lualatex -interaction nonstopmode' -pdf PolarisPoster_beamer.tex
+	latexmk -pdflatex='lualatex -interaction nonstopmode' -pdf PolarisPoster.tex
 
 clean:
 	latexmk -pdf -C
