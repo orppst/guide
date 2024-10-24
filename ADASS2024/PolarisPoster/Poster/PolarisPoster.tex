@@ -43,9 +43,16 @@
 % ====================
 % Footer Logos
 % ====================
+%logos left. middle, and right in the footer
 \logoleftfooter{\includegraphics[height=7cm]{logos/polaris_logo}}
 \logomiddlefooter{\includegraphics[height=7cm]{logos/ADASS-XXXIV_Logo_rgb_FullColour_uwWfloC}}
 \logorightfooter{\includegraphics[height=7cm]{images/PolarisGitHub}}
+
+\footercontent{
+  \hspace{5ex} \href{https://github.com/orppst/}{https://github.com/orppst/}  \hfill \hspace{5ex}
+  ADASS XXXIV Valetta, Malta \hspace{7ex} \hfill
+    \href{https://github.com/orppst/}{https://github.com/orppst/}
+}
 
 
 % ====================
@@ -61,16 +68,6 @@
 % ====================
 
 \begin{document}
-
-% Refer to https://github.com/k4rtik/uchicago-poster
-% logo: https://www.cam.ac.uk/brand-resources/about-the-logo/logo-downloads
-% \addtobeamertemplate{headline}{}
-% {
-%     \begin{tikzpicture}[remember picture,overlay]
-%       \node [anchor=north west, inner sep=3cm] at ([xshift=-2.5cm,yshift=1.75cm]current page.north west)
-%       {\includegraphics[height=7cm]{logos/unott-logo.eps}};
-%     \end{tikzpicture}
-% }
 
     \begin{frame}[t]
         \begin{columns}[t]
@@ -298,6 +295,14 @@
 
                 \end{exampleblock}
 
+                \begin{block}{Acknowledgements}
+                    This project has received funding from the European Union’s Horizon 2020 research and
+                    innovation programme under grant agreement No 101004719
+
+                    We would also like to acknowledge the individual contributions to the Polaris frontend
+                    GUI from Alan Stokes and Michael Ahearn.
+                \end{block}
+
 
 
                 \begin{block}{References}
@@ -309,10 +314,6 @@
 
             \end{column}
             \separatorcolumn
-
-
-
         \end{columns}
     \end{frame}
-
 \end{document}

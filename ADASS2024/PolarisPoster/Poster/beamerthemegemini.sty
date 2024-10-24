@@ -267,11 +267,13 @@
     \setlength{\maxlogowidthfoot}{\maxof{\logomiddlewidthfoot}{\maxof{\logoleftwidthfoot}{\logorightwidthfoot}}}
 }
 
+\newcommand{\footercontent}[1]{\newcommand{\insertfootercontent}{#1}}
+
 \setbeamertemplate{footline}
 {
-\begin{beamercolorbox}{footline}
+\begin{beamercolorbox}[vmode]{headline}
+    \vspace{2ex}
     \ifdefined\insertlogoleftfooter
-        \vspace{2ex}
         \hspace{10ex}
         \insertlogoleftfooter
         \hfill
@@ -283,7 +285,15 @@
     \fi
     \ifdefined\insertlogorightfooter
         \insertlogorightfooter
-        \hspace{10ex}
-    \fi\vspace{2ex}
+        \hspace{12ex}
+    \fi
+
+    \vspace{1.5ex}
+    \hspace{\sepwidth}
+    \usebeamerfont{footline}
+    \centering
+    \insertfootercontent
+    \hspace{\sepwidth}
+    \vspace{1.5ex}
 \end{beamercolorbox}
 }
