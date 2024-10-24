@@ -4,7 +4,6 @@ requirements
 
 * JDK 17+ installed
 * node
-* yarn v1.x
 * quarkus (is optional)
 * Docker
 
