@@ -162,18 +162,18 @@
 \setbeamertemplate{block begin}
 {
 \begin{beamercolorbox}[colsep*=0ex,dp=2ex,center]{block title}
-\vskip0pt
-\usebeamerfont{block title}\insertblocktitle
-\vskip-1.25ex
-\begin{beamercolorbox}[colsep=0.025ex]{block separator}\end{beamercolorbox}
-\end{beamercolorbox}
-{\parskip0pt\par}
-\usebeamerfont{block body}
-\vskip-0.5ex
-\begin{beamercolorbox}[colsep*=0ex]{block body}
-\justifying
-\setlength{\parskip}{1ex}
-\vskip-2ex
+    \vskip0pt
+    \usebeamerfont{block title}\insertblocktitle
+    \vskip-1.25ex
+    \begin{beamercolorbox}[colsep=0.025ex]{block separator}\end{beamercolorbox}
+    \end{beamercolorbox}
+    {\parskip0pt\par}
+    \usebeamerfont{block body}
+    \vskip-0.5ex
+    \begin{beamercolorbox}[colsep*=0ex]{block body}
+    \justifying
+    \setlength{\parskip}{1ex}
+    \vskip-2ex
 }
 \setbeamertemplate{block end}
 {
@@ -186,10 +186,10 @@
 \setbeamertemplate{block alerted begin}
 {
 \begin{beamercolorbox}[colsep*=0ex,dp=2ex,center]{block alerted title}
-\vskip0pt
-\usebeamerfont{block title}\insertblocktitle
-\vskip-1.25ex
-\begin{beamercolorbox}[colsep=0.025ex]{block alerted separator}\end{beamercolorbox}
+    \vskip0pt
+    \usebeamerfont{block title}\insertblocktitle
+    \vskip-1.25ex
+    \begin{beamercolorbox}[colsep=0.025ex]{block alerted separator}\end{beamercolorbox}
 \end{beamercolorbox}
 {\parskip0pt\par}
 \usebeamerfont{block body}
@@ -213,10 +213,10 @@
 \setbeamertemplate{block example begin}
 {
 \begin{beamercolorbox}[colsep*=0ex,dp=2ex,center]{block example title}
-\vskip0pt
-\usebeamerfont{block title}\insertblocktitle
-\vskip-1.25ex
-\begin{beamercolorbox}[colsep=0.025ex]{block example separator}\end{beamercolorbox}
+    \vskip0pt
+    \usebeamerfont{block title}\insertblocktitle
+    \vskip-1.25ex
+    \begin{beamercolorbox}[colsep=0.025ex]{block example separator}\end{beamercolorbox}
 \end{beamercolorbox}
 {\parskip0pt\par}
 \usebeamerfont{block body}
@@ -237,21 +237,53 @@
 }
 
 % Footer
-\newcommand{\footercontent}[1]{\newcommand{\insertfootercontent}{#1}}
+\newlength{\logoleftwidthfoot}
+\setlength{\logoleftwidthfoot}{0cm}
+\newlength{\logomiddlewidthfoot}
+\setlength{\logomiddlewidthfoot}{0cm}
+\newlength{\logorightwidthfoot}
+\setlength{\logorightwidthfoot}{0cm}
+\newlength{\maxlogowidthfoot}
+\setlength{\maxlogowidthfoot}{0cm}
 
-\setbeamertemplate{footline}{
-    \ifdefined\insertfootercontent
-    \begin{beamercolorbox}[vmode]{headline}
-        \ifbeamercolorempty[bg]{headline rule}{}{
-            \begin{beamercolorbox}[wd=\paperwidth,colsep=0.25ex]{headline rule}\end{beamercolorbox}
-        }
-        \vspace{1.5ex}
-        \hspace{\sepwidth}
-        \usebeamerfont{footline}
-        \centering
-        \insertfootercontent
-        \hspace{\sepwidth}
-        \vspace{1.5ex}
-    \end{beamercolorbox}
-    \else\fi
+\newcommand{\logoleftfooter}[1]{
+    \newcommand{\insertlogoleftfooter}{#1}
+    \settowidth{\logoleftwidthfoot}{\insertlogoleftfooter}
+    \addtolength{\logoleftwidthfoot}{10ex}
+    \setlength{\maxlogowidthfoot}{\maxof{\logomiddlewidthfoot}{\maxof{\logoleftwidthfoot}{\logorightwidthfoot}}}
+}
+
+\newcommand{\logomiddlefooter}[1]{
+    \newcommand{\insertlogomiddlefooter}{#1}
+    \settowidth{\logomiddlewidthfoot}{\insertlogomiddlefooter}
+    \addtolength{\logomiddlewidthfoot}{10ex}
+    \setlength{\maxlogowidthfoot}{\maxof{\logomiddlewidthfoot}{\maxof{\logoleftwidthfoot}{\logorightwidthfoot}}}
+}
+
+\newcommand{\logorightfooter}[1]{
+    \newcommand{\insertlogorightfooter}{#1}
+    \settowidth{\logorightwidthfoot}{\insertlogorightfooter}
+    \addtolength{\logorightwidthfoot}{10ex}
+    \setlength{\maxlogowidthfoot}{\maxof{\logomiddlewidthfoot}{\maxof{\logoleftwidthfoot}{\logorightwidthfoot}}}
+}
+
+\setbeamertemplate{footline}
+{
+\begin{beamercolorbox}{footline}
+    \ifdefined\insertlogoleftfooter
+        \vspace{2ex}
+        \hspace{10ex}
+        \insertlogoleftfooter
+        \hfill
+    \fi
+    \ifdefined\insertlogomiddlefooter
+        \insertlogomiddlefooter
+        \hspace{10ex} %centers the middle logo
+        \hfill
+    \fi
+    \ifdefined\insertlogorightfooter
+        \insertlogorightfooter
+        \hspace{10ex}
+    \fi\vspace{2ex}
+\end{beamercolorbox}
 }
