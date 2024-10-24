@@ -29,8 +29,8 @@
 
 \setbeamerfont{headline}{family=\Raleway}
 \setbeamerfont{headline title}{size=\Huge,series=\bfseries}
-\setbeamerfont{headline author}{size=\Large}
-\setbeamerfont{headline institute}{size=\normalsize}
+\setbeamerfont{headline author}{size=\normalsize}
+\setbeamerfont{headline institute}{size=\small}
 \setbeamerfont{block title}{family=\Raleway,size=\large,series=\bfseries}
 \setbeamerfont{heading}{family=\Lato,series=\bfseries}
 \setbeamerfont{caption}{size=\small}
@@ -115,46 +115,46 @@
 \setbeamertemplate{headline}
 {
 \begin{beamercolorbox}{headline}
-\begin{columns}
-\begin{column}{\maxlogowidth}
-\vskip5ex
-\ifdefined\insertlogoleft
-\vspace*{\fill}
-\hspace{10ex}
-\raggedright
-\insertlogoleft
-\vspace*{\fill}
-\else\fi
-\end{column}
-\begin{column}{\dimexpr\paperwidth-\maxlogowidth-\maxlogowidth}
-\usebeamerfont{headline}
-\vskip3ex
-\centering
-\ifx \inserttitle \empty \else
-{\usebeamerfont{headline title}\usebeamercolor[fg]{headline title}\inserttitle\\[0.5ex]}
-\fi
-\ifx \beamer@shortauthor \empty \else
-{\usebeamerfont{headline author}\usebeamercolor[fg]{headline author}\insertauthor\\[1ex]}
-\fi
-\ifx \insertinstitute \empty \else
-{\usebeamerfont{headline institute}\usebeamercolor[fg]{headline institute}\insertinstitute\\[1ex]}
-\fi
-\end{column}
-\begin{column}{\maxlogowidth}
-\vskip5ex
-\ifdefined\insertlogoright
-\vspace*{\fill}
-\raggedleft
-\insertlogoright
-\hspace{10ex}
-\vspace*{\fill}
-\else\fi
-\end{column}
-\end{columns}
-\vspace{5ex}
-\ifbeamercolorempty[bg]{headline rule}{}{
-\begin{beamercolorbox}[wd=\paperwidth,colsep=0.5ex]{headline rule}\end{beamercolorbox}
-}
+    \begin{columns}
+        \begin{column}{\maxlogowidth}
+            \vskip5ex
+            \ifdefined\insertlogoleft
+            \vspace*{\fill}
+            \hspace{20ex}
+            \raggedright
+            \insertlogoleft
+            \vspace*{\fill}
+            \fi
+        \end{column}
+        \begin{column}{\dimexpr\paperwidth-\maxlogowidth-\maxlogowidth}
+            \usebeamerfont{headline}
+            \vskip3ex
+            \centering
+            \ifx \inserttitle \empty \else
+            {\usebeamerfont{headline title}\usebeamercolor[fg]{headline title}\inserttitle\\[0.5ex]}
+            \fi
+            \ifx \beamer@shortauthor \empty \else
+            {\usebeamerfont{headline author}\usebeamercolor[fg]{headline author}\insertauthor\\[1ex]}
+            \fi
+            \ifx \insertinstitute \empty \else
+            {\usebeamerfont{headline institute}\usebeamercolor[fg]{headline institute}\insertinstitute\\[1ex]}
+            \fi
+        \end{column}
+        \begin{column}{\maxlogowidth}
+            \vskip5ex
+            \ifdefined\insertlogoright
+            \vspace*{\fill}
+            \raggedleft
+            \insertlogoright
+            \hspace{10ex}
+            \vspace*{\fill}
+            \fi
+        \end{column}
+    \end{columns}
+    \vspace{5ex}
+    \ifbeamercolorempty[bg]{headline rule}{}{
+        \begin{beamercolorbox}[wd=\paperwidth,colsep=0.5ex]{headline rule}\end{beamercolorbox}
+    }
 \end{beamercolorbox}
 }
 
@@ -240,18 +240,18 @@
 \newcommand{\footercontent}[1]{\newcommand{\insertfootercontent}{#1}}
 
 \setbeamertemplate{footline}{
-\ifdefined\insertfootercontent
-\begin{beamercolorbox}[vmode]{headline}
-\ifbeamercolorempty[bg]{headline rule}{}{
-\begin{beamercolorbox}[wd=\paperwidth,colsep=0.25ex]{headline rule}\end{beamercolorbox}
-}
-\vspace{1.5ex}
-\hspace{\sepwidth}
-\usebeamerfont{footline}
-\centering
-\insertfootercontent
-\hspace{\sepwidth}
-\vspace{1.5ex}
-\end{beamercolorbox}
-\else\fi
+    \ifdefined\insertfootercontent
+    \begin{beamercolorbox}[vmode]{headline}
+        \ifbeamercolorempty[bg]{headline rule}{}{
+            \begin{beamercolorbox}[wd=\paperwidth,colsep=0.25ex]{headline rule}\end{beamercolorbox}
+        }
+        \vspace{1.5ex}
+        \hspace{\sepwidth}
+        \usebeamerfont{footline}
+        \centering
+        \insertfootercontent
+        \hspace{\sepwidth}
+        \vspace{1.5ex}
+    \end{beamercolorbox}
+    \else\fi
 }
