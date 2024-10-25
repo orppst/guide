@@ -2,12 +2,12 @@
 \documentclass[final]{beamer}
 
 % ====================
-% Packages
+% Packages orientation=portrait,
 % ====================
 
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[orientation=portrait,size=a0,scale=1.0]{beamerposter}
+\usepackage[size=custom,width=120,height=213,scale=1.7]{beamerposter}
 \usetheme{gemini}
 \usecolortheme{uom}
 \usepackage{graphicx}
@@ -50,9 +50,9 @@
 \logorightfooter{\includegraphics[height=7cm]{images/PolarisGitHub}}
 
 \footercontent{
-  \hspace{5ex} \href{https://github.com/orppst/}{https://github.com/orppst/}  \hfill \hspace{5ex}
-  ADASS XXXIV Valetta, Malta \hspace{7ex} \hfill
-    \href{https://github.com/orppst/}{https://github.com/orppst/}
+  \small{An Observation Proposal Preparation Tool} \hfill
+  ADASS XXXIV Valetta, Malta - 2024 \hfill \hspace{19ex}
+    \href{https://github.com/orppst/}{github.com/orppst} \hspace{3ex}
 }
 
 
@@ -94,8 +94,8 @@
 
                     \heading{\emph{NorthStar} is dead}
                     Technically ``end-of-life'', but that just doesn't have the same ring to it.
-                    \textbf{\emph{NorthStar}} is the name of a current observation proposal tool used both by the radio
-                    and optical astronomy communities.
+                    \textbf{\emph{NorthStar}} is the name of a current observation proposal preparation tool used both
+                    by the radio and optical astronomy communities.
                     It requires an exorbitant amount of effort to maintain and develop, it is awkward to use for both
                     observatories and astronomers, and is in need of replacement.
 
@@ -106,7 +106,7 @@
                     The \textbf{ORP} attempts to deliver on this aim by developing \textbf{common standards for observation
                     requests and specifications}, as well as a common framework for data access and processing.
                     As part of this pilot we are developing \textbf{a new open source proposal tool} that provides a
-                    single access point for the community to create, edit, and submit observation requests to various
+                    single access point for the community to \textbf{create, edit, and submit proposals} to various
                     astronomy facilities.
                     Additionally, the tool provides an interface for \textbf{reviewing and allocating proposals} by the
                     time-allocation-committees (TAC) at the relevant astronomy facilities.
@@ -120,11 +120,82 @@
                     Our intention is to allow both the
                     \textbf{observatory and astronomer communities to contribute to the projects},
                     either directly by \textbf{writing and editing source code}, via feedback in terms of
-                    \textbf{bug-fixes and feature requests},or to \textbf{fork the projects} to better tailor them to
+                    \textbf{bug-fixes and feature requests}, or to \textbf{fork the projects} to better tailor them to
                     their own needs.
 
                     As a nod to the outgoing proposal tool, and perhaps signifying progress, we are calling this new
                     proposal tool \textbf{\emph{Polaris}} (\emph{NorthStar++} felt a bit too ``on-the-nose'').
+
+                \end{block}
+
+                \begin{block}{Use-cases}
+
+                    \insertFigure[width=38cm,height=40cm]{use-cases}{Actors and high level use cases of Polaris}
+
+                    Figure~\ref{fig:use-cases} shows a diagram representing the actors and high level use-cases of
+                    \emph{Polaris}.
+                    The following use-cases occur in rough chronological order when configuring and using \emph{Polaris}
+
+                    \begin{itemize}
+                        \item \textbf{deploy the system} - special system administrator created, local authorisation
+                        \item \textbf{user registers to system} - other uses authorised using the system's mechanisms
+                        \item \textbf{create observatory admin} - system admin assigns registered user as observatory admin
+                        \item \textbf{configure observatory} - observatory admin adds e.g., telescopes and instruments
+                        \item \textbf{create TAC Chair} - observatory admin assigns registered user as TAC chair
+                        \item \textbf{add TAC members} - TAC chair may add other users as TAC members
+                        \item \textbf{create new proposal cycle} - usually by TAC chair but could be TAC member
+                        \item \textbf{create or import whole proposal} - PI can create or import a proposal --or-
+                        \item \textbf{clone proposal} - PI can clone a proposal as a seed for a new one
+                        \item \textbf{edit observing proposal} - PI or CoI may edit a proposal
+                        \item \textbf{submit a proposal} - PI can submit a proposal when it is ready
+                        \item \textbf{assign internal reviewer} - TAC chair assigns TAC member from their observatory as a reviewer
+                        \item \textbf{assign external reviewer} - TAC chair assigns user external to their observatory as a reviewer
+                        \item \textbf{export whole proposal} - Reviewers may export the proposal for offline study
+                        \item \textbf{review and score proposals} - Reviewers provide comments and scores for the TAC members to assess
+                        \item \textbf{assign observing time} - TAC members assign time to the highest scoring proposals
+                        \item \textbf{inform PIs about allocation} - either through Polaris or via email
+                    \end{itemize}
+
+                    We have also allowed for the following actions:
+
+                    \begin{itemize}
+                        \item PI may want to withdraw a previously submitted proposal if they feel it is no longer valid
+                        \item TAC Chair revokes a previously allocated proposal, possibly because the cycle schedule has become over-subscribed
+                    \end{itemize}
+
+                \end{block}
+
+            \end{column}
+
+            \separatorcolumn
+
+            \begin{column}{\colwidth}
+
+                \begin{block}{Architecture}
+
+                    \insertFigure[width=30cm,height=35cm]{architecture}{The coloured boxes show microservices that can be run on a Kubernetes cluster}
+
+                    Figure~\ref{fig:architecture} shows a diagram representing the architecture of \emph{Polaris}.
+                    The functionality of the tool is exposed as a \textbf{RESTful Application Programming Interface (API)},
+                    written in Java, as a \textbf{microservices architecture deployed on Kubernetes}.
+                    The API connects with a Postgres database using the Hibernate query language.
+                    The database schemas are generated from the Proposal Data Model, and provide the Java class
+                    definitions we can work with when writing the implementation of the API calls.
+
+                    We have created a web-based \textbf{Graphical User Interface (GUI)} frontend to access our API
+                    that has been written in \textbf{Typescript using the React framework}.
+                    This GUI will be the main access point for those creating, editing, and submitting proposals i.e.,
+                    principal investigators (PI) and co-investigators (CI).
+                    The GUI accesses the \textbf{SIMBAD Table Access Protocol (TAP)} service as an aid to observational
+                    target lookup.
+
+                    We are also actively developing a \textbf{Command Line Interface CLI}, also written in Java, to
+                    provide a companion access to the API. The intention of this CLI is to provide convenient access
+                    for administrators e.g., TAC members, to the configurable parts of Polaris, like the operational
+                    details of astronomy facilities.
+
+                    Authorisation to the API is done using \textbf{KeyCloak and an OpenID Connect (OIDC) server}.
+                    You can sign-on to \emph{Polaris} using your orcid ID\@.
 
                 \end{block}
 
@@ -166,101 +237,16 @@
 
                 \end{block}
 
-                \begin{block}{Fusce aliquam magna velit}
-
-                    Et rutrum ex euismod vel. Pellentesque ultricies, velit in fermentum
-                    vestibulum, lectus nisi pretium nibh, sit amet aliquam lectus augue vel
-                    velit. Suspendisse rhoncus massa porttitor augue feugiat molestie. Sed
-                    molestie ut orci nec malesuada. Sed ultricies feugiat est fringilla
-                    posuere.
-
-                    \begin{figure}
-                        \centering
-                        \begin{tikzpicture}
-                            \begin{axis}[
-                                scale only axis,
-                                no markers,
-                                domain=0:2*pi,
-                                samples=100,
-                                axis lines=center,
-                                axis line style={-},
-                                ticks=none]
-                                \addplot[red] {sin(deg(x))};
-                                \addplot[blue] {cos(deg(x))};
-                            \end{axis}
-                        \end{tikzpicture}
-                        \caption{Another figure caption.}
-                    \end{figure}
-
-                \end{block}
-
-            \end{column}
-
-            \separatorcolumn
-
-            \begin{column}{\colwidth}
-
-                \begin{block}{Architecture}
-
-                    \insertFigure[width=12cm,height=15cm]{architecture}{The coloured boxes show microservices that can be run on a Kubernetes cluster}
-
-                    Figure~\ref{fig:architecture} shows a diagram representing the architecture of \emph{Polaris}.
-                    The functionality of the tool is exposed as a RESTful Application Programming Interface (API),
-                    written in Java, as a microservices architecture deployed on Kubernetes.
-                    The API connects with a Postgres database using the Hibernate query language, and database schemas,
-                    generated from the Proposal Data Model, provide the Java class definitions we can work with when
-                    writing the implementation of the API calls.
-
-                    We have created a web-based Graphical User Interface (GUI) frontend to access our API that has been
-                    written in Typescript using the React framework.
-                    This GUI will be the main access point for those creating, editing, and submitting proposals i.e.,
-                    principal investigators (PI) and co-investigators (CI).
-                    The GUI accesses the SIMBAD Table Access Protocol (TAP) service as an aid to observational target
-                    lookup.
-
-                    We are also actively developing a command line interface CLI, written in Java, to provide a
-                    companion access to the API. The intention of this CLI is to provide convenient access for
-                    administrators e.g., TAC members, to the configurable parts of Polaris, like the operational
-                    details of astronomy facilities.
-
-                    Authorisation to the API is done using KeyCloak and an OpenID Connect (OIDC) server.
-                    You can sign-on to \emph{Polaris} using your orcid ID\@.
-
-                \end{block}
-
-                \begin{block}{A block containing an enumerated list}
-
-                    Vivamus congue volutpat elit non semper. Praesent molestie nec erat ac
-                    interdum. In quis suscipit erat. \textbf{Phasellus mauris felis, molestie
-                    ac pharetra quis}, tempus nec ante. Donec finibus ante vel purus mollis
-                    fermentum. Sed felis mi, pharetra eget nibh a, feugiat eleifend dolor. Nam
-                    mollis condimentum purus quis sodales. Nullam eu felis eu nulla eleifend
-                    bibendum nec eu lorem. Vivamus felis velit, volutpat ut facilisis ac,
-                    commodo in metus.
-
-                    \begin{enumerate}
-                        \item \textbf{Morbi mauris purus}, egestas at vehicula et, convallis
-                        accumsan orci. Orci varius natoque penatibus et magnis dis parturient
-                        montes, nascetur ridiculus mus.
-                        \item \textbf{Cras vehicula blandit urna ut maximus}. Aliquam blandit nec
-                        massa ac sollicitudin. Curabitur cursus, metus nec imperdiet bibendum,
-                        velit lectus faucibus dolor, quis gravida metus mauris gravida turpis.
-                        \item \textbf{Vestibulum et massa diam}. Phasellus fermentum augue non
-                        nulla accumsan, non rhoncus lectus condimentum.
-                    \end{enumerate}
-
-                \end{block}
-
                 \begin{exampleblock}{Future plans}
 
                     In general, we are looking to develop and include the following features in
                     \textbf{\emph{Polaris}}:
 
                     \begin{itemize}
-                        \item a centralised database of observatories and their instruments
-                        \item a single-sign-on service
-                        \item a ``plug-in'' feature for exposure/sensitivity calculators
-                        \item access to a spectral line lookup service e.g., Splatalogue
+                        \item \textbf{a centralised database of observatories and their instruments}
+                        \item \textbf{a single-sign-on service}
+                        \item \textbf{a ``plug-in'' feature for exposure/sensitivity calculators}
+                        \item \textbf{access to a spectral line lookup service e.g., Splatalogue}
                     \end{itemize}
 
                     Please notice that list is not exhaustive, nor is it written in any particular order,
@@ -273,22 +259,24 @@
 
                 \begin{block}{Acknowledgements}
                     \includegraphics[height=\baselineskip]{logos/EU_flag_yellow_eps}
-                    This project has received funding from the European Union’s Horizon 2020 research and
-                    innovation programme under grant agreement No 101004719
+                    This project has received funding from the \textbf{European Union’s Horizon 2020} research and
+                    innovation programme under grant agreement \textbf{No 101004719}
 
                     We would also like to acknowledge the individual contributions to the Polaris frontend
-                    GUI from Alan Stokes and Michael Ahearn.
+                    GUI from \textbf{Alan Stokes} and \textbf{Michael Ahearn}.
                 \end{block}
 
-                \begin{block}{References}
 
-                    \nocite{*}
-                    \footnotesize{\bibliographystyle{plain}\bibliography{poster}}
+                %\begin{block}{References}
 
-                \end{block}
+                 %   \nocite{*}
+                 %   \footnotesize{\bibliographystyle{plain}\bibliography{poster}}
+
+                %\end{block}
 
             \end{column}
             \separatorcolumn
         \end{columns}
+
     \end{frame}
 \end{document}
