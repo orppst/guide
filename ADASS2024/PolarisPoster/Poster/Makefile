@@ -1,8 +1,8 @@
 .PHONY: main clean FORCE
 
-main: poster.pdf
+main: PolarisPoster.pdf
 
-poster.pdf: FORCE
+PolarisPoster.pdf: FORCE
 	latexmk -pdflatex='lualatex -interaction nonstopmode' -pdf PolarisPoster.tex
 
 clean:
