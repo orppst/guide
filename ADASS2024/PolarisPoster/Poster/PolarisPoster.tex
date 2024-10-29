@@ -35,7 +35,7 @@
 % Title
 % ====================
 
-\title{Polaris: a new open source observation proposal preparation tool}
+\title{Polaris: a new open source observation proposal preparation toolkit}
 
 \author{Darren Walker \and Allan England \and Ben Green \and Paul Harrison}
 
@@ -107,7 +107,8 @@
                     requests and specifications}, as well as a common framework for data access and processing.
                     As part of this pilot we are developing \textbf{a new open source proposal tool} that provides a
                     single access point for the community to \textbf{create, edit, and submit proposals} to various
-                    astronomy facilities.
+                    astronomy facilities. It is a key feature of the tool that it takes the proposers perspective in that it
+                    facilitates creating a single proposal that might be submitted to multiple facilities.
                     Additionally, the tool provides an interface for \textbf{reviewing and allocating proposals} by the
                     time-allocation-committees (TAC) at the relevant astronomy facilities.
 
@@ -115,7 +116,7 @@
                     We set out to develop a generalised, ``phase 1'' observation proposal tool with
                     \textbf{a modern, open source philosophy}.
                     To that end, our code base is currently version controlled in a
-                    \textbf{private repository on GitHub} (see QR-code, bottom right) that we hope remains active for
+                    \textbf{public repository on GitHub} (see QR-code, bottom right) that we hope remains active for
                     the foreseeable future.
                     Our intention is to allow both the
                     \textbf{observatory and astronomer communities to contribute to the projects},
@@ -124,7 +125,7 @@
                     their own needs.
 
                     As a nod to the outgoing proposal tool, and perhaps signifying progress, we are calling this new
-                    proposal tool \textbf{\emph{Polaris}} (\emph{NorthStar++} felt a bit too ``on-the-nose'').
+                    proposal tool \textbf{\emph{Polaris}}.
 
                 \end{block}
 
@@ -173,12 +174,12 @@
 
                 \begin{block}{Architecture}
 
-                    \insertFigure[width=30cm,height=35cm]{architecture}{The coloured boxes show microservices that can be run on a Kubernetes cluster}
+                    \insertFigure[width=30cm,height=35cm]{architecture}{The components that make up the toolkit}
 
                     Figure~\ref{fig:architecture} shows a diagram representing the architecture of \emph{Polaris}.
                     The functionality of the tool is exposed as a \textbf{RESTful Application Programming Interface (API)},
                     written in Java, as a \textbf{microservices architecture deployed on Kubernetes}.
-                    The API connects with a Postgres database using the Hibernate query language.
+                    The API connects with a Postgres database using the Hibernate as an ORM.
                     The database schemas are generated from the Proposal Data Model, and provide the Java class
                     definitions we can work with when writing the implementation of the API calls.
 
@@ -189,8 +190,8 @@
                     The GUI accesses the \textbf{SIMBAD Table Access Protocol (TAP)} service as an aid to observational
                     target lookup.
 
-                    We are also actively developing a \textbf{Command Line Interface CLI}, also written in Java, to
-                    provide a companion access to the API. The intention of this CLI is to provide convenient access
+                    We are also actively developing a \textbf{Command Line Interface CLI}, both as a stand-alone application and
+                    a python library. The intention of this CLI is to provide convenient access
                     for administrators e.g., TAC members, to the configurable parts of Polaris, like the operational
                     details of astronomy facilities.
 
@@ -209,11 +210,9 @@
                     Even so, for some observatories, and indeed for some astronomers, \emph{Polaris} will not
                     capture sufficient details about an observation to effectively assess its suitability.
 
-                    \textbf{\emph{Polaris} is built on top of the International Virtual Observatory Alliance (IVOA)
-                        Virtual Observatory Data Modelling Language (VO-DML).
-                        As such, we have designed \emph{Polaris} to export and import proposals to and from other,
-                        perhaps more comprehensive, proposal tools that use VO-DML as their underpinning data modelling
-                        language with minimal manual intervention.
+                    \textbf{\emph{Polaris} uses the IVOA ProposalDM data model (see the other poster about this)  draft standard as its native data model.
+                        As such, it is realtively easy for \emph{Polaris} to export and import proposals using this interchange data model, which opens up
+                    the possibility
                     }
 
                 \end{alertblock}
@@ -229,10 +228,13 @@
                     \emph{Polaris} as an observation proposal preparation tool:
 
                     \begin{itemize}
-                        \item \textbf{Quarkus}: a Kubernetes-native Java framework
-                        \item \textbf{OpenAPI-codegen}: generate anything from OpenAPI specs
-                        \item \textbf{Mantine}: a React components library
+                        \item \textbf{VO-DML}: using the tooling to write the ProposalDM and generate the JPA data access classes (see separate poster)
+                        \item \textbf{Quarkus}: a Kubernetes-native Java framework to create the database backend.
+                        \item \textbf{OpenAPI-codegen}: generate anything from OpenAPI specs to generate client code for the API
+                        \item \textbf{Mantine}: a React component library
                         \item \textbf{Vite}: a build tool for web applications
+                        \item \textbf{GitHub Actions}: for CI testing.
+                        \item \textbf{Kubernetes}: for container orchestration.
                     \end{itemize}
 
                 \end{block}
