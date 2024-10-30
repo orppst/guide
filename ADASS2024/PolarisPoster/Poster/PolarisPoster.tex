@@ -96,21 +96,23 @@
                     Technically ``end-of-life'', but that just doesn't have the same ring to it.
                     \textbf{\emph{NorthStar}} is the name of a current observation proposal preparation tool used both
                     by the radio and optical astronomy communities.
-                    It requires an exorbitant amount of effort to maintain and develop, it is awkward to use for both
-                    observatories and astronomers, and is in need of replacement.
+                    However, there has been a growing need for a replacement, as
+                    it has become too difficult to maintain and develop, and existing deployments are relying on old infrastructure.
+
 
                     \heading{Opticon RadioNet Pilot}
                     The \textbf{Opticon RadioNet Pilot (ORP)} aims to support and develop seamless access to
                     \textbf{radio and optical}, ground-based astronomy facilities across Europe and the rest of the
                     world.
-                    The \textbf{ORP} attempts to deliver on this aim by developing \textbf{common standards for observation
+                    The \textbf{ORP} JA2 attempts to deliver on this aim by developing \textbf{common standards for observation
                     requests and specifications}, as well as a common framework for data access and processing.
                     As part of this pilot we are developing \textbf{a new open source proposal tool} that provides a
                     single access point for the community to \textbf{create, edit, and submit proposals} to various
-                    astronomy facilities. It is a key feature of the tool that it takes the proposers perspective in that it
+                    astronomy facilities.
+                    It is a key feature of the tool that it takes the proposers perspective in that it
                     facilitates creating a single proposal that might be submitted to multiple facilities.
                     Additionally, the tool provides an interface for \textbf{reviewing and allocating proposals} by the
-                    time-allocation-committees (TAC) at the relevant astronomy facilities.
+                    time allocation committees (TAC) at the relevant astronomy facilities.
 
                     \heading{Polaris}
                     We set out to develop a generalised, ``phase 1'' observation proposal tool with
@@ -186,7 +188,7 @@
                     We have created a web-based \textbf{Graphical User Interface (GUI)} frontend to access our API
                     that has been written in \textbf{Typescript using the React framework}.
                     This GUI will be the main access point for those creating, editing, and submitting proposals i.e.,
-                    principal investigators (PI) and co-investigators (CI).
+                    principal investigators (PI) and co-investigators (COI).
                     The GUI accesses the \textbf{SIMBAD Table Access Protocol (TAP)} service as an aid to observational
                     target lookup.
 
@@ -202,17 +204,15 @@
 
                 \begin{alertblock}{Import and export your proposals}
 
-                    We know that \emph{Polaris} will not be to every one's taste,
-                    ``you can't please all of the people all of the time'', somebody famously once said.
                     \emph{Polaris} is designed to capture succinct details about an observation
                     that will allow observatories to deem if it is a suitable use of their facilities.
                     In this respect it is a so called ``phase 1'' proposal tool.
                     Even so, for some observatories, and indeed for some astronomers, \emph{Polaris} will not
                     capture sufficient details about an observation to effectively assess its suitability.
 
-                    \textbf{\emph{Polaris} uses the IVOA ProposalDM data model (see the other poster about this)  draft standard as its native data model.
+                    \textbf{\emph{Polaris} uses the IVOA ProposalDM data model (see the other poster for more detail)  draft standard as its native data model.
                         As such, it is realtively easy for \emph{Polaris} to export and import proposals using this interchange data model, which opens up
-                    the possibility
+                    the possibility of being able to exchange proposal information with other proposal tools if they implement an import mechanism for the model.
                     }
 
                 \end{alertblock}
@@ -222,7 +222,7 @@
                     Let's face it, software developers are lazy beasts.
                     The less code we have to type the happier, in general, we are.
                     If code can be automatically generated, with little to no human involvement then we are
-                    all for it (looking at you ChatGPT).
+                    all for it.
 
                     The following technologies where use to help develop, build, test, package, and deploy
                     \emph{Polaris} as an observation proposal preparation tool:
