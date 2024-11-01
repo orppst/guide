@@ -256,7 +256,7 @@ def MainSubjectIndexFile (Details = None) :
    #  for the file - this is where it was for the Sydney ADASS processing.
    
    Path = LocateFile ("main subject index file","MainSubjectIndexFile", \
-                                      "subjectKeywords.txt",["Work"],Details)
+                      "subjectKeywords.txt", ["Work"], Details)
    return Path
 
 # ------------------------------------------------------------------------------

@@ -1012,7 +1012,7 @@ def VerifyEps (Paper,TexFileName = "",Problems = None,Warnings = None) :
       #  - to FileList.)
       
       FileList = []
-      for Details in os.walk('.') :
+      for Details in os.walk('..') :
           CalledFromWalk(FileList,Details[0],Details[2])
 
       #  First, simply list all the graphics files specified by the .tex file.
@@ -3496,7 +3496,7 @@ def GetLatestFileDate () :
    #  For each directory, os.walk returns the directory path, a list of
    #  sub-directories, and a list of files.
 
-   for Details in os.walk('.',onerror = None) :
+   for Details in os.walk('..', onerror = None) :
       DirPath = Details[0]
       
       #  We ignore files in the special directories OS X inserts under some

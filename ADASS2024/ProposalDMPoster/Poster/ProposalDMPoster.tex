@@ -1,0 +1,171 @@
+
+\documentclass[final]{beamer}
+
+% ====================
+% Packages orientation=portrait,
+% ====================
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[size=custom,width=120,height=213,scale=2.5]{beamerposter}
+\usetheme{gemini}
+\usecolortheme{uom}
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
+\usepackage{anyfontsize}
+
+% ====================
+% Lengths
+% ====================
+
+% If you have N columns, choose \sepwidth and \colwidth such that
+% (N+1)*\sepwidth + N*\colwidth = \paperwidth
+\newlength{\sepwidth}
+\newlength{\colwidth}
+\setlength{\sepwidth}{0.025\paperwidth}
+\setlength{\colwidth}{0.45\paperwidth}
+
+\newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+
+% ====================
+% Title
+% ====================
+
+\title{ProposalDM}
+
+\author{Paul Harrison}
+
+\institute[shortinst]{JBCA, The University of Manchester, UK}
+
+% ====================
+% Footer Logos
+% ====================
+%logos left. middle, and right in the footer
+\logoleftfooter{\includegraphics[height=7cm]{logos/IVOA_logo}}
+\logomiddlefooter{\includegraphics[height=7cm]{logos/ADASS-XXXIV_Logo_rgb_FullColour_uwWfloC}}
+\logorightfooter{\includegraphics[height=7cm]{images/ProposalDM_QR}}
+
+\footercontent{
+    \hspace{10ex} IVOA \hfill
+  ADASS XXXIV Valetta, Malta - 2024 \hfill
+    \href{https://github.com/ivoa/ProposalDM/}{github.com/ivoa/ProposalDM}{\color{manYellow}}
+}
+
+
+% ====================
+% Header Logos
+% ====================
+
+% use this to include logos on the left and/or right side of the header:
+\logoright{\includegraphics[height=7cm]{logos/INSU-Opticon-Radionet-logo-web-blanc-fond-transparent}}
+\logoleft{\includegraphics[height=7cm]{logos/UOM_logo_allwhite}}
+
+% ====================
+% Figure command
+% ====================
+
+\newcommand{\insertFigure}[3][width=1.0\textwidth]{%
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[#1]{#2}
+    \caption{#3}
+    \label{fig:#2}
+    \end{figure}
+}
+
+
+% ====================
+% Body
+% ====================
+
+\begin{document}
+
+    \begin{frame}[t]
+        \begin{columns}[t]
+            \separatorcolumn
+
+            \begin{column}{\colwidth}
+
+                \begin{block}{Motivation}
+                    Funding was obtained as part of the joint activity 2.1 of the \href{https://www.orp-h2020.eu}{Opticon RadioNet Pilot (ORP)} to create
+                    a new proposal preparation tool that would make it easier for astronomers to be able to participate in so-called
+                    multi-facility calls.
+                    Explicit in the funding request was the aim of creating a data model (in a similar fashion to\cite{10.1117/12.789262}) that could be used to describe the observation proposals
+                    in as general way as possible to cover a common set of requirements from as many different observatories and observing modes.
+                    That data model could  then be used as the basis for creating a toolkit for managing proposals.
+
+                    This poster describes the data model, called ProposalDM, and another poster (P103) describes the toolkit, called Polaris.
+
+
+                \heading{Design Goals}
+                    The Data model is primarily intended to be able to support what is often called "phase 1" of the proposal process, i.e.\ the information
+                    in the model is sufficient to be able to allocate the observations, but not necessarily complete enough to actually schedule them.
+                    \begin{itemize}
+                        \item Emphasis on required physics and the science goals.
+                        \item Flexible enough to use at multiple observatories.
+                    \end{itemize}
+                \end{block}
+                \begin{block}{Implementation}
+                     The model is expressed in VO-DML and published as an IVOA working draft. It has actually been split into two halves
+                    \begin{itemize}
+                        \item The proposal part, which expresses the concepts important to the astronomer principal investigator.
+                        \item The proposal management part, which expresses the concepts necessary to review and allocate the proposal.
+                    \end{itemize}
+                    The two figures show a somewhat simplified view of each of these parts, which despite this, are probably unintelligible on
+                    this poster!
+                    For an easier to read presentation of the model see \href{https://ivoa.github.io/ProposalDM/}{https://ivoa.github.io/ProposalDM/}.
+                \end{block}
+
+                \insertFigure{proposaldm.vo-dml}{Simplified view of the Proposal part of the model.}
+
+            \end{column}
+
+            \separatorcolumn
+
+            \begin{column}{\colwidth}
+
+
+
+                \insertFigure{proposalManagement.vo-dml}{Simplified view of the Proposal Management part of the model.}
+
+
+                \begin{exampleblock}{VO-DML}
+                  VO-DML\cite{2018ivoa.spec.0910L} is an IVOA standard for defining data models.
+                  It has been designed in a way that is more constrained and concise than other generic modelling methodologies such
+                    as UML, so that it is easy to create models with well defined serializations following IVOA standards.
+                    There is also some tooling associated with VO-DML (\href{https://github.com/ivoa/vo-dml}{https://github.com/ivoa/vo-dml}) that
+                    has the capability of generating documentation and source code data objects in Java and Python that allow
+                    easy serialization to and from XML and JSON as well as object relational mapping to databases.
+                \end{exampleblock}
+
+                \begin{block}{Future plans}
+                   It should be noted that the ProposalDM has not reached the 1.0 status yet as there are still some parts of the model to elaborate.
+                   In addition it would probably be a good idea to factor out common Observatory, Instrument and Target models to allow re-use elsewhere in IVOA data models.
+
+                   Any help/feedback from the community would be welcome.
+
+                \end{block}
+
+                \begin{block}{Acknowledgements}
+                    \includegraphics[height=\baselineskip]{logos/EU_flag_yellow_eps}
+                    This project has received funding from the \textbf{European Union’s Horizon 2020} research and
+                    innovation programme under grant agreement \textbf{No 101004719}
+
+                \end{block}
+
+
+                \begin{block}{References}
+                    \footnotesize{\bibliographystyle{plain}\bibliography{poster}}
+
+                \end{block}
+
+            \end{column}
+            \separatorcolumn
+        \end{columns}
+
+    \end{frame}
+\end{document}
