@@ -7,7 +7,7 @@
 
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[size=custom,width=120,height=213,scale=1.7]{beamerposter}
+\usepackage[size=custom,width=120,height=213.3333,scale=1.7]{beamerposter}
 \usetheme{gemini}
 \usecolortheme{uom}
 \usepackage{graphicx}
@@ -51,8 +51,8 @@
 
 \footercontent{
   \small{An Observation Proposal Preparation Tool} \hfill
-  ADASS XXXIV Valetta, Malta - 2024 \hfill \hspace{19ex}
-    \href{https://github.com/orppst/}{github.com/orppst} \hspace{3ex}
+  ADASS XXXIV Valetta, Malta - 2024 \hfill \hspace{16ex}
+    \href{https://github.com/orppst/}{github.com/orppst} \hspace{4ex}
 }
 
 
@@ -94,10 +94,10 @@
 
                     \heading{\emph{NorthStar} is dead}
                     Technically ``end-of-life'', but that just doesn't have the same ring to it.
-                    \textbf{\emph{NorthStar}} is the name of a current observation proposal preparation tool used both
-                    by the radio and optical astronomy communities.
+                    \textbf{\emph{NorthStar}} is the name of a current observation proposal preparation tool used
+                    by both the radio and optical astronomy communities.
                     However, there has been a growing need for a replacement, as
-                    it has become too difficult to maintain and develop, and existing deployments are relying on old infrastructure.
+                    it has become too difficult to maintain and develop, and existing deployments rely on old infrastructure.
 
 
                     \heading{Opticon RadioNet Pilot}
@@ -107,10 +107,10 @@
                     The \textbf{ORP} JA2 attempts to deliver on this aim by developing \textbf{common standards for observation
                     requests and specifications}, as well as a common framework for data access and processing.
                     As part of this pilot we are developing \textbf{a new open source proposal tool} that provides a
-                    single access point for the community to \textbf{create, edit, and submit proposals} to various
-                    astronomy facilities.
-                    It is a key feature of the tool that it takes the proposers perspective in that it
-                    facilitates creating a single proposal that might be submitted to multiple facilities.
+                    single access point for the radio and optical communities to
+                    \textbf{create, edit, and submit proposals} to various astronomy facilities.
+                    A key feature of the tool is that a proposer may create a \textbf{single observation proposal} that
+                    might be submitted to \textbf{multiple facilities}.
                     Additionally, the tool provides an interface for \textbf{reviewing and allocating proposals} by the
                     time allocation committees (TAC) at the relevant astronomy facilities.
 
@@ -141,7 +141,7 @@
 
                     \begin{itemize}
                         \item \textbf{deploy the system} - special system administrator created, local authorisation
-                        \item \textbf{user registers to system} - other uses authorised using the system's mechanisms
+                        \item \textbf{user registers to system} - other users authorised using the system's mechanisms
                         \item \textbf{create observatory admin} - system admin assigns registered user as observatory admin
                         \item \textbf{configure observatory} - observatory admin adds e.g., telescopes and instruments
                         \item \textbf{create TAC Chair} - observatory admin assigns registered user as TAC chair
@@ -176,26 +176,26 @@
 
                 \begin{block}{Architecture}
 
-                    \insertFigure[width=30cm,height=35cm]{architecture}{The components that make up the toolkit}
+                    \insertFigure[width=28cm,height=35cm]{architecture}{The components that make up the toolkit}
 
                     Figure~\ref{fig:architecture} shows a diagram representing the architecture of \emph{Polaris}.
                     The functionality of the tool is exposed as a \textbf{RESTful Application Programming Interface (API)},
                     written in Java, as a \textbf{microservices architecture deployed on Kubernetes}.
-                    The API connects with a Postgres database using the Hibernate as an ORM.
-                    The database schemas are generated from the Proposal Data Model, and provide the Java class
-                    definitions we can work with when writing the implementation of the API calls.
+                    The API connects with a \emph{Postgres} database using \emph{Hibernate} as an ORM\@.
+                    The database schemas are generated from the \textbf{IVOA Proposal Data Model (ProposalDM)}, and
+                    provide the Java class definitions we can work with when writing the implementation of the API calls.
 
                     We have created a web-based \textbf{Graphical User Interface (GUI)} frontend to access our API
                     that has been written in \textbf{Typescript using the React framework}.
                     This GUI will be the main access point for those creating, editing, and submitting proposals i.e.,
-                    principal investigators (PI) and co-investigators (COI).
+                    principal investigators (PI) and co-investigators (CoI).
                     The GUI accesses the \textbf{SIMBAD Table Access Protocol (TAP)} service as an aid to observational
                     target lookup.
 
                     We are also actively developing a \textbf{Command Line Interface CLI}, both as a stand-alone application and
-                    a python library. The intention of this CLI is to provide convenient access
-                    for administrators e.g., TAC members, to the configurable parts of Polaris, like the operational
-                    details of astronomy facilities.
+                    a python library.
+                    The intention of this CLI is to provide convenient access for administrators e.g., TAC members, to
+                    the configurable parts of Polaris, like the operational details of astronomy facilities.
 
                     Authorisation to the API is done using \textbf{KeyCloak and an OpenID Connect (OIDC) server}.
                     You can sign-on to \emph{Polaris} using your orcid ID\@.
@@ -210,9 +210,12 @@
                     Even so, for some observatories, and indeed for some astronomers, \emph{Polaris} will not
                     capture sufficient details about an observation to effectively assess its suitability.
 
-                    \textbf{\emph{Polaris} uses the IVOA ProposalDM data model (see the other poster for more detail)  draft standard as its native data model.
-                        As such, it is realtively easy for \emph{Polaris} to export and import proposals using this interchange data model, which opens up
-                    the possibility of being able to exchange proposal information with other proposal tools if they implement an import mechanism for the model.
+                    \textbf{\emph{Polaris} uses the IVOA ProposalDM (see the other poster for more detail) draft
+                    standard as its native data model.
+                    As such, it is realtively easy for \emph{Polaris} to export and import proposals using this
+                    interchange data model.
+                    This opens up the possibility of being able to exchange proposal information with other proposal
+                    tools if they implement an import mechanism for the model.
                     }
 
                 \end{alertblock}
@@ -224,14 +227,14 @@
                     If code can be automatically generated, with little to no human involvement then we are
                     all for it.
 
-                    The following technologies where use to help develop, build, test, package, and deploy
+                    The following technologies are used to help develop, build, test, package, and deploy
                     \emph{Polaris} as an observation proposal preparation tool:
 
                     \begin{itemize}
-                        \item \textbf{VO-DML}: using the tooling to write the ProposalDM and generate the JPA data access classes (see separate poster)
+                        \item \textbf{VO-DML}: using the tooling to write the ProposalDM and generate the JPA data access classes (see other poster)
                         \item \textbf{Quarkus}: a Kubernetes-native Java framework to create the database backend.
-                        \item \textbf{OpenAPI-codegen}: generate anything from OpenAPI specs to generate client code for the API
-                        \item \textbf{Mantine}: a React component library
+                        \item \textbf{OpenAPI-codegen}: generates client code for the API from OpenAPI specs
+                        \item \textbf{Mantine}: a React components library use to help write the GUI
                         \item \textbf{Vite}: a build tool for web applications
                         \item \textbf{GitHub Actions}: for CI testing.
                         \item \textbf{Kubernetes}: for container orchestration.
@@ -255,7 +258,8 @@
                     and will, with some luck and much work, be out-of-date before long.
 
                     An active list of ``issues'' is maintained in each project's GitHub repository containing
-                    bug-fix and feature requests, please feel free to browse and contribute to these lists.
+                    bug-fix and feature requests.
+                    Please feel free to browse and contribute to these lists.
 
                 \end{exampleblock}
 
