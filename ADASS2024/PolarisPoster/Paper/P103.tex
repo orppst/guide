@@ -107,83 +107,80 @@
 
 
 \section{Motivation}\label{sec:motivation}
-\emph{NorthStar} is dead (technically ``end-of-life'', but that just doesn't have the same ring
-to it).
+\emph{NorthStar} is ``end-of-life''.
 \emph{NorthStar} is the name of a current observation proposal tool used both by the radio and optical
 astronomy communities.
-It is no longer actively developed or maintained, it is outdated, and in need of replacement.
+However, there has been a growing need for a replacement, as it has become too difficult to maintain and develop,
+and existing deployments rely on old infrastructure.
 
 The Opticon RadioNet Pilot (ORP) aims to support and develop seamless access to radio and optical,
 ground-based astronomy facilities across Europe and the rest of the world.
 The ORP attempts to deliver on this aim by developing common standards for observation requests and
 specifications, as well as a common framework for data access and processing.
-As part of work-package JA2.1 of this pilot we are developing a new open source proposal tool that provides
+As part of this pilot we are developing a new open source proposal tool that provides
 a single access point for the community to create, edit, and submit observation requests to various astronomy
 facilities.
 The tool also strives to provide a uniform and useful interface for reviewing and allocating proposals by the
 time-allocation-committees (TAC) at the relevant astronomy facilities.
 
-To avoid the mistakes of the past we set out to develop a proposal tool with a modern, open source philosophy.
-To that end, our code base is currently version controlled in a private repository on
-GitHub~\footnote{\url{https://github.com/orppst}} that we hope remains active for the foreseeable future.
+We set out to develop this proposal tool with a modern, open source philosophy.
+To that end, our code base is currently version controlled in a public repository on
+GitHub~\footnote{\url{https://github.com/orppst}}, and makes use of ``GitHub Actions'' to perform continuous
+integration testing.
 Our intention is to allow the user community to contribute to the projects, either directly by writing and
 editing source code, via feedback in terms of bug-fixes and feature requests, or to fork the projects to
 better tailor them to their own needs.
 
 As a nod to the outgoing proposal tool, and perhaps signifying progress, we are calling this new proposal tool
-\emph{Polaris} (\emph{North Star++} felt a bit too ``on-the-nose'').
-
-We are aware of other such efforts to create observation proposal preparation tools.
-Notably, the European Southern Observatory (ESO),and the Square Kilometer Array Observatory (SKAO),
-both have their own proposal preparation tools under development.~\footnote{\url{https://www.eso.org/sci/observing/phase1/p1intro.html}}~\footnote{\url{https://developer.skao.int/projects/ska-oso-pht-ui/en/latest/UserIntroduction.html}}
-
-Our tool is built on top of the International Virtual Observatory Alliance (IVOA) Virtual
-Observatory Data Modelling Language (VO-DML).
-As such, we are confident that \emph{Polaris} can export and import proposals to and from other tools using
-VO-DML as their underpinning data modelling language with minimal manual intervention.
+\emph{Polaris}.
 
 \section{Architecture}\label{sec:architecture}
 
 Figure~\ref{architectureFigure} shows a diagram representing the architecture of \emph{Polaris}.
 The functionality of the tool is exposed as a RESTful Application Programming Interface (API) in a
 microservices architecture deployed on Kubernetes.
-The API connects with a Postgres database using the Hibernate query language, and database schemas, generated
-from the Proposal Data Model, provide the Java class definitions we can work with when writing the implementation
-of the API calls.
+The API connects with a \emph{Postgres} database using \emph{Hibernate} as an ORM\@.
+The database schemas are generated from the ProposalDM, and provide the Java class definitions we can
+work with when writing the implementation of the API calls.
 
-\articlefigure[scale=0.4]{P1-nn_architecture.eps}{architectureFigure}{Polaris microservices that can be run on Kubernetes clusters}
-
-\clearpage
+\articlefigure[scale=0.4]{P103_architecture.eps}{architectureFigure}{The components that make up the toolkit for \emph{Polaris}}
 
 We have created a web-based Graphical User Interface (GUI) frontend to access our API that has been
 written in Typescript using the React framework.
-The TypeScript is transpiled to JavaScript, which calls the REST endpoints defined in the API, and produces the
-HTML for the application.
-
+This GUI will be the main access point for those creating, editing, and submitting proposals i.e.,
+principal investigators (PI) and co-investigators (CoI).
 The GUI accesses the SIMBAD Table Access Protocol (TAP) service as an aid to observational target lookup.
-We are also actively developing a command line interface CLI, written in Java, to provide a companion access to
-the API. The intention of this CLI is to provide convenient access for administrators to the configurable parts of
-Polaris, like the operational details of astronomy facilities.
+
+We are also actively developing a Command Line Interface CLI, both as a stand-alone application and
+a python library.
+The intention of this CLI is to provide convenient access for administrators e.g., TAC members, to
+the configurable parts of Polaris, like the operational details of astronomy facilities.
 
 Authorisation to the API is done using KeyCloak and an OpenID Connect (OIDC) server.
 You can sign-on to \emph{Polaris} using your orcid ID\@.
 
 
-\section{Technologies Used}\label{sec:technologies-used}
+\section{Technologies}\label{sec:technologies}
 
 In modern development of ``full stack'' applications, there is an extensive choice in how you set up your
 development environment, and how the application is packaged for deployment.
 
-Let's face it, software developers are lazy beasts.
-The less code they have to type the happier, in general, they are.
-If code can be automatically generated, with little to no human intervention then we are all for it (looking at you
-ChatGPT).
+In this section we discuss some of the technologies used to help develop, build, test, package, and deploy
+\emph{Polaris} as an observation proposal preparation tool.
 
-In this section we discuss the technologies we choose to develop Polaris, bearing in mind this ``lazy'' attitude.
+\subsection{VO-DML: Virtual Observatory Data Modelling Language}\label{subsec:vodml}
+
+\emph{Polaris} uses the IVOA Proposal Data Model (ProposalDM) draft standard as its native data model.
+This standard is built with the International Virtual Observatory Alliance (IVOA) Virtual
+Observatory Data Modelling Language (VO-DML).
+Using the VO-DML tooling we can generate the JPA data access classes for use in our API\@.
+Using this common standard opens up the possibility of being able to exchange proposal information with
+other proposal tools if they implement an import mechanism for the model.
+
 
 \subsection{Quarkus: a Kubernetes-native Java framework}\label{subsec:quarkus}
 
-Quarkus\footnote{\url{https://quarkus.io/}}, a ``Supersonic Subatomic Java'', is designed around a
+Quarkus~\footnote{\url{https://quarkus.io/}}, a ``Supersonic Subatomic Java'', is designed around a
 container-first philosophy to develop applications with low memory usage and fast startup times.
 It is an open source project with a large community of developers and contributors, and a vast ecosystem
 of extensions and plugins.
@@ -198,11 +195,13 @@ configuration files that are then automatically reflected in the running applica
 
 \subsection{OpenAPI: code generation}\label{subsec:openapi-code-generation}
 
-OpenApi-codegen\footnote{\url{https://github.com/fabien0102/openapi-codegen}} can automatically generate
-the functional components and type schemas from our Java API code to be used in the Typescript GUI\@.
-In other words, it creates from our API the ``fetch'' calls to the REST endpoints.
-OpenApi-codegen is relatively easy to use and required only a moderate amount of developer effort
-required to intervene when it did not do quite the right thing.
+OpenApi-codegen\footnote{\url{https://github.com/fabien0102/openapi-codegen}} can automatically generate the functional components and type schemas from
+our Java API code to be used in the Typescript GUI\@.
+In other words, it creates the ``fetch'' calls to the REST endpoints that form our API\@.
+OpenApi-codegen is mostly automatic, but we have found that it requires some manual effort to correct
+the generated code every now and again.
+However, overall it has saved developer time and effort, especially when making changes to the API that must be
+reflected in the GUI\@.
 
 \subsection{Mantine: a React components library}\label{subsec:mantine:-a-react-components-library}
 
@@ -211,13 +210,24 @@ provides many customisable components and hooks, based in TypeScript, to quickly
 frontend web applications.
 It is an open source project that, at time of writing, is actively developed and maintained on GitHub.
 We have found Mantine to be an intuitive, comprehensive, well documented, and performant library.
+We use Mantine with Vite, a fast build tool for web applications, to build our frontend GUI\@.
 
 \section{Future Developments}\label{sec:future-developments}
 
-Some grand-plan, blue-sky (vomit), ideas go here.
-A centralised repository/database of observatories and their instruments/detectors.
-A standardised list of global astronomy facilities.
-Single-sign on feature or service for astronomy.
+In general, we are looking to develop and include the following features in \emph{Polaris}:
+
+\begin{itemize}
+    \item a centralised database of observatories and their instruments
+    \item a single-sign-on service
+    \item a ``plug-in'' feature for exposure/sensitivity calculators
+    \item access to a spectral line lookup service e.g., \emph{Splatalogue}
+\end{itemize}
+
+Please notice that this list is not exhaustive, nor is it written in any particular order, and should be
+out-of-date before long.
+
+An active list of ``issues'' is maintained in each project's GitHub repository containing
+bug-fix and feature requests.
 
 \section{Summary}\label{sec:summary}
 In summary, we have created a full-stack, web-based, open source observation proposal tool, \emph{Polaris},
@@ -225,11 +235,13 @@ for intended use within both the radio and optical astronomy communities.
 It is our hope that those communities contribute to the development of \emph{Polaris} such that it remains an
 active project on GitHub, and continues to mature into the foreseeable future at least.
 
-\emph{Polaris} will replace \emph{NorthStar} as the de facto observation proposal preparation tool for
+\emph{Polaris} will replace \emph{NorthStar} as the de-facto observation proposal preparation tool for
 the \emph{eMerlin} facility in the near future.
 
-\acknowledgements This work has received funding from the European Union's Horizon 2020 research and innovation programme, grant agreement No 101004719.
-We would also like to acknowledge the individual contributions of Allan Stokes and Michael Ahearn to the development of our frontend GUI\@.
+\acknowledgements This work has received funding from the European Union's Horizon 2020 research and innovation
+programme, grant agreement No 101004719.
+We would also like to acknowledge the individual contributions of Allan Stokes and Michael Ahearn to the
+development of our frontend GUI\@.
 
 \bibliography{example}  % For BibTex
 
