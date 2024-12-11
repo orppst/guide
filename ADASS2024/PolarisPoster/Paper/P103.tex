@@ -77,7 +77,7 @@
     2020 OPTICON RadioNet Pilot project.
     This tool has been built on top of the Proposal Data Model, defined in the IVOA standard VO-DML\@.
     Although this is an important part of the tool, this paper will focus on the technologies
-    used build and develop \emph{Polaris} itself.
+    used build and develop \emph{Polaris}, and its architecture.
 
     The API, GUI and CLI are maintained in open-source repositories on GitHub.
     This allows others to contribute to the development of Polaris or fork the projects to change the tool
@@ -139,11 +139,11 @@ As a nod to the outgoing proposal tool, and perhaps signifying progress, we are 
 Figure~\ref{architectureFigure} shows a diagram representing the architecture of \emph{Polaris}.
 The functionality of the tool is exposed as a RESTful Application Programming Interface (API) in a
 microservices architecture deployed on Kubernetes.
-The API connects with a \emph{Postgres} database using \emph{Hibernate} as an ORM\@.
-The database schemas are generated from the ProposalDM, and provide the Java class definitions we can
-work with when writing the implementation of the API calls.
+The API connects with a \emph{Postgres} database using \emph{Hibernate} as the Object Relational Mapping (ORM) layer.
+The database schemas are generated from our proposal data model (see section~\ref{subsec:vodml}), which provides
+the Java class definitions we can work with when writing the implementation of the API calls.
 
-\articlefigure[scale=0.4]{P103_architecture.eps}{architectureFigure}{The components that make up the toolkit for \emph{Polaris}}
+\articlefigure[scale=0.5]{P103_architecture.eps}{architectureFigure}{The components that make up the toolkit for \emph{Polaris}}
 
 We have created a web-based Graphical User Interface (GUI) frontend to access our API that has been
 written in Typescript using the React framework.
@@ -227,7 +227,7 @@ Please notice that this list is not exhaustive, nor is it written in any particu
 out-of-date before long.
 
 An active list of ``issues'' is maintained in each project's GitHub repository containing
-bug-fix and feature requests.
+bug-fixes and feature requests.
 
 \section{Summary}\label{sec:summary}
 In summary, we have created a full-stack, web-based, open source observation proposal tool, \emph{Polaris},
@@ -243,7 +243,8 @@ programme, grant agreement No 101004719.
 We would also like to acknowledge the individual contributions of Allan Stokes and Michael Ahearn to the
 development of our frontend GUI\@.
 
-\bibliography{example}  % For BibTex
+% we have no citations
+%\bibliography{example}  % For BibTex
 
 % if we have space left, we might add a conference photograph here. Leave commented for now.
 % \bookpartphoto[width=1.0\textwidth]{foobar.eps}{FooBar Photo (Photo: Any Photographer)}
