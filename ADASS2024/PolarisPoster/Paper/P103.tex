@@ -48,14 +48,14 @@
 % authors share an affiliation this should be in a single \affil which can then
 % be referenced for several author names. If only one affiliation, no footnotes are needed.
 % See ManuscriptInstructions.pdf and ASP's manual2010.pdf 3.1.4 for more details
-\author{Darren~Walker, Allan~England, Ben~Green, and Paul~Harrison}
+\author{Darren~Walker, Allan~England, Benjamin~Green, and Paul~Harrison}
 \affil{JBCA, The University of Manchester, Manchester, UK; \email{darren.walker@manchester.ac.uk}}
 
 % This section is for ADS Processing.  There must be one line per author. paperauthor has 9 arguments.
 % Arguments are: {NAME}{EMAIL}{ORCID_ID_OR_BLANK}{INSTITUTION}{DEPARTMENT}{CITY}{PROVINCE}{POSTAL CODE}{COUNTRY}
 \paperauthor{Darren~Walker}{darren.walker@manchester.ac.uk}{}{The University of Manchester}{Dept. of Physics and Astronomy}{Jodrell Bank Observatory}{Cheshire}{SK11 9DL}{UK}
 \paperauthor{Allan~England}{allan.england@manchester.ac.uk}{}{The University of Manchester}{Dept. of Physics and Astronomy}{Jodrell Bank Observatory}{Cheshire}{SK11 9DL}{UK}
-\paperauthor{Ben~Green}{benjamin.green@manchester.ac.uk}{}{The University of Manchester}{Dept. of Physics and Astronomy}{Jodrell Bank Observatory}{Cheshire}{SK11 9DL}{UK}
+\paperauthor{Benjamin~Green}{benjamin.green@manchester.ac.uk}{}{The University of Manchester}{Dept. of Physics and Astronomy}{Jodrell Bank Observatory}{Cheshire}{SK11 9DL}{UK}
 \paperauthor{Paul~Harrison}{paul.harrison@manchester.ac.uk}{}{The University of Manchester}{Dept. of Physics and Astronomy}{Jodrell Bank Observatory}{Cheshire}{SK11 9DL}{UK}
 
 % There should be one \aindex line (commented out) for each author. These are used to
@@ -108,7 +108,7 @@
 
 
 \section{Motivation}\label{sec:motivation}
-\emph{NorthStar} is ``end-of-life''.
+\emph{NorthStar} is at ``end-of-life''.
 \emph{NorthStar} is the name of a current observation proposal tool used both by the radio and optical
 astronomy communities.
 However, there has been a growing need for a replacement, as it has become too difficult to maintain and develop,
@@ -122,11 +122,11 @@ As part of this pilot we are developing a new open source proposal tool that pro
 a single access point for the community to create, edit, and submit observation requests to various astronomy
 facilities.
 The tool also strives to provide a uniform and useful interface for reviewing and allocating proposals by the
-time-allocation-committees (TAC) at the relevant astronomy facilities.
+Time-Allocation-Committees (TAC) at the relevant astronomy facilities.
 
 We set out to develop this proposal tool with a modern, open source philosophy.
 To that end, our code base is currently version controlled in a public repository on
-GitHub~\footnote{\url{https://github.com/orppst}}, and makes use of ``GitHub Actions'' to perform continuous
+\emph{GitHub},\footnote{\url{https://github.com/orppst}} and makes use of \emph{GitHub Actions} to perform continuous
 integration testing.
 Our intention is to allow the user community to contribute to the projects, either directly by writing and
 editing source code, via feedback in terms of bug-fixes and feature requests, or to fork the projects to
@@ -149,13 +149,13 @@ the Java class definitions we can work with when writing the implementation of t
 We have created a web-based Graphical User Interface (GUI) frontend to access our API that has been
 written in Typescript using the React framework.
 This GUI will be the main access point for those creating, editing, and submitting proposals i.e.,
-principal investigators (PI) and co-investigators (CoI).
+Principal Investigators (PI) and Co-Investigators (CoI).
 The GUI accesses the SIMBAD Table Access Protocol (TAP) service as an aid to observational target lookup.
 
-We are also actively developing a Command Line Interface CLI, both as a stand-alone application and
+We are also actively developing a Command Line Interface (CLI), both as a stand-alone application and
 a python library.
 The intention of this CLI is to provide convenient access for administrators e.g., TAC members, to
-the configurable parts of Polaris, like the operational details of astronomy facilities.
+the configurable parts of \emph{Polaris}, like the operational details of astronomy facilities.
 
 Authorisation to the API is done using KeyCloak and an OpenID Connect (OIDC) server.
 You can sign-on to \emph{Polaris} using your orcid ID\@.
@@ -171,9 +171,9 @@ In this section we discuss some of the technologies used to help develop, build,
 
 \subsection{VO-DML: Virtual Observatory Data Modelling Language}\label{subsec:vodml}
 
-\emph{Polaris} uses the IVOA Proposal Data Model (ProposalDM) draft standard as its native data model.
-This standard is built with the International Virtual Observatory Alliance (IVOA) Virtual
-Observatory Data Modelling Language (VO-DML).
+\emph{Polaris} uses the International Virtual Observatory Alliance (IVOA) Proposal Data Model (ProposalDM)
+draft standard as its native data model.
+This standard is built with the IVOA Virtual Observatory Data Modelling Language (VO-DML).
 Using the VO-DML tooling we can generate the Jakarta Persistence (or JPA) data access classes for use in our API\@.
 Using this common standard opens up the possibility of being able to exchange proposal information with
 other proposal tools if they implement an import mechanism for the model.
@@ -181,37 +181,37 @@ other proposal tools if they implement an import mechanism for the model.
 
 \subsection{Quarkus: a Kubernetes-native Java framework}\label{subsec:quarkus}
 
-Quarkus~\footnote{\url{https://quarkus.io/}}, a ``Supersonic Subatomic Java'', is designed around a
+\emph{Quarkus},\footnote{\url{https://quarkus.io/}} a ``Supersonic Subatomic Java'', is designed around a
 container-first philosophy to develop applications with low memory usage and fast startup times.
 It is an open source project with a large community of developers and contributors, and a vast ecosystem
 of extensions and plugins.
 
-Using Quarkus allows us to concentrate our development effort on the business logic, user experience, and GUI
+Using \emph{Quarkus} allows us to concentrate our development effort on the business logic, user experience, and GUI
 without having to spend time on much of the underlying boilerplate work.
-Combining Quarkus with Kubernetes is relatively seamless and means Polaris can be deployed on any standard
-Kubernetes cluster for high resilience and scalability.
+Combining \emph{Quarkus} with \emph{Kubernetes} is relatively seamless and means \emph{Polaris} can be deployed
+on any standard \emph{Kubernetes} cluster for high resilience and scalability.
 
-Quarkus comes with a built-in development mode that allows developers to update source, resource, and
+\emph{Quarkus} comes with a built-in development mode that allows developers to update source, resource, and
 configuration files that are then automatically reflected in the running application.
 
 \subsection{OpenAPI: code generation}\label{subsec:openapi-code-generation}
 
-OpenApi-codegen\footnote{\url{https://github.com/fabien0102/openapi-codegen}} can automatically generate the functional components and type schemas from
+\emph{OpenApi-codegen}\footnote{\url{https://github.com/fabien0102/openapi-codegen}} can automatically generate the functional components and type schemas from
 our Java API code to be used in the Typescript GUI\@.
 In other words, it creates the ``fetch'' calls to the REST endpoints that form our API\@.
-OpenApi-codegen is mostly automatic, but we have found that it requires some manual effort to correct
+\emph{OpenApi-codegen} is mostly automatic, but we have found that it requires some manual effort to correct
 the generated code every now and again.
 However, overall it has saved developer time and effort, especially when making changes to the API that must be
 reflected in the GUI\@.
 
 \subsection{Mantine: a React components library}\label{subsec:mantine:-a-react-components-library}
 
-Mantine\footnote{\url{https://mantine.dev/} - named after a Pok\'emon.} is a React components library that
+\emph{Mantine}\footnote{\url{https://mantine.dev/} - named after a Pok\'emon.} is a React components library that
 provides many customisable components and hooks, based in TypeScript, to quickly and easily build accessible
 frontend web applications.
-It is an open source project that, at time of writing, is actively developed and maintained on GitHub.
-We have found Mantine to be an intuitive, comprehensive, well documented, and performant library.
-We use Mantine with Vite, a fast build tool for web applications, to build our frontend GUI\@.
+It is an open source project that, at time of writing, is actively developed and maintained on \emph{GitHub}.
+We have found \emph{Mantine} to be an intuitive, comprehensive, well documented, and performant library.
+We use \emph{Mantine} with \emph{Vite}, a fast build tool for web applications, to build our frontend GUI\@.
 
 \section{Future Developments}\label{sec:future-developments}
 
@@ -227,17 +227,17 @@ In general, we are looking to develop and include the following features in \emp
 Please notice that this list is not exhaustive, nor is it written in any particular order, and should be
 out-of-date before long.
 
-An active list of ``issues'' is maintained in each project's GitHub repository containing
-bug-fixes and feature requests.
+An active list of ``issues'' is maintained in each project's \emph{GitHub} repository containing requests for
+bug-fixes and new features.
 
 \section{Summary}\label{sec:summary}
 In summary, we have created a full-stack, web-based, open source observation proposal tool, \emph{Polaris},
 for intended use within both the radio and optical astronomy communities.
 It is our hope that those communities contribute to the development of \emph{Polaris} such that it remains an
-active project on GitHub, and continues to mature into the foreseeable future at least.
+active project on \emph{GitHub}, and continues to mature into the foreseeable future at least.
 
 \emph{Polaris} will replace \emph{NorthStar} as the de-facto observation proposal preparation tool for
-the \emph{eMerlin} facility in the near future.
+the \emph{eMerlin}\footnote{\url{https://e-merlin.ac.uk/}} facility in the near future.
 
 \acknowledgements This work has received funding from the European Union's Horizon 2020 research and innovation
 programme, grant agreement No 101004719.
