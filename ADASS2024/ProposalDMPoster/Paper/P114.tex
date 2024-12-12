@@ -1,0 +1,159 @@
+% This is the ADASS_template.tex LaTeX file, 19th Sep 2019.
+% It is based on the ASP general author template file, but modified to reflect the specific
+% requirements of the ADASS proceedings.
+% Copyright 2014, Astronomical Society of the Pacific Conference Series
+% Revision:  14 August 2014
+
+% To compile, at the command line positioned at this folder, type:
+% latex ADASS_template
+% latex ADASS_template
+% dvipdfm ADASS_template
+% This will create a file called ADASS_template.pdf
+
+\documentclass[11pt,twoside]{article}
+
+% Do NOT use ANY packages other than asp2014. 
+\usepackage{asp2014}
+
+\aspSuppressVolSlug
+\resetcounters
+
+% References must all use BibTeX entries in a .bibfile.
+% References must be cited in the text using \citet{} or \citep{}.
+% Do not use \cite{}.
+% See ManuscriptInstructions.pdf for more details
+\bibliographystyle{asp2014}
+
+% The ``markboth'' line sets up the running heads for the paper.
+% 1 author: "Surname"
+% 2 authors: "Surname1 and Surname2"
+% 3 authors: "Surname1, Surname2, and Surname3"
+% >3 authors: "Surname1 et al."
+% Replace ``Short Title'' with the actual paper title, shortened if necessary.
+% Use mixed case type for the shortened title
+% Ensure shortened title does not cause an overfull hbox LaTeX error
+% See ASPmanual2010.pdf 2.1.4  and ManuscriptInstructions.pdf for more details
+\markboth{Paul Harrison}{Proposal Data Model}
+
+\begin{document}
+
+\title{The Proposal Data Model as the basis for Polaris, a Proposal Submission Toolkit}
+
+% Note the position of the comma between the author name and the 
+% affiliation number.
+% Authors surnames should come after first names or initials, eg John Smith, or J. Smith.
+% Author names should be separated by commas.
+% The final author should be preceded by "and".
+% Affiliations should not be repeated across multiple \affil commands. If several
+% authors share an affiliation this should be in a single \affil which can then
+% be referenced for several author names. If only one affiliation, no footnotes are needed.
+% See ManuscriptInstructions.pdf and ASP's manual2010.pdf 3.1.4 for more details
+\author{Paul~Harrison$^1$}
+\affil{$^1$JBCA, University of Manchester,  UK; \email{paul.harrison@manchester.ac.uk}}
+
+
+% This section is for ADS Processing.  There must be one line per author. paperauthor has 9 arguments.
+\paperauthor{Paul~Harrison}{paul.harrison@manchester.ac.uk}{0000-0001-6362-3182}{University of Manchester}{JBCA}{Macclesfield}{State/Province}{SK11 9DL}{UK}
+
+% There should be one \aindex line (commented out) for each author. These are used to
+% build up the author index for the Proceedings. The surname must come first, followed by
+% initials. Note the use of ~ before each initial to control spacing.
+% The \author entries (see above) have surname last. These \aindex entries have
+% surname first.
+% The Aindex.py command willl create them for you after you have constructed the \author
+% The first entry should be the first author, for bold-facing the author index page-reference
+
+%\aindex{FistAuthor1,~S.~A.}
+%\aindex{Author2,~S.~B.}
+%\aindex{Author3,~S.}
+
+
+\begin{abstract}
+The Proposal Data Model (ProposalDM) has been created as an IVOA endorsed data model expressed in VO-DML to represent the metadata involved in creating and assessing
+    Observing proposals for time to be allocated at astronomical facilities.
+
+    The Polaris proposal toolkit is a set of services to allow proposals to be created and managed via web services APIs that can be accessed via a GUI or the
+    commandline clients that are also part of the toolkit.
+    The Polaris toolkit uses the ProposalDM at its native internal data model.
+\end{abstract}
+
+% These lines show examples of subject index entries. At this stage these have to commented
+% out, and need to be on separate lines. Eventually, they will be automatically uncommented
+% and used to generate entries in the Subject Index at the end of the Proceedings volume.
+% Don't leave these in! - replace them with ones relevant to your paper.
+%\ssindex{FOOBAR!conference!ADASS 2019}
+%\ssindex{FOOBAR!organisations!ASP}
+
+% These lines show examples of ASCL index entries. At this stage these have to commented
+% out, and need to be on separate lines. Eventually, they will be automatically uncommented
+% and used to generate entries in the ASCL Index at the end of the Proceedings volume.
+% The ascl.py command will scan your paper on possible code names.
+% Don't leave these in! - replace them with ones relevant to your paper.
+%\ooindex{FOOBAR, ascl:1101.010}
+
+
+\section{Motivation}
+        Funding was obtained as part of the joint activity 2.1 of the \href{https://www.orp-h2020.eu}{Opticon RadioNet Pilot (ORP)} to create
+        a new proposal preparation tool that would make it easier for astronomers to be able to participate in so-called
+        multi-facility calls.
+        Explicit in the funding request was the aim of creating a data model (in a similar fashion to\cite{10.1117/12.789262}) that could be used to describe the observation proposals
+        in as general way as possible to cover a common set of requirements from as many different observatories and observing modes.
+        That data model could  then be used as the basis for creating a toolkit for managing proposals.
+
+        This poster describes the data model, called ProposalDM, and another poster \citep{p103_adassxxxiv} describes the toolkit, called Polaris.
+
+
+        \subsection{Design Goals}
+        The Data model is primarily intended to be able to support what is often called "phase 1" of the proposal process, i.e.\ the information
+        in the model is sufficient to be able to allocate the observations, but not necessarily complete enough to actually schedule them.
+        \begin{itemize}
+            \item Emphasis on required physics and the science goals.
+            \item Flexible enough to use at multiple observatories.
+        \end{itemize}
+
+    \section{Implementation}
+        The model is expressed in VO-DML and published as an IVOA working draft. It has actually been split into two halves
+        \begin{itemize}
+            \item The proposal part, which expresses the concepts important to the astronomer principal investigator.
+            \item The proposal management part, which expresses the concepts necessary to review and allocate the proposal.
+        \end{itemize}
+        The two figures show a somewhat simplified view of each of these parts, which despite this, are probably unintelligible on
+        this poster!
+        For an easier to read presentation of the model see \href{https://ivoa.github.io/ProposalDM/}{https://ivoa.github.io/ProposalDM/}.
+
+
+    \articlefigure{proposaldm.vo-dml.eps}{pdmfig}{Simplified view of the Proposal part of the model.}
+
+
+
+    \articlefigure{proposalManagement.vo-dml.eps}{manfig}{Simplified view of the Proposal Management part of the model.}
+
+
+    \section{VO-DML}
+        VO-DML \citep{2018ivoa.spec.0910L} is an IVOA standard for defining data models.
+        It has been designed in a way that is more constrained and concise than other generic modelling methodologies such
+        as UML, so that it is easy to create models with well defined serializations following IVOA standards.
+        There is also some tooling associated with VO-DML (\href{https://github.com/ivoa/vo-dml}{https://github.com/ivoa/vo-dml}) that
+        has the capability of generating documentation and source code data objects in Java and Python that allow
+        easy serialization to and from XML and JSON as well as object relational mapping to databases.
+
+
+    \section{Future plans}
+        It should be noted that the ProposalDM has not reached the 1.0 status yet as there are still some parts of the model to elaborate.
+        In addition it would probably be a good idea to factor out common Observatory, Instrument and Target models to allow re-use elsewhere in IVOA data models.
+
+       The reader is encouraged to follow the web links within this document to learn the latest status of the projects.
+
+
+
+\acknowledgements This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 101004719.
+
+
+\bibliography{P114}  % For BibTex
+
+% if we have space left, we might add a conference photograph here. Leave commented for now.
+% \bookpartphoto[width=1.0\textwidth]{foobar.eps}{FooBar Photo (Photo: Any Photographer)}
+
+    %\ssindex{proposal}
+
+\end{document}
