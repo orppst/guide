@@ -142,14 +142,14 @@ clean:
 	rm -f $(P).dvi $(P).bbl $(P).blg $(P).pdf $(P).aux $(P).log $(P).out $(P).toc $(P)_inc.tex
 
 check:
-	PaperCheck.py $(P) $(A)
+	./PaperCheck.py $(P) $(A)
 
 ENCODING =
 fix:
-	FixUnprintable.py  $(P).tex $(ENCODING)
+	./FixUnprintable.py  $(P).tex $(ENCODING)
 
 inc:
-	tex2inc.py $(P).tex > $(P)_inc.tex
+	./tex2inc.py $(P).tex > $(P)_inc.tex
 	@tail -1 $(P)_inc.tex
 	@cat $(P).toc
 
@@ -164,7 +164,7 @@ dvi:
 	latex $(P)
 
 aindex:
-	Aindex.py $(P)
+	./Aindex.py $(P)
 
 DETEX = detex
 words:
