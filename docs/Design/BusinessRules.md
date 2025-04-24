@@ -31,9 +31,11 @@ Polaris must not offer the Maintain Polaris observatory reference data option to
 ### *Observations*
 
 <ul><li>A proposal has one or more observations</li>
-<li>An observations has one target</li>
-<li>A target has one set of technical goals, one or many timing windows, and zero, one or many constraints, and must be identified as either Observation or Calibration</li>
-<li>A set of technical goals consists of one set of performance parameters and one or more spectral windows</li></ul>
+<li>An observation has one or more targets, but usually just one</li>
+<li>A target is an attribute of one or more observations, and one or more proposals</li>
+<li>A target has one set of performance parameters, one or many spectral windows, one or many timing windows, and zero, one, or many constraints, and must be identified as either Observation or Calibration</li>
+<li>Performance parameters and spectral windows are known collectively as technical goals, usually just one per target, and maybe even per proposal</li>
+</ul>
 
 ###	*Proposal cycle*
 
