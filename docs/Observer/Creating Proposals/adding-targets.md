@@ -34,9 +34,9 @@ will take you back to the targets list page without saving.
 
 ![list of targets](polaris-target-list.png)
 
-You may _Delete_ this target if you so wish, just remember that you need at least one target in order
-to build an **Observation** for your proposal. For information, you will not be able to _Delete_ targets 
-that currently belong to an **Observation** - the corresponding observation must be deleted first.
+You may _Delete_ this **Target** if you so wish, just remember that you need at least one target in order
+to build an **Observation** for your proposal. For information, you will not be able to _Delete_ **Targets** 
+that currently belong to an **Observation** - the corresponding **Observation** must be deleted first.
 
 ## Next Step
 

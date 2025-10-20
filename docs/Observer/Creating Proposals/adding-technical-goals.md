@@ -22,7 +22,7 @@ To add a **Technical Goal** click the _Add +_ button, which will bring up the _N
 The values can be freely entered but the units are selected via a drop-down menu. These values are what you would 
 like the observation to achieve, and are not necessarily strict requirements. The _Performance Parameters_ are the 
 minimum amount of information required to _Save_ a **Technical Goal**. For now, we ignore the _Spectral Window_ 
-aspect of a**Technical Goal**, to be revisited later.
+aspect of a **Technical Goal**, to be revisited later.
 
 After clicking _Save_ you will be brought back to the technical goals summary page, which should now display your
 newly added **Technical Goal**. 
