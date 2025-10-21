@@ -1,11 +1,13 @@
 ---
 title: Adding Technical Goals
-date: 2024-03-04
+date: 2025-10-21
 description: >
    _Guide to adding **Technical Goals** to your proposal_
 categories: [Examples]
 tags: [test, sample, docs]
 ---
+
+Last updated: 2025-10-21 Polaris _beta_ version
 
 # Add a Technical Goal
 

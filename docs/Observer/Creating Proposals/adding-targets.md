@@ -1,3 +1,13 @@
+---
+title: Adding Targets
+date: 2025-10-21
+description: >
+   _Guide to adding **Targets** to your proposal_
+categories: [Examples]
+tags: [test, sample, docs]
+---
+
+Last updated: 2025-10-21 Polaris _beta_ version
 
 # Add a Target
 
@@ -6,13 +16,14 @@ A fresh proposal will have no **Targets** added, and you will be presented with 
 ![add a target](polaris-targets-none.png)
 
 
-To add a **Target** click the _Add +_ button, which will bring up the _New Target_ form.
+To add a single **Target** click the _Add +_ button, which will bring up the _New Target_ form.
 
 !["new target form](polaris-simbad-search-target.png)
 
-In the screenshot you will see we have added the [Aladin Lite Sky Atlas](https://aladin.cds.unistra.fr/),
-and we have found the _Crab Nebula_ using the **Search** function. This fills in the corresponding 
-positional and coordinate system data for the named target, and displays the target in the Sky Atlas.
+In the screenshot you will see we have found the _Crab Nebula_ using the **Search** function.
+This fills in the corresponding positional and coordinate system data for the named target, and displays 
+the target in the [Aladin Lite Sky Atlas](https://aladin.cds.unistra.fr/).
+
 Notice that the backend uses [Simbad](https://simbad.cds.unistra.fr/simbad/) to search for the named target, such that the name must 
 exist in their databases to be successful; an appropriate error notification is displayed if the 
 named target cannot be found. The name displayed after selecting a search item is the _main-id_
@@ -28,9 +39,9 @@ coordinates. Notice that in this beta version of Polaris, you can have any coord
 so long as it's _J2000_ with an ICRS reference system.
 
 You can change the name of the target after you have looked it up and before you save it as a 
-**Target**. To save, click the _Save_ button. This will return you to the _Targets_ tab of your proposal 
+**Target**. To save, click the _Save_ button. This will return you to the **Targets** page of your proposal 
 now displaying the **Target** you just saved, and any other targets you may have added. Clicking _Cancel_
-will take you back to the targets list page without saving.
+on the new target form will take you back to the targets list page without saving.
 
 ![list of targets](polaris-target-list.png)
 
