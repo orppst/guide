@@ -67,7 +67,7 @@ you to transfer proposals between different instanced of the Polaris application
 _Clone Proposal_ creates a deep copy of the current proposal as a new proposal i.e., everything is copied - 
 targets, technical goals, observations, justifications, supporting documents, ...
 
-If you've decided that this proposal is on longer worth pursuing then clicking on _Delete Proposal_ will remove 
+If you've decided that this proposal is no longer worth pursuing then clicking on _Delete Proposal_ will remove 
 it permanently from the system. Notice that if the proposal has been submitted to a **Proposal Cycle** that submitted 
 proposal is _NOT_ removed from the cycle. We explain about **Submitted Proposals** elsewhere, but for now see them 
 as a "snapshot" of the proposal at the point of submission. We would recommend that you don't delete proposals that
@@ -84,6 +84,7 @@ In the Polaris app you must first add at least one observational **Target** and 
 Goal** before you can generate an **Observation** for your proposal. Notice that the yellow text in the
 screenshot is a link to take you to the corresponding page in the App. 
 
-For the next steps in this guide, please follow either the **Adding Targets** link or the **Adding Technical Goals** 
-link, the order here does not matter. The **Building an Observation** page assumes you have added at least one target 
-and at least one technical goal to your proposal.
+For the next steps in this guide, please go to either [**Adding Targets**](adding-targets.md) or 
+[**Adding Technical Goals**](adding-technical-goals.md), the order here does not matter. 
+The [**Building an Observation**](build-observation.md) guide assumes you have added at least one target and at least 
+one technical goal to your proposal.

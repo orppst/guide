@@ -51,7 +51,7 @@ Again click _Next step_ to continue to step 3.
 Here you select the **Observing Modes** you want for your **Observations**. Notice that the selectable data here
 depends on your choice of **Proposal Cycle**. For example, having chosen the eMerlin proposal cycle (generally 
 named "Cycle N", where N represents the cycle number) you can choose between _L-Band_, _C-Band_, and _K-Band_ 
-**Observing Modes**. You may either select a single **Observing Mode** for each of the **Observations** in your 
+**Observing Modes**. You may either select a single **Observing Mode** for all the **Observations** in your 
 proposal, most conveniently done by selecting the mode in the _Observing Mode Details_ section and clicking
 the _Set for all_ button, or select the mode for each observation separately. Once each of your **Observations**
 has a mode you may proceed to step 4.
@@ -81,4 +81,13 @@ the cycle of choice. This email is sent to all investigators associated with the
 Clicking on _Done_ will take you back to the _Overview_ page for the proposal.
 
 
+## Withdrawing a Submitted Proposal
 
+The Principal Investigator may withdraw a submitted proposal from a **Proposal Cycle** up to the submission
+deadline for that cycle. The _Withdraw_ button is located on the user's homepage, one per cycle to which a proposal 
+has been submitted, shown in the screenshot below.
+
+![polaris homepage withdraw](polaris-home-page-withdraw.png)
+
+You may submit and withdraw a proposal to a particular cycle _ad nauseam_, but do try to not over do it, for your 
+own sake as much as anyone else's. 

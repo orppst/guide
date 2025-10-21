@@ -11,6 +11,8 @@ nav:
           - Adding Targets: Observer/Creating Proposals/adding-targets.md
           - Adding Technical Goals: Observer/Creating Proposals/adding-technical-goals.md
           - Building an Observation: Observer/Creating Proposals/build-observation.md
+      - Justifications:
+          - Creating and Compiling: Observer/Justifications/index.md
       - Submitting Proposals:
           - Submitting: Observer/Submitting Proposals/index.md
   - TAC:
