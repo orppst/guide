@@ -23,7 +23,7 @@ To add a single **Target** click the _Add One Target +_ button, which will bring
 
 In the screenshot you will see we have found the _Crab Nebula_ using the **SIMBAD search** function.
 This fills in the corresponding positional and coordinate system data for the named target, and displays 
-the target in the [Aladin Lite Sky Atlas](https://aladin.cds.unistra.fr/) (admittedly there more for eye-candy than functional reasons)
+the target in the [Aladin Lite Sky Atlas](https://aladin.cds.unistra.fr/).
 
 Notice that the backend uses [Simbad](https://simbad.cds.unistra.fr/simbad/) to search for the named target, such that the name must 
 exist in their databases to be successful; an appropriate error notification is displayed if the 
@@ -72,7 +72,7 @@ where you are required to provide the columns 'name', 'ra', and 'dec' of the tar
 columns may be omitted with the caveat that if you provide one proper-motion ('pm') column, you must provide the
 other. The names can only be ASCII characters and the other values are integer or decimal digits. All units are in degrees 
 or degrees per second for rates. The order of the columns is not important (to the code at least, 
-to your sanity maybe). Any optional data values i.e., 'pmra', 'pmdec', 'plx', 'rv', that isn't available but for which
+to your sanity maybe). Any optional data value i.e., 'pmra', 'pmdec', 'plx', 'rv', that isn't available but for which
 you have a column should be left blank e.g., the target 'alpha' in the (made-up) list above has no parallax data. Again
 we recommend using either one of the other two formats to add a list of targets.
 

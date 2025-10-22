@@ -22,9 +22,9 @@ To build an **Observation** click the _Add +_ button, which will bring up the ne
 
 In this screenshot we have yet to fill in the data. You must select the _Type_ of **Observation** either _Target_
 or _Calibration_. If selecting _Calibration_ you must also select the _Intended Use_ of the calibration. There 
-are several options here including but not limit to _Pointing_, _Bandpass_, _Focus_, and _Delay_ amongst others.
+are several options here including _Pointing_, _Bandpass_, _Focus_, and _Delay_ amongst others.
 The messages in red describe the necessary fields that are required to create an **Observation** after selecting
-its type, and intended use where appropriate.
+its type and intended use where appropriate.
 
 Each **Observation** must have at least one **Target** and multiple selections are allowed. **Observations** can
 only have one **Technical Goal** selected, and you must provide at least one **Timing Window**. 
@@ -53,7 +53,7 @@ As with **Technical Goals** you may _Edit_ and _Copy_ **Observations** to avoid 
 **Observations** that have similar attributes. For example, using the same **Target** but for different types,
 _Target_ or _Calibration_, of **Observation** with perhaps the same **Technical Goal** and/or timing constraints.
 
-With an **Observation** now built both the **Target** and the **Technical Goal** to which is refers have their 
+With an **Observation** now built both the **Target** and the **Technical Goal** to which it refers have their 
 _Delete_ button disabled. This prevents you from deleting either of these things while they are actively referred
 to by an **Observation**. In order to re-enable the _Delete_ button on **Targets** and **Technical Goals** you 
 must first delete all **Observations** that refer to them.
@@ -61,7 +61,7 @@ must first delete all **Observations** that refer to them.
 ## Next Steps
 
 If you have yet to fill out the Justifications for your proposal please follow the guide at
-[**Justification**](../Justifications/index.md)
+[**Justifications**](../Justifications/index.md)
 
 To see how to submit your proposal for review please follow the guide at 
 [**Submitting Proposals**](../Submitting%20Proposals/index.md)

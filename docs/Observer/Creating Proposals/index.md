@@ -18,7 +18,7 @@ by the red circle in the screenshot below.
 ![polaris home page, highlighting the create a new proposal button](polaris-home-page-fresh.png)
 
 
-This will bring up the new **Proposal** details form. Please notice that this screenshot is in dark-mode.
+Please notice that this screenshot is in dark-mode.
 You may select light-mode by clicking the toggle button in the very top right of the window, left of the
 "user management" button. When in dark-mode the button will be a "sun", meaning go-to light-mode, and when
 in light-mode it will be a "crescent-moon", meaning got-to dark-mode. The following screenshot shows what
@@ -29,15 +29,18 @@ light-mode looks like.
 Switch to which ever mode you want. The author of this guide prefers dark-mode so that is the mode the rest
 of the screenshots will show. 
 
-## Fill in the proposal details form and click **Create**
+After clicking the _Create new proposal +_ button you will be taken to the new proposal form page.
 
-![create proposal details](polaris-create-new-proposal.png)
+## Fill in the proposal details form and click **Save**
+
+![create proposal details](polaris-create-proposal.png)
 
 
 The basic details of an **Observing Proposal** are the title, a brief Summary, and the "kind" of your proposal 
-either _STANDARD_, _SURVEY_, or _T.O.O._ (target-of-opportunity). These attributes can be changed after you create 
+either _STANDARD_, _SURVEY_, or _T.O.O._ (target-of-opportunity). The Summary is limited to 1000 characters.
+These values can be edited after you create 
 the proposal. Please note that we have help buttons located on the top right of most pages - a blue question mark in 
-a hexagonal border (circled in red in the screenshot) that will drop down some basic textual help for that page. 
+a hexagonal border - that will drop down some basic textual help for the current page. 
 If a page does not have this button the help will be located in a tab on the page somewhere.
 
 ## The Proposal Overview
@@ -59,19 +62,21 @@ Principal Investigator role for the proposal.
 You will notice three buttons at the top of the overview page, namely _Export Proposal_, _Clone Proposal_, and
 _Delete Proposal_. 
 
-_Export Proposal_ provides a downloaded zip file containing this proposal as JSON, any supporting 
+_Export Proposal_ provides a downloadable zip file containing this proposal as JSON, any supporting 
 documents you may have uploaded, and a screenshot of this overview. The astute among you will have realised this
-is the file you upload when you click on the button _Import existing proposal_. The intention of this is to allow
+is the file you then upload when you click on the button _Import existing proposal_. The intention of this is to allow
 you to transfer proposals between different instanced of the Polaris application. 
 
 _Clone Proposal_ creates a deep copy of the current proposal as a new proposal i.e., everything is copied - 
 targets, technical goals, observations, justifications, supporting documents, ...
 
-If you've decided that this proposal is no longer worth pursuing then clicking on _Delete Proposal_ will remove 
-it permanently from the system. Notice that if the proposal has been submitted to a **Proposal Cycle** that submitted 
-proposal is _NOT_ removed from the cycle. We explain about **Submitted Proposals** elsewhere, but for now see them 
-as a "snapshot" of the proposal at the point of submission. We would recommend that you don't delete proposals that
-are actively submitted to a cycle.
+
+_Delete Proposal_ will permanently remove the proposal from the system. Notice that if the proposal has been submitted 
+to a **Proposal Cycle** the **Submitted Proposal**, which is a separate entity to the currently active proposal, is 
+_NOT_ removed from the cycle. 
+**Submitted Proposals** can be thought of as a "snapshot" of the proposal, frozen at the point of submission. We would 
+recommend that you don't delete proposals that are actively submitted to a cycle i.e., under review, but this is not 
+a restriction.
 
 ## Next Steps: adding Targets and Technical Goals
 
