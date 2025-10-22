@@ -7,10 +7,12 @@ nav:
   - Observer:
       - Getting Started: Observer/index.md
       - Creating Proposals:
-          - Starting : Observer/Creating Proposals/index.md
+          - First Steps : Observer/Creating Proposals/index.md
           - Adding Targets: Observer/Creating Proposals/adding-targets.md
           - Adding Technical Goals: Observer/Creating Proposals/adding-technical-goals.md
           - Building an Observation: Observer/Creating Proposals/build-observation.md
+      - Justifications:
+          - Creating and Compiling: Observer/Justifications/index.md
       - Submitting Proposals:
           - Submitting: Observer/Submitting Proposals/index.md
   - TAC:
