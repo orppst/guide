@@ -7,7 +7,7 @@ categories: [Examples]
 tags: [test, sample, docs]
 ---
 
-Last updated: 2025-10-21 Polaris _beta_ version
+Last updated **2025-10-24** Polaris _beta_ version.
 
 # Add a Technical Goal
 
@@ -21,10 +21,14 @@ To add a **Technical Goal** click the _Add +_ button, which will bring up the _N
 ![new technical goals form](polaris-tech-goals-new.png)
 
 
-The values can be freely entered but the units are selected via a drop-down menu. These values are what you would 
-like the observation to achieve, and are not necessarily strict requirements. The _Performance Parameters_ are the 
-minimum amount of information required to _Save_ a **Technical Goal**. For now, we ignore the _Spectral Window_ 
-aspect of a **Technical Goal**, to be revisited later.
+The field values can be freely entered but the units are selected via a drop-down menu. These values are what you would 
+like the observation to achieve rather than strict requirements. The _Performance Parameters_ are the 
+minimum amount of information required to _Save_ a **Technical Goal**. 
+
+**Spectral Windows** are optional but if provided consist of a _start_ and _end_ frequency defining the range
+of the EM-spectrum you are interested in, the _resolution_ of that range, a _polarization_ option, and whether the
+frequency of the range is a _sky frequency_. The _Spectral point_ of the _Performance Parameters_ should be related
+to this range. 
 
 After clicking _Save_ you will be brought back to the technical goals summary page, which should now display your
 newly added **Technical Goal**. 

@@ -6,6 +6,9 @@ description: >
 categories: [Examples]
 tags: [test, sample, docs]
 ---
+
+Last updated **2025-10-24** Polaris _beta_ version.
+
 # Build an Observation
 
 After adding at least one **Target** and at least one **Technical Goal** you will see the following summary page 
@@ -27,31 +30,30 @@ The messages in red describe the necessary fields that are required to create an
 its type and intended use where appropriate.
 
 Each **Observation** must have at least one **Target** and multiple selections are allowed. **Observations** can
-only have one **Technical Goal** selected, and you must provide at least one **Timing Window**. 
+only have one **Technical Goal** selected. **Timing Windows** are optional, and in general refer to some
+(external) observation that relates to your proposal in some way. 
 
 A **Timing Window** is a timing constraint on the **Observation**, and consists of _start_ and _end_ times that 
 can be specified up to the minutes unit, an _avoid_ toggle switch that changes the meaning of the window, to be
 explained presently, and an optional note to provide additional information if required. Typically, a 
-**Timing Window** will specify the range of times when the **Observation** should be performed i.e., the _avoid_ 
-toggle is unset. However, with the _avoid_ toggle set the window then specifies the range of times when the 
-**Observation** should **_not_** be performed. (Notice that
-the **Timing Window** must relate to the **Proposal Cycle** _session_ interval to which you will be submitting
-the proposal - this validation check is done during the submission process.)
+**Timing Window** will specify when an external observation will be performed i.e., the _avoid_ 
+toggle is unset. However, with the _avoid_ toggle set the window then specifies the range of times when the external
+observation will **_not_** be performed. You can add as many **Timing Windows** to an **Observation** as required by 
+your needs. Please note that the _start_ time must be at an earlier time than the _end_ time, but that different 
+**Timing Windows** may overlap. It is recommended to write optional notes to provide context for anyone reviewing your 
+proposal. Notice that we assume all times are entered as UTC. Generally, most proposals will not be using this feature.
 
-You can add as many **Timing Windows** to an **Observation** as required by your needs. Please note that the 
-_start_ time must be at an earlier time than the _end_ time, but that different **Timing Windows** may overlap. 
-In this case, it is recommended to write optional notes to provide context for anyone reviewing your proposal. 
-Notice that we assume all times are entered as UTC. 
-
-With all that information entered, click _Save_ to save the **Observation** to your **Proposal**. This will 
-bring you back to the _Observations_ summary page, that will now contain your newly built **Observation**.
+With the required information, Type, Target(s), and Technical Goals, entered, click _Save_ to save the 
+**Observation** to your **Proposal**. This will bring you back to the _Observations_ summary page, that will now 
+contain your newly built **Observation**.
 
 ![Observations summary page](polaris-observation-list.png)
 
 
 As with **Technical Goals** you may _Edit_ and _Copy_ **Observations** to avoid having to repeat data entry for
-**Observations** that have similar attributes. For example, using the same **Target** but for different types,
-_Target_ or _Calibration_, of **Observation** with perhaps the same **Technical Goal** and/or timing constraints.
+**Observations** that have similar attributes. Due to restrictions in the backend code you cannot change the _Type_
+of an existing **Observation**. If you wish to create an **Observation** with a different _Type_ you must 
+create a new **Observation** rather than copying one. 
 
 With an **Observation** now built both the **Target** and the **Technical Goal** to which it refers have their 
 _Delete_ button disabled. This prevents you from deleting either of these things while they are actively referred

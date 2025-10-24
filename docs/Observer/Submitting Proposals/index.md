@@ -1,10 +1,12 @@
 
-Last updated **2025-10-21** Polaris _beta_ version.
+Last updated **2025-10-24** Polaris _beta_ version.
 
 # Submit your Proposal
 
 Once you are happy with the details of your **Proposal**, and it has passed the server side validation checks
-you may submit it for review.
+you may submit it for review. Please notice that submission it restricted to the _Principal Investigator_ only,
+_Co-Investigators_ cannot submit proposals.
+
 The proposal submission process consists of several steps.
 
 ## Step 1 - Select the **Proposal Cycle**
@@ -19,12 +21,16 @@ Once selected click _Next step_ to continue to the next step.
 
 Server side validation checks currently include:
 
-* at least one **Observation** added with at least one **Timing Window**
-  * which requires at least one **Target** and at least one **Technical Goal**
-* a successfully compiled Justification PDF
+* at least one **Observation** added
+    * which requires at least one **Target** and at least one **Technical Goal**
+* a successfully compiled **Justification PDF**
+    * which includes having non-empty **Justification** texts
 
-As we develop the server side validation checks this list will grow. We expect this list to expand as we put 
-Polaris in to beta-testing.
+You _can_ compile an "empty" **Justification PDF** i.e., empty texts, but this will fail the validation check.
+Notice that if your justifications texts are short (< 256 characters) then this check will emit a warning to
+that effect, as your justification texts should be longer, but it will not fail the check.
+
+As we develop the server side validation checks we expect this list to potentially expand.
 
 If a **Proposal** doesn't pass the validation checks then you will be presented with the following page for 
 _Step 2_ in the submission process, which lists the problems.
@@ -33,6 +39,7 @@ _Step 2_ in the submission process, which lists the problems.
 
 
 Here we have created another proposal but haven't added any **Targets**, **Technical Goals**, or **Observations**. 
+We also have not written any Justification texts or attempted to compile the PDF document.
 Please notice that the messages are links that will take you to the relevant page in Polaris so you can address
 the issues. In this case the _Next step_ button is disabled.
 
@@ -78,13 +85,21 @@ should be presented with the following screen.
 You will also be sent a confirmation email outlining that you have just successfully submitted your proposal to
 the cycle of choice. This email is sent to all investigators associated with the proposal.
 
+For your information, when your **Observing Proposal** is submitted it is copied into a new **Submitted Proposal**,
+in essence creating a "snapshot" of your proposal at the point of submission. The **Submitted Proposal** is a
+different entity to your **Observing Proposal** and is non-editable. You may continue to edit your
+**Observing Proposal** without effecting the **Submitted Proposal**. If you need to update a **Submitted Proposal**
+then you must first withdraw that proposal from the cycle 
+(see [**Withdrawing a Submitted Proposal**](#withdrawing-a-submitted-proposal))
+and resubmit your edited **Observing Proposal**. 
+
 Clicking on _Done_ will take you back to the _Overview_ page for the proposal.
 
 
 ## Withdrawing a Submitted Proposal
 
 The Principal Investigator may withdraw a submitted proposal from a **Proposal Cycle** up to the submission
-deadline for that cycle. The _Withdraw_ button is located on the user's homepage, one per cycle to which a proposal 
+deadline for that cycle. The _withdraw_ button is located on the user's homepage, one per cycle to which a proposal 
 has been submitted, shown in the screenshot below.
 
 ![polaris homepage withdraw](polaris-home-page-withdraw.png)

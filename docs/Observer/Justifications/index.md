@@ -1,9 +1,16 @@
+
+Last updated **2025-10-24** Polaris _beta_ version.
+
 ## Filling out Justifications
 
 In Polaris there are two **Justification** "flavours": **Scientific** and **Technical**.
 
 Both **Justifications** are to be provided as LaTex text strings. That is, text decorated with
-the usual LaTex commands for figures, tables, and citations (or whatever else you wish to put in your document)
+the usual LaTex commands for figures, tables, and citations (or whatever else you want to insert into your document).
+
+In the current version of Polaris you must manually save (urgh!) your **Justification** texts. We recommend creating
+and editing the texts elsewhere then copy-paste them into Polaris. In future versions of Polaris we will make the
+Justifications a "save as you type" service. 
 
 These texts will be inserted into the following "main.tex" file under the relevant section headings:
 
@@ -53,7 +60,11 @@ These texts will be inserted into the following "main.tex" file under the releva
 ```
 The ellipsis (...) in the file replaces a lengthy section where we define custom "insert figure" functions. These
 functions are described in detail in the _Help_ tab found on the **Justifications** page in Polaris. Also see the
-**Custom Insert Figure Functions** section below.
+[**Custom Insert Figure Functions**](#custom-insert-figure-functions) section below.
+
+We are using our own bibliography style template that (generally) gives only the sufficient details of a reference
+to find the associated article. We've done this in an effort to reduce "bloat" in the _References_ section of the
+compiled document.
 
 The following screenshot shows the Justifications page in Polaris. Please notice that the two **Justification**
 text areas are found in separate tabs labelled _Scientific Justification_ and _Technical Justification_, along with 
@@ -89,8 +100,9 @@ Please note that image formats are restricted to '.jpg', '.png', '.eps', and '.p
 be aware that uploading an image file with the same filename as an existing file
 will overwrite that file, and there will be no warning. You cannot have multiple bibliography files.
 
-We are using our own bibliography style template that (generally) gives only the sufficient details of a reference
-to find the associated article. 
+Justification resource files are considered to be **Supporting Documents** and as such can also be viewed and
+downloaded in the **Documents** section of Polaris. The documents belong to a given proposal and all _Investigators_
+associated with the proposal may view and download the files any other investigator has uploaded.
 
 ## Custom Insert Figure Functions
 
@@ -110,6 +122,9 @@ and 1, defining the width of the figure in terms of the text-width. It defaults 
 0.5 for the single figure cases, and is an even division of the total text-width for
 the multiple figure cases. If supplied, the width parameter for the multiple figure
 cases applies to each of the images in the figure, rather than the whole figure itself.
+The astute among you will have deduced then that the product of the width
+value with the number of figures must not exceed one, else the figures will overflow
+the text.
 
 The **filename** parameter(s) should match the name of the image file(s) that you wish to
 insert. You may exclude the dot extension part of the filename, just remember that the filename
@@ -124,16 +139,12 @@ multiple figure cases, the 'filename' should be the name of the first filename p
 edge-case issue with this labelling strategy. If you have a single figure that uses an image file repeated
 as the first image in a multiple figure command, you'll get a naming conflict. The most straightforward 
 way around this issue would be to exclude the dot extension for one of the filenames. If you're including
-the same image in more than two figures (though you'd better have a good reason for doing this) then you could upload 
+the same image in more than two figures (I mean, _WHY_!?) then you could upload 
 the image with different filenames such that the figure labels will be different.
 
 Notice that the two figure and three figure functions will place the images in a
 single row, whereas the four figure function will place the images in a two-by-two
-arrangement.The astute among you will have deduced then that the product of the width
-value with the number of figures must not exceed one, else the figures will overflow
-the text. In the case of the four-figure command due to the two-by-two arrangement,
-two times the width parameter must not exceed one. For the multiple figure functions,
-each image will be labelled '(a)' through to '(d)' where appropriate.
+arrangement. For the multiple figure functions, each image will be labelled '(a)' through '(d)' where appropriate.
 
 If the multiple figure-caption layout is not to your liking, or you have more than four images to place in a figure,
 then you can always create your own multiple figure as a single image file and use the "onefigure" command.
@@ -144,15 +155,18 @@ or 'r' or 'R' for the image on the right. The uppercase version allows the image
 float, whereas the lowercase version means exactly here. (Our command uses the
 'wrapfigure' environment from the 'wrapfig' package).
 
+Of course, you can entirely ignore these custom insert figure functions and use the standard Latex syntax for
+inserting figures (using the 'graphicx' package). 
+
 # Compiling your Justification
 
-To compile your **Justification** document simply click the _Compile to PDF_ button. We
+To compile your **Justification** document click the _Compile to PDF_ button. We
 recommend keeping 'Warnings as errors' checked. After a short delay waiting for the compilation 
 to complete on the server, a modal will open displaying the status of the compilation.
 
-If you have compilation errors they will be listed in the _Latex Status_ section of the modal.
+If you have compilation errors they will be listed in the _Compilation output_ section of the modal.
 Typically, these will be caused by typos in the LaTex commands or missing resource files. To illustrate
-in the following screenshot we have tried to compile a document with an inserted a figure using
+in the following screenshot we have tried to compile a document with an insert figure command using
 an image file named 'missing' we have yet to upload to the server.
 
 ![polaris Justification compilation failure](polaris-justifications-failure.png)
@@ -169,8 +183,10 @@ If your compilation was successful you will see the following output in the moda
 
 It will give you a page count and a _Download PDF_ button that when clicked downloads the compiled document.
 Another _Download PDF_ button will also appear in the **Justifications** main page. Please be aware that the
-button on the Justifications main page, will download the latest _successfully_ compiled document only.
+button on the Justifications main page, will download the latest _successfully_ compiled document only. That is,
+any edits to your Justification texts that do not compile successfully with not appear in the downloadable
+document (this may be obvious to most of you, but we know what some of you are like).
 
-For your information, you will see a _CYCLE ID HERE_ placeholder in the header of the document. This is for the
+For your information, you will see a "_CYCLE-ID-HERE_" placeholder in the header of the document. This is for the
 Time Allocation Committee (of a particular Proposal Cycle) use only, and is replaced with an actual value upon 
 submission of the proposal to a cycle.
