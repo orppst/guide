@@ -30,8 +30,8 @@ You will notice alongside the _Delete_ button, which will remove the person as a
 the proposal, is a _Swap Role_ button which allows you to switch a person's "type" of **Investigator**;
 PI -> CoI or CoI -> PI. There is a restriction on this: a proposal _must_ have at least one PI. If as
 the only PI you want to swap roles to a CoI, you must first switch a CoI to a PI. We would recommend
-that you inform the current CoI that you wish to switch them to being a PI as a courtesy, but you don't 
-_have_ to in regard to using Polaris. 
+that you inform the CoI that you wish to switch to being a PI as a courtesy, but there are no 
+restrictions in Polaris to enforce this. 
 
 Currently, you cannot edit an existing **Investigator**. If, for example, you forget to check the
 "Is this for a PhD?" checkbox when adding a person as an **Investigator**, you must first _Delete_

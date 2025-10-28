@@ -1,7 +1,7 @@
-If you have made reference to any document in your justifications that is not a "resource file" i.e,
-images that you have inserted as figures and your bibliography file (.bib), then you should upload them
+If you have made reference to any document in your justifications that is not a "resource file"
+(images and the bibliography file), then you should upload them
 in the **Documents** section of the proposal. Please notice that your image files and bibliography file
-use in your justifications are considered **Supporting Documents** so will appear in the list. If you
+used in your justifications are considered **Supporting Documents** so will appear in the list. If you
 have successfully compiled the justification document, "compiledJustification.pdf" will also appear
 in the list. The following screenshot shows the **Documents** upload page:
 
@@ -9,7 +9,7 @@ in the list. The following screenshot shows the **Documents** upload page:
 
 
 File size is restricted to a **maximum of 10 MB**, but you can upload as many files as you like up to
-the storage limitations for a proposal (which is generous).
+the storage limitations for a proposal (which is sufficiently large).
 
 Any specific additional information that is required by an observatory should be uploaded to **Polaris** 
 as a **Supporting Document**. The filename and format of that document should be advertised by the 
