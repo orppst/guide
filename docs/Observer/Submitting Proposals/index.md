@@ -65,7 +65,7 @@ has a mode you may proceed to step 4.
 
 The "eye" button in the _Observing Mode Details_ section will toggle a display of the details of the selected mode. 
 For example, the eMerlin modes show details of the receivers and the correlator involved, and will show which 
-of the telescopes will ideally be used for the observation.
+of the telescopes will be used for the observation in the ideal case.
 
 ## Step 4 - Review selections before submitting
 

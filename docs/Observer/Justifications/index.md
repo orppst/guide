@@ -184,9 +184,11 @@ If your compilation was successful you will see the following output in the moda
 It will give you a page count and a _Download PDF_ button that when clicked downloads the compiled document.
 Another _Download PDF_ button will also appear in the **Justifications** main page. Please be aware that the
 button on the Justifications main page, will download the latest _successfully_ compiled document only. That is,
-any edits to your Justification texts that do not compile successfully with not appear in the downloadable
-document (this may be obvious to most of you, but we know what some of you are like).
+any edits to your Justification texts that do not compile successfully will not appear in the downloadable
+document obtained from the button on the main page (this may be obvious to most of you, but we know what some of you are like).
 
 For your information, you will see a "_CYCLE-ID-HERE_" placeholder in the header of the document. This is for the
 Time Allocation Committee (of a particular Proposal Cycle) use only, and is replaced with an actual value upon 
 submission of the proposal to a cycle.
+
+If you haven't already, please now follow the guide about uploading [**Supporting Documents**](../Supporting%20Documents/index.md).
