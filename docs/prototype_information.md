@@ -10,7 +10,7 @@ experimentation and evaluation. There are some things to be aware of
 
 ## Example Data in the prototype
 
-If you simply want to log-in and see an example proposal without registering yourself, then log in as
+If you simply want to log in and see an example proposal without registering yourself, then log in as
 
 * username: pi
 * password: pi
@@ -18,6 +18,12 @@ If you simply want to log-in and see an example proposal without registering you
 which logs you in as an example Principal Investigator called "John Flamsteed" who already has one proposal prepared.
 
 Then see [instructions for creating a proposal](Observer/Creating%20Proposals/index.md).
+
+## Polaris use at specific organizations
+
+Please see [Organization Specifics](Organization%20Specifics/index.md) to discover what additional details
+organizations using **Polaris** may want to capture about a proposal that cannot be captured by the current
+version of **Polaris** in general.
 
 ## Providing feedback
 

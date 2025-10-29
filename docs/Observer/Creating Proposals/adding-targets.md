@@ -7,7 +7,7 @@ categories: [Examples]
 tags: [test, sample, docs]
 ---
 
-Last updated: 2025-10-21 Polaris _beta_ version
+Last updated **2025-10-24** Polaris _beta_ version.
 
 # Adding a Targets
 
@@ -33,7 +33,7 @@ database. In the screenshot shown the _main-id_ for the Crab Nebula is "M 1".
 
 You may also double-click anywhere on the displayed Sky Atlas. This will centre the Atlas under the
 position you just double-clicked and fill out the form with a "random" target name and the corresponding 
-positional details will be updated in the RA and DEC fields. These will be displayed as sexagesimal with
+coordinates for the RA and DEC fields. These will be displayed as sexagesimal with
 the equivalent degree value displayed under the field box. 
 
 You can also manually fill in the fields, the Sky Atlas will automatically change the view to those 
@@ -72,9 +72,9 @@ where you are required to provide the columns 'name', 'ra', and 'dec' of the tar
 columns may be omitted with the caveat that if you provide one proper-motion ('pm') column, you must provide the
 other. The names can only be ASCII characters and the other values are integer or decimal digits. All units are in degrees 
 or degrees per second for rates. The order of the columns is not important (to the code at least, 
-to your sanity maybe). Any optional data value i.e., 'pmra', 'pmdec', 'plx', 'rv', that isn't available but for which
-you have a column should be left blank e.g., the target 'alpha' in the (made-up) list above has no parallax data. Again
-we recommend using either one of the other two formats to add a list of targets.
+to your sanity maybe). Any optional data value i.e., 'pmra', 'pmdec', 'plx', 'rv' (radial velocity), that isn't available but for which
+you have a column should be left blank e.g., the target 'alpha' in the (made-up) list above has no parallax ('plx') data.
+Again we recommend using either one of the other two formats to add a list of targets.
 
 ## Next Step
 

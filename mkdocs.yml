@@ -13,8 +13,15 @@ nav:
           - Building an Observation: Observer/Creating Proposals/build-observation.md
       - Justifications:
           - Creating and Compiling: Observer/Justifications/index.md
+      - Supporting Documents:
+          - Uploading: Observer/Supporting Documents/index.md
+      - Investigators:
+          - Management: Observer/Investigators/index.md
       - Submitting Proposals:
           - Submitting: Observer/Submitting Proposals/index.md
+  - Organization Specifics:
+      - Polaris: Organization Specifics/index.md
+      - eMERLIN: Organization Specifics/eMERLIN/index.md
   - TAC:
       - Getting Started: TAC/index.md
   - Observatory:
