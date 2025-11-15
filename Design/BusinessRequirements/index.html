@@ -1,0 +1,3164 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../PurposeAndScope/">
+      
+      
+        <link rel="next" href="../BusinessRules/">
+      
+      
+      <link rel="icon" href="../../assets/icons/polaris_square_icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.25">
+    
+    
+      
+        <title>Business Requirements - Polaris</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#business-requirements" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Polaris" class="md-header__button md-logo" aria-label="Polaris" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Polaris
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Business Requirements
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/orppst/guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Observer/" class="md-tabs__link">
+          
+  
+  Observer
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Organization%20Specifics/" class="md-tabs__link">
+          
+  
+  Organization Specifics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../TAC/" class="md-tabs__link">
+          
+  
+  TAC
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Observatory/" class="md-tabs__link">
+          
+  
+  Observatory
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Developer/" class="md-tabs__link">
+          
+  
+  Developer
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Polaris" class="md-nav__button md-logo" aria-label="Polaris" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    Polaris
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/orppst/guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Observer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Observer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Observer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Creating Proposals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Creating Proposals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Observer/Creating%20Proposals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    First Steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Observer/Creating%20Proposals/adding-targets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adding Targets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Observer/Creating%20Proposals/adding-technical-goals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adding Technical Goals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Observer/Creating%20Proposals/build-observation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building an Observation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Justifications
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Justifications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Observer/Justifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creating and Compiling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Supporting Documents
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Supporting Documents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Observer/Supporting%20Documents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Uploading
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Investigators
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Investigators
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Observer/Investigators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Submitting Proposals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Submitting Proposals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Observer/Submitting%20Proposals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Submitting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Organization Specifics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Organization Specifics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Organization%20Specifics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Polaris
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Organization%20Specifics/eMERLIN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    eMERLIN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TAC
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            TAC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Observatory
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Observatory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Observatory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Developer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Developer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Developer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Developer/use-cases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use Cases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Developer/architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Developer/ProposalDM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Developer/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_5" id="__nav_6_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Design
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Approach/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Approach
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PurposeAndScope/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Purpose and Scope
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Business Requirements
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Business Requirements
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#primary-actors-and-their-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primary actors and their goals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business use cases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-uses-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      System uses cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System uses cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apply-to-use-polaris" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apply to use Polaris
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choose-a-polaris-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choose a Polaris activity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polaris-reference-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polaris reference data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observatory-reference-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observatory reference data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      View proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submit-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Submit proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#withdraw-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Withdraw proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clone-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clone proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Review proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revoke-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Revoke allocation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common use cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common use cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maintain-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintain documents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintain-investigators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintain investigators
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintain-justifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintain justifications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintain-observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintain observations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintain-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintain targets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintain-title-and-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintain title and summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BusinessRules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Business Rules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Components
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NFRs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Non-functional Requirements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2_6" id="__nav_6_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Project Management
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Project Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project%20Management/ProjectManagement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project%20Management/DeliveryPlan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Delivery Plan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Deployment
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Deployment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#primary-actors-and-their-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primary actors and their goals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business use cases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-uses-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      System uses cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System uses cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apply-to-use-polaris" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apply to use Polaris
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choose-a-polaris-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choose a Polaris activity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polaris-reference-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polaris reference data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observatory-reference-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observatory reference data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      View proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submit-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Submit proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#withdraw-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Withdraw proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clone-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clone proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Review proposal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revoke-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Revoke allocation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common use cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common use cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maintain-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintain documents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintain-investigators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintain investigators
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintain-justifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintain justifications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintain-observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintain observations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintain-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintain targets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintain-title-and-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintain title and summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/orppst/guide/edit/main/docs/Design/BusinessRequirements.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="business-requirements"><strong><em>Business Requirements</em></strong></h1>
+<h2 id="primary-actors-and-their-goals"><strong>Primary actors and their goals</strong></h2>
+<p>Polaris users are defined in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Actor</th>
+<th>Description and Goals</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AAI system</td>
+<td>Create Polaris account for applicant.<br>AAI does little if any checking, we would like it to check the applicant’s email address and membership of an academic institution – see Dependencies</td>
+</tr>
+<tr>
+<td>AAI user</td>
+<td>Any user of Polaris, a user can have many roles.<br>The AAI system will grant access to Polaris for verified prospective users.</td>
+</tr>
+<tr>
+<td>Co-Investigator</td>
+<td>Assists Principal Investigator in assembling observing proposals.</td>
+</tr>
+<tr>
+<td>Investigator</td>
+<td>Collective term for Principal Investigator and Co-Investigator</td>
+</tr>
+<tr>
+<td>Observatory Administrator</td>
+<td>Maintains detailed descriptions of their observatory.  <br>Associates known users with their observatory. <br>Assigns known observatory users to be members of their observatory’s Time Allocation Committee (TAC).</td>
+</tr>
+<tr>
+<td>Principal Investigator</td>
+<td>Creates and maintains observing proposals.<br>Assigns zero or more users to be a co-investigator.</td>
+</tr>
+<tr>
+<td>Polaris</td>
+<td>The web application (system)</td>
+</tr>
+<tr>
+<td>Polaris-user</td>
+<td>Collective term for any Polaris user</td>
+</tr>
+<tr>
+<td>Reviewer</td>
+<td>Collective term for scientific and technical reviewers.<br>Reviews submitted observing proposals as instructed by the TAC. <br>The reviewer does not necessarily have to be a member of the TAC – in fact one of the driving design goals of PST is to allow “anonymous” community reviewing.</td>
+</tr>
+<tr>
+<td>Scientific Reviewer</td>
+<td>Reviews a proposal from a scientific point of view awarding a score to each proposal</td>
+</tr>
+<tr>
+<td>System Administrator</td>
+<td>The System Administrator will be assigned from outside the system when it is first deployed. <br>Manages system reference data including user roles and assigning a known user to be a System Administrator. <br>Creates a record for each participating observatory with minimal data, viz, observatory name and address, and TAC Chairman.</td>
+</tr>
+<tr>
+<td>TAC Chair</td>
+<td>Chairs Time Allocation Committee</td>
+</tr>
+<tr>
+<td>TAC</td>
+<td>Responsible for ranking the reviewed proposals and then allocating observing time based on the rankings and the requested resources.<br>Manages observations schedule (not within Polaris).</td>
+</tr>
+<tr>
+<td>Technical Reviewer</td>
+<td>Reviews a proposal from a technical point of view – checks that it is feasible (and probably scores)</td>
+</tr>
+<tr>
+<td>Viewer</td>
+<td>Collective term for Investigator and Reviewer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="business-use-cases"><strong>Business use cases</strong></h2>
+<table>
+<thead>
+<tr>
+<th><strong>As a</strong></th>
+<th><strong>I want to</strong></th>
+<th><strong>So that</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>System Administrator</td>
+<td>maintain system reference data</td>
+<td>astronomers can readily assemble valid observing proposals.</td>
+</tr>
+<tr>
+<td></td>
+<td>manage user roles in Polaris</td>
+<td>users get access to the information and features that they need.</td>
+</tr>
+<tr>
+<td></td>
+<td>set up basic observatory data (name etc) and assign an observatory administrator to it</td>
+<td>observatory data can be maintained<br> (see observatory administrator details)</td>
+</tr>
+<tr>
+<td>Observatory administrator</td>
+<td>maintain observatory details and inventory for my observatory, such as proposal cycles, and available resources such as instruments and telescopes</td>
+<td>astronomers are aware of the available facilities.</td>
+</tr>
+<tr>
+<td></td>
+<td>publish future proposal cycles</td>
+<td>astronomers can apply to use the available observatory resources at a suitable time.<br>(This function might be undertaken by TAC Chair)</td>
+</tr>
+<tr>
+<td>Astronomer</td>
+<td>create an observing proposal for submission to a suitable observatory</td>
+<td>I can test my hypothesis by experiment.</td>
+</tr>
+<tr>
+<td></td>
+<td>be informed of the TAC’s decision on my proposal</td>
+<td>I can consider next steps.</td>
+</tr>
+<tr>
+<td></td>
+<td>clone any proposal of mine</td>
+<td>I can edit and submit it to one or more observatories</td>
+</tr>
+<tr>
+<td></td>
+<td>import a proposal created in an external system</td>
+<td>I can make use of material generated by non-Polaris investigators</td>
+</tr>
+<tr>
+<td></td>
+<td>export a proposal</td>
+<td>I can read it offline<br>its contents can be shared with non-Polaris investigators</td>
+</tr>
+<tr>
+<td>Reviewer</td>
+<td>identify submitted observing proposals awaiting a decision</td>
+<td>I can assign a score to them to enable the TAC to make a decision regarding allocation of observing time</td>
+</tr>
+<tr>
+<td></td>
+<td>export a proposal</td>
+<td>I can read it offline</td>
+</tr>
+<tr>
+<td>TAC Chair</td>
+<td>invite other users to join the TAC</td>
+<td>the TAC can function</td>
+</tr>
+<tr>
+<td>TAC member</td>
+<td>consider reviewed proposals</td>
+<td>Allocate observing time to suitable proposals, and exceptionally revoke previously allocated proposals when necessary.</td>
+</tr>
+<tr>
+<td></td>
+<td>export a proposal</td>
+<td>I can read it offline</td>
+</tr>
+</tbody>
+</table>
+<h2 id="system-uses-cases"><strong>System uses cases</strong></h2>
+<p>There are many Business Rules governing individual use cases, and there is a general <a href="../NFRs/#inactivity"><strong><em>Inactivity</em></strong></a> non-functional requirement covering all use cases.</p>
+<p>This document does not describe the interaction between Polaris and the database management system, but it is the case that Polaris must respond gracefully to any failures. Polaris will preserve the integrity and consistency of the data. The data models can be found <a href="https://github.com/ivoa/ProposalDM"><strong><em>here</em></strong></a></p>
+<p>These use cases are presented in rough order of the natural process flow.</p>
+<h3 id="apply-to-use-polaris"><em>Apply to use Polaris</em></h3>
+<p>Somebody wants to be able to use Polaris. They apply for access via AAI which will send them login credentials as an astronomer if approved.</p>
+<h3 id="choose-a-polaris-activity"><em>Choose a Polaris activity</em></h3>
+<p>See business rule <a href="../BusinessRules/#home-page-features"><strong><em>Home page features</em></strong></a></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Actor</td>
+<td>Polaris-user</td>
+</tr>
+<tr>
+<td>Preconditions</td>
+<td></td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>Polaris-user has opened the application</td>
+</tr>
+<tr>
+<td>Main Success Scenario</td>
+<td>10 Polaris presents Home page offering Polaris-users options consistent with their Polaris role<br>20 Polaris-user selects options until finished.<ul><li><a href="#polaris-reference-data"><strong><em>Polaris reference data</em></strong></a></li><li><a href="#observatory-reference-data"><strong><em>Observatory reference data</em></strong></a></li><li><a href="#create-proposal"><strong><em>Create proposal</em></strong></a></li><li><a href="#import-proposal"><strong><em>Import proposal</em></strong></a></li><li><a href="#view-proposal"><strong><em>View proposal</em></strong></a></li><li><a href="#submit-proposal"><strong><em>Submit proposal</em></strong></a></li><li><a href="#withdraw-proposal"><strong><em>Withdraw proposal</em></strong></a></li><li><a href="#review-proposal"><strong><em>Review proposal</em></strong></a></li></ul><br>30 Polaris user logs out</td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td></td>
+</tr>
+<tr>
+<td>Occurrence</td>
+<td>Frequent</td>
+</tr>
+<tr>
+<td>Success Guarantee</td>
+<td>Polaris-user is given access to the desired information and functionality</td>
+</tr>
+<tr>
+<td>Minimal Guarantee</td>
+<td>Nothing happens</td>
+</tr>
+<tr>
+<td>Open Issues</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="polaris-reference-data"><em>Polaris reference data</em></h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Actor</td>
+<td>System Administrator (sysadmin)</td>
+</tr>
+<tr>
+<td>Preconditions</td>
+<td></td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>sysadmin has chosen to Maintain Polaris system reference data</td>
+</tr>
+<tr>
+<td>Main Success Scenario</td>
+<td>10 Polaris presents a menu of Polaris system reference data from which the sysadmin selects until finished<br><ul><li>Person</li><li>Organization</li><li>Observatory</li><li>Observatory Administrator</li><li>System Administrator</li></ul><br>20 sysadmin chooses which data to view<br>30 Polaris retrieves and displays selected data<br>40 sysadmin makes changes and saves them<br>50 Polaris confirms changes saved, executes <a href="../Components/#audit-activity"><strong><em>Audit activity</em></strong></a>, go to step 20</td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td>20a sysadmin ends request, Polaris follows next user request<br>40a sysadmin discards changes, go to step 20</td>
+</tr>
+<tr>
+<td>Occurrence</td>
+<td>Occasional</td>
+</tr>
+<tr>
+<td>Success Guarantee</td>
+<td>Polaris system reference data has been maintained</td>
+</tr>
+<tr>
+<td>Minimal Guarantee</td>
+<td>Nothing happens</td>
+</tr>
+<tr>
+<td>Open Issues</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="observatory-reference-data"><em>Observatory reference data</em></h3>
+<p>Note that there will almost certainly be no GUI for this activity as it will be infrequent and managed by a scriptable command line interface.
+See business rule <a href="../BusinessRules/#proposal-cycle"><strong><em>Proposal cycle</em></strong></a></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Actor</td>
+<td>Observatory Administrator (obsadmin), TAC Chair</td>
+</tr>
+<tr>
+<td>Preconditions</td>
+<td></td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>Either user has chosen to Maintain Polaris observatory reference data</td>
+</tr>
+<tr>
+<td>Main Success Scenario</td>
+<td>Each of MSS steps 20 – 50 are optional <br><br>Polaris confirms when any changes have been saved and executes <a href="../Components/#audit-activity"><strong><em>Audit activity</em></strong></a><br><br>10 Polaris presents a menu of Polaris observatory reference data, from which the user selects until finished<br> <ul><li>Administration - obsadmin only</li><li>Organization - obsadmin only</li><li>Resources - obsadmin only</li><li>Time Allocation Committee - both</li><li>Proposal cycles - both</li></ul><br>20 obsadmin maintains the observatory’s organization details, observatory instruments with a spectral window setup for each, observatory telescopes, equipment arrays and configurations, and the TAC Chair<br>30 TAC Chair maintains TAC members<br>40 TAC Chair maintains proposal cycles each with their available resources<br>50 TAC Chairs nominates a Polaris user as a Reviewer of a submitted proposal</td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td>20a obsadmin ends request, Polaris follows next request <br> 30a TAC Chair ends request, Polaris follows next request  <br> 40a TAC Chair ends request, Polaris follows next request <br> 50a TAC Chair ends request, Polaris follows next request</td>
+</tr>
+<tr>
+<td>Occurrence</td>
+<td>Occasional</td>
+</tr>
+<tr>
+<td>Success Guarantee</td>
+<td>Polaris observatory reference data has been maintained</td>
+</tr>
+<tr>
+<td>Minimal Guarantee</td>
+<td>Nothing happens</td>
+</tr>
+<tr>
+<td>Open Issues</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="create-proposal"><em>Create proposal</em></h3>
+<p>See business rule <a href="../BusinessRules/#creating-a-proposal"><strong><em>Creating a proposal</em></strong></a></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Actor</td>
+<td>Principal Investigator (PI)</td>
+</tr>
+<tr>
+<td>Preconditions</td>
+<td></td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>PI selects Create</td>
+</tr>
+<tr>
+<td>Main Success Scenario</td>
+<td>10 Polaris Assigns PI and presents the proposal maintenance page with the following options from which the PI selects until finished <ul><li><a href="#maintain-title-and-summary"><strong><em>Create title and summary</em></strong></a></li><li><a href="#maintain-investigators"><strong><em>Create investigators</em></strong></a></li><li><a href="#maintain-justifications"><strong><em>Create justifications</em></strong></a></li><li><a href="#maintain-targets"><strong><em>Create targets</em></strong></a></li><li><a href="#maintain-observations"><strong><em>Create observations</em></strong></a></li><li><a href="#maintain-documents"><strong><em>Add documents</em></strong></a></li></ul>20 PI supplies data and saves<br>30 Polaris confirms changes saved, executes <a href="../Components/#audit-activity"><strong><em>Audit activity</em></strong></a><br>40 Polaris follows next user request</td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td>20a PI discards changes, go to step 20<br>20b PI ends request, Polaris follows next user request</td>
+</tr>
+<tr>
+<td>Occurrence</td>
+<td>Frequent</td>
+</tr>
+<tr>
+<td>Success Guarantee</td>
+<td>A new observing proposal has been created</td>
+</tr>
+<tr>
+<td>Minimal Guarantee</td>
+<td>Nothing happens</td>
+</tr>
+<tr>
+<td>Open Issues</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="import-proposal"><em>Import proposal</em></h3>
+<p>See business rule <a href="../BusinessRules/#document-exchange-format"><strong><em>Document exchange format</em></strong></a></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Actor</td>
+<td>Principal Investigator (PI)</td>
+</tr>
+<tr>
+<td>Preconditions</td>
+<td>A proposal has been created in an external system</td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>Investigator selects Import proposal from the Homepage</td>
+</tr>
+<tr>
+<td>Main Success Scenario</td>
+<td>10 Polaris displays operating system file management window<br>20 PI selects file to import<br>30 Polaris confirms selected document has been imported and a proposal created from it, sets its status to <em>Created</em>, assigns PI to imported proposal, and executes <a href="../Components/#audit-activity"><strong><em>Audit activity</em></strong></a><br>40 PI goes to step 10</td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td>20a PI ends request, Polaris follows next user request<br>30a Selected file is not in approved Polaris Exchange Format, Polaris displays error message, goes to step 10<br>40a PI ends request, Polaris follows next user request</td>
+</tr>
+<tr>
+<td>Occurrence</td>
+<td>??</td>
+</tr>
+<tr>
+<td>Success Guarantee</td>
+<td>Externally generated proposal has been imported into Polaris, can be viewed by a Viewer</td>
+</tr>
+<tr>
+<td>Minimal Guarantee</td>
+<td>Nothing happens</td>
+</tr>
+<tr>
+<td>Open Issues</td>
+<td>Where is the approved Polaris Exchange Format declared?<br>How often will this happen?</td>
+</tr>
+</tbody>
+</table>
+<h3 id="export-proposal"><em>Export proposal</em></h3>
+<p>See business rule <a href="../BusinessRules/#document-exchange-format"><strong><em>Document exchange format</em></strong></a></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Actor</td>
+<td>Viewer</td>
+</tr>
+<tr>
+<td>Preconditions</td>
+<td>A proposal exists</td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>Viewer selects Export proposal while viewing it</td>
+</tr>
+<tr>
+<td>Main Success Scenario</td>
+<td>10 Polaris displays operating system file management window <br>20 Viewer selects destination<br>30 Polaris confirms proposal has been exported and executes <a href="../Components/#audit-activity"><strong><em>Audit activity</em></strong></a><br>40 Viewer goes to step 10</td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td>20a Viewer ends request, Polaris follows next user request</td>
+</tr>
+<tr>
+<td>Occurrence</td>
+<td>Frequent</td>
+</tr>
+<tr>
+<td>Success Guarantee</td>
+<td>Selected proposal has been exported from Polaris</td>
+</tr>
+<tr>
+<td>Minimal Guarantee</td>
+<td>Nothing happens</td>
+</tr>
+<tr>
+<td>Open Issues</td>
+<td>Where is the approved Polaris Exchange Format declared?</td>
+</tr>
+</tbody>
+</table>
+<h3 id="view-proposal"><em>View proposal</em></h3>
+<p>See business rules <a href="../BusinessRules/#viewing-a-proposal"><strong><em>Viewing a proposal</em></strong></a>, <a href="../BusinessRules/#editing-a-proposal"><strong><em>Editing a proposal</em></strong></a>, and <a href="../BusinessRules/#document-exchange-format"><strong><em>Document exchange format</em></strong></a></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Actor</td>
+<td>Viewer</td>
+</tr>
+<tr>
+<td>Preconditions</td>
+<td></td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>Viewer selects View</td>
+</tr>
+<tr>
+<td>Main Success Scenario</td>
+<td>10 Polaris displays a summary list of proposals including Title, Summary, and Status.<br>20 Viewer selects from the list and views selected proposal until finished, optionally choosing another proposal from the list<br><ul><li><a href="#maintain-title-and-summary"><strong><em>View title and summary</em></strong></a></li><li><a href="#maintain-investigators"><strong><em>View investigators</em></strong></a></li><li><a href="#maintain-justifications"><strong><em>View justifications</em></strong></a></li><li><a href="#maintain-targets"><strong><em>View targets</em></strong></a></li><li><a href="#maintain-observations"><strong><em>View observations</em></strong></a></li><li><a href="#maintain-documents"><strong><em>View documents</em></strong></a></li><li><a href="#export-proposal"><strong><em>Export proposal</em></strong></a></li><li>Delete proposal</li></ul></td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td>20a Viewer ends request, Polaris follows next user request<br>20b if Viewer selects <em>Delete proposal</em> then Polaris prompts for confirmation and if Viewer confirms then Polaris deletes it</td>
+</tr>
+<tr>
+<td>Occurrence</td>
+<td>Frequent</td>
+</tr>
+<tr>
+<td>Success Guarantee</td>
+<td>Observing proposal has been viewed, including the possibility of editing or deleting it.</td>
+</tr>
+<tr>
+<td>Minimal Guarantee</td>
+<td>Nothing happens</td>
+</tr>
+<tr>
+<td>Open Issues</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="submit-proposal"><em>Submit proposal</em></h3>
+<p>See business rule <a href="../BusinessRules/#submitting-a-proposal"><strong><em>Submitting a proposal</em></strong></a></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Actor</td>
+<td>Principal Investigator (PI)</td>
+</tr>
+<tr>
+<td>Preconditions</td>
+<td>Observing proposal has been completed by the investigators</td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>PI selects Submit</td>
+</tr>
+<tr>
+<td>Main Success Scenario</td>
+<td>10 Polaris executes <a href="../Components/#verify-submission"><strong><em>Verify Submission</em></strong></a> and <a href="../Components/#discover-cycles"><strong><em>Discover cycles</em></strong></a> and for any selected proposal displays a list of suitable observatories and proposal cycles<br>20 PI selects one or more observatory/ proposal cycles and saves<br>30 Polaris confirms proposal submitted, changes the status to <em>Submitted</em>, executes <a href="../Components/#audit-activity"><strong><em>Audit activity</em></strong></a>, executes <a href="../Components/#informs"><strong><em>Informs</em></strong></a> the relevant TAC, and follows next user request</td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td>20a There are no proposals suitable for submission, Polaris displays a message and awaits next user request once the PI has cleared<br>20b There are no proposal cycles available for this proposal, Polaris displays a message and awaits next user request once the PI has cleared<br>20c PI discards changes, go to step20<br>20d PI ends request, Polaris follows next user request</td>
+</tr>
+<tr>
+<td>Occurrence</td>
+<td>As the proposal cycle deadline draws near, the rate of submissions will probably increase, and many if not most of them are expected to be in the week before the deadline.</td>
+</tr>
+<tr>
+<td>Success Guarantee</td>
+<td>Observing proposal is submitted to the selected observatory</td>
+</tr>
+<tr>
+<td>Minimal Guarantee</td>
+<td>Nothing happens</td>
+</tr>
+<tr>
+<td>Open Issues</td>
+<td>There is no means as yet to<br>...capture and store the result of multiple submissions for a single proposal - it may be rejected by one observatory but accepted by another<br>...capture and store the fact that the observations have been completed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="withdraw-proposal"><em>Withdraw proposal</em></h3>
+<p>See business rule <a href="../BusinessRules/#withdrawing-a-proposal"><strong><em>Withdrawing a proposal</em></strong></a></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Actor</td>
+<td>Principal Investigator (PI)</td>
+</tr>
+<tr>
+<td>Preconditions</td>
+<td>Observing proposal has previously been submitted by the PI</td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>PI selects Submitted</td>
+</tr>
+<tr>
+<td>Main Success Scenario</td>
+<td>10 Polaris executes <a href="../Components/#withdrawal-search"><strong><em>Withdrawal search</em></strong></a> for submissions<br>20 PI selects from the list and requests Withdrawal<br>30 Polaris confirms withdrawal, and changes proposal status to <em>Withdrawn</em>, executes <a href="../Components/#audit-activity"><strong><em>Audit activity</em></strong></a>, and executes <a href="../Components/#informs"><strong><em>Informs</em></strong></a> the TAC and PI<br>40 PI go to step 20</td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td>20a PI discards changes, go to step 20<br>20b PI ends request, Polaris follows next user request</td>
+</tr>
+<tr>
+<td>Occurrence</td>
+<td>Rare</td>
+</tr>
+<tr>
+<td>Success Guarantee</td>
+<td>Withdrawal decision has been submitted to the selected observatory and their TAC has been made aware of this, with copy to PI.</td>
+</tr>
+<tr>
+<td>Minimal Guarantee</td>
+<td>Nothing happens</td>
+</tr>
+<tr>
+<td>Open Issues</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="clone-proposal"><em>Clone proposal</em></h3>
+<p>See business rule <a href="../BusinessRules/#creating-a-proposal"><strong><em>Creating a proposal</em></strong></a></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Actor</td>
+<td>Principal Investigator (PI)</td>
+</tr>
+<tr>
+<td>Preconditions</td>
+<td>PI is viewing one of their proposals</td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>PI selects Clone</td>
+</tr>
+<tr>
+<td>Main Success Scenario</td>
+<td>10 Polaris makes a copy of the proposal being viewed, Assigns PI to it, and presents the proposal maintenance page with the following options from which the PI selects until finished<ul><li><a href="#maintain-title-and-summary"><strong><em>Edit title and summary</em></strong></a></li><li><a href="#maintain-investigators"><strong><em>Edit investigators</em></strong></a></li><li><a href="#maintain-justifications"><strong><em>Edit justifications</em></strong></a></li><li><a href="#maintain-targets"><strong><em>Edit targets</em></strong></a></li><li><a href="#maintain-observations"><strong><em>Edit observations</em></strong></a></li><li><a href="#maintain-documents"><strong><em>Maintain documents</em></strong></a></li><li><a href="#submit-proposal"><strong><em>Submit proposal</em></strong></a></li></ul><br>20 PI supplies data and saves<br>30 Polaris confirms changes saved, executes <a href="../Components/#audit-activity"><strong><em>Audit activity</em></strong></a><br>40 Polaris follows next user request</td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td>20a PI discards changes, go to step 20<br>20b PI ends request, Polaris follows next user request</td>
+</tr>
+<tr>
+<td>Occurrence</td>
+<td>Frequent</td>
+</tr>
+<tr>
+<td>Success Guarantee</td>
+<td>A new observing proposal has been created</td>
+</tr>
+<tr>
+<td>Minimal Guarantee</td>
+<td>Nothing happens</td>
+</tr>
+<tr>
+<td>Open Issues</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="review-proposal"><em>Review proposal</em></h3>
+<p>See business rules <a href="../BusinessRules/#reviewing-a-proposal"><strong><em>Reviewing a proposal</em></strong></a> and <a href="../BusinessRules/#document-exchange-format"><strong><em>Document exchange format</em></strong></a></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Actor</td>
+<td>Reviewer</td>
+</tr>
+<tr>
+<td>Preconditions</td>
+<td>One or more observing proposals have been submitted to the Reviewer’s observatory</td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>Reviewer selects Review</td>
+</tr>
+<tr>
+<td>Main Success Scenario</td>
+<td>10 Polaris executes <a href="../Components/#reviewer-search"><strong><em>Reviewer Search</em></strong></a><br>20 Reviewer selects a result from the list to view<br>30 Polaris displays the selected proposal<br>40 Reviewer reads proposal online, and/ or Exports it<br><ul><li><a href="#maintain-title-and-summary"><strong><em>View title and summary</em></strong></a></li><li><a href="#maintain-justifications"><strong><em>View Justifications</em></strong></a></li><li><a href="#maintain-targets"><strong><em>View Targets</em></strong></a></li><li><a href="#maintain-observations"><strong><em>View Observations</em></strong></a></li><li><a href="#maintain-documents"><strong><em>View Documents</em></strong></a></li><li><a href="#export-proposal"><strong><em>Export proposal</em></strong></a></li></ul><br>50 Reviewer assigns a score to the proposal, adds a comment, and saves<br>60 Polaris confirms changes saved, Assigns Reviewer to the proposal, changes the proposal status to <em>Scored</em>, executes <a href="../Components/#audit-activity"><strong><em>Audit activity</em></strong></a></td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td>20a Reviewer ends request, Polaris follows next user request<br>20b Result list is empty, Reviewer ends request, Polaris follows next user request<br>50a Viewer discards, or ends request, Polaris follows next user request</td>
+</tr>
+<tr>
+<td>Occurrence</td>
+<td>Frequent</td>
+</tr>
+<tr>
+<td>Success Guarantee</td>
+<td>A decision has been captured about the proposal</td>
+</tr>
+<tr>
+<td>Minimal Guarantee</td>
+<td>Nothing happens</td>
+</tr>
+<tr>
+<td>Open Issues</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="revoke-allocation"><em>Revoke allocation</em></h3>
+<p>See business rule <a href="../BusinessRules/#revoking-an-allocation"><strong><em>Revoking an allocation</em></strong></a></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Actor</td>
+<td>TAC Chair</td>
+</tr>
+<tr>
+<td>Preconditions</td>
+<td>A proposal exists</td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>TAC Chair selects revoke an allocation while viewing allocations</td>
+</tr>
+<tr>
+<td>Main Success Scenario</td>
+<td>10 Polaris displays allocations panel showing future cycle allocations<br>20 TAC Chair selects an allocation to be revoked<br>30 Polaris changes proposal status to <em>Revoked</em>, and executes <a href="../Components/#audit-activity"><strong><em>Audit activity</em></strong></a>, and <a href="../Components/#informs"><strong><em>Informs</em></strong></a> the TAC and PI<br>40 TAC Chair ends request, Polaris follows next user request</td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td>20a TAC Chair ends request, Polaris follows next user request</td>
+</tr>
+<tr>
+<td>Occurrence</td>
+<td>Rare</td>
+</tr>
+<tr>
+<td>Success Guarantee</td>
+<td>Allocation has been revoked</td>
+</tr>
+<tr>
+<td>Minimal Guarantee</td>
+<td>Nothing happens</td>
+</tr>
+<tr>
+<td>Open Issues</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="common-use-cases"><strong>Common use cases</strong></h2>
+<h3 id="maintain-documents"><em>Maintain documents</em></h3>
+<p>This provides the means to create, view, and edit a proposal but see business rules <a href="../BusinessRules/#creating-a-proposal"><strong><em>Creating a proposal</em></strong></a>, <a href="../BusinessRules/#viewing-a-proposal"><strong><em>Viewing a proposal</em></strong></a>, and <a href="../BusinessRules/#editing-a-proposal"><strong><em>Editing a proposal</em></strong></a></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Actor</td>
+<td>Viewer</td>
+</tr>
+<tr>
+<td>Preconditions</td>
+<td>A proposal exists</td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>Investigator selects Create Documents while creating a proposal<br>Investigator or Reviewer selects View Documents while viewing a proposal<br>Investigator selects Edit while viewing Documents</td>
+</tr>
+<tr>
+<td>Main Success Scenario</td>
+<td>20 PI selects open document<br>30 Polaris opens and displays document<br>40 PI selects Upload document<br>50 Polaris displays operating system file management window<br>60 PI selects document<br>70 Polaris confirms document has been uploaded and executes <a href="../Components/#audit-activity"><strong><em>Audit activity</em></strong></a><br>80 Viewer selects document and Download document<br>90 Polaris displays operating system file management window<br>100 Viewer selects destination <br>110 Polaris confirms document has been downloaded and executes <a href="../Components/#audit-activity"><strong><em>Audit activity</em></strong></a><br>120 Viewer goes to step 40</td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td>20a Viewer does not select open, go to step 40<br>20b Viewer ends request, Polaris follows next request<br>40a PI does not select Upload, go to step 80<br>40b PI ends request, Polaris follows next request<br>60a PI ends request, Polaris follows next request<br>80a Viewer ends request, Polaris follows next request<br>100a Viewer ends request, Polaris follows next request</td>
+</tr>
+<tr>
+<td>Occurrence</td>
+<td>Frequent</td>
+</tr>
+<tr>
+<td>Success Guarantee</td>
+<td>All documents displayed, optionally downloaded by Viewer, or added to by Investigator</td>
+</tr>
+<tr>
+<td>Minimal Guarantee</td>
+<td>Nothing happens</td>
+</tr>
+<tr>
+<td>Open Issues</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="maintain-investigators"><em>Maintain investigators</em></h3>
+<p>This provides the means to create, view, and edit a proposal but see business rules <a href="../BusinessRules/#creating-a-proposal"><strong><em>Creating a proposal</em></strong></a>, <a href="../BusinessRules/#viewing-a-proposal"><strong><em>Viewing a proposal</em></strong></a> and <a href="../BusinessRules/#editing-a-proposal"><strong><em>Editing a proposal</em></strong></a></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Actor</td>
+<td>Viewer</td>
+</tr>
+<tr>
+<td>Preconditions</td>
+<td>A proposal exists</td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>Investigator selects Create investigators while creating a proposal<br>Investigator or Reviewer selects View Investigators while viewing a proposal<br>Investigator selects Edit while viewing investigators</td>
+</tr>
+<tr>
+<td>Main Success Scenario</td>
+<td>10 Polaris displays the Investigators panel showing Principal Investigator and any Co-Investigators<br>20 Principal Investigator adds or removes one or more Co-Investigators from a list of available investigators, and saves<br>30 Polaris confirms changes saved, executes <a href="../Components/#audit-activity"><strong><em>Audit activity</em></strong></a>, go to step 20</td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td>20a Investigator ends request, Polaris awaits next user request<br>20b PI discards, go to step 20</td>
+</tr>
+<tr>
+<td>Occurrence</td>
+<td></td>
+</tr>
+<tr>
+<td>Success Guarantee</td>
+<td>All investigators displayed, optionally added to by PI</td>
+</tr>
+<tr>
+<td>Minimal Guarantee</td>
+<td>Nothing happens</td>
+</tr>
+<tr>
+<td>Open Issues</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="maintain-justifications"><em>Maintain justifications</em></h3>
+<p>This provides the means to create, view, and edit a proposal but see business rules <a href="../BusinessRules/#creating-a-proposal"><strong><em>Creating a proposal</em></strong></a>, <a href="../BusinessRules/#viewing-a-proposal"><strong><em>Viewing a proposal</em></strong></a> and <a href="../BusinessRules/#editing-a-proposal"><strong><em>Editing a proposal</em></strong></a></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Actor</td>
+<td>Viewer</td>
+</tr>
+<tr>
+<td>Preconditions</td>
+<td>A proposal exists</td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>Investigator selects Create Justifications while creating a proposal<br>Investigator or Reviewer selects View Justifications while viewing a proposal<br>Investigator selects Edit while viewing Justifications</td>
+</tr>
+<tr>
+<td>Main Success Scenario</td>
+<td>10 Polaris displays the justifications panel showing scientific and technical justifications<br>20 Investigator changes justifications, and saves<br>30 Polaris confirms changes saved, executes <a href="../Components/#audit-activity"><strong><em>Audit activity</em></strong></a>, go to step 20</td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td>20a Viewer ends request, Polaris follows next user request<br>20b Investigator discards, go to step 20<br></td>
+</tr>
+<tr>
+<td>Occurrence</td>
+<td></td>
+</tr>
+<tr>
+<td>Success Guarantee</td>
+<td>All justifications displayed, optionally added to by Investigator</td>
+</tr>
+<tr>
+<td>Minimal Guarantee</td>
+<td>Nothing happens</td>
+</tr>
+<tr>
+<td>Open Issues</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="maintain-observations"><em>Maintain observations</em></h3>
+<p>This provides the means to create, view, and edit a proposal but see business rules <a href="../BusinessRules/#creating-a-proposal"><strong><em>Creating a proposal</em></strong></a>, <a href="../BusinessRules/#viewing-a-proposal"><strong><em>Viewing a proposal</em></strong></a>, <a href="../BusinessRules/#editing-a-proposal"><strong><em>Editing a proposal</em></strong></a>, and <a href="../BusinessRules/#observations"><strong><em>Observations</em></strong></a></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Actor</td>
+<td>Viewer</td>
+</tr>
+<tr>
+<td>Preconditions</td>
+<td>A proposal exists</td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>Investigator selects Create Observations while creating a proposal<br>Investigator or Reviewer selects View Observations while viewing a proposal<br>Investigator selects Edit while viewing Observations</td>
+</tr>
+<tr>
+<td>Main Success Scenario</td>
+<td>10 Polaris displays the observations panel showing a list of observations, each showing its target description, and options which the viewer can select until finished as follows<br><ul><li>New observation (implies target)</li><li>Identify target and field</li><li>State performance parameters with one or more  spectral windows and spectral lines</li><li>State one or more timing windows</li><li>State constraints</li></ul><br>20 Viewer selects option<br>30 Investigator changes data and saves<br>40 Polaris confirms changes saved, executes <a href="../Components/#audit-activity"><strong><em>Audit activity</em></strong></a>, go to step 30</td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td>20a Viewer ends request, Polaris follows next user request<br>30a Investigator ends request, Polaris follows next user request<br>30b Investigator discards, go to step 30</td>
+</tr>
+<tr>
+<td>Occurrence</td>
+<td></td>
+</tr>
+<tr>
+<td>Success Guarantee</td>
+<td>All observations displayed, optionally added to by Investigator</td>
+</tr>
+<tr>
+<td>Minimal Guarantee</td>
+<td>Nothing happens</td>
+</tr>
+<tr>
+<td>Open Issues</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="maintain-targets"><em>Maintain targets</em></h3>
+<p>This provides the means to create, view, and edit a proposal but see business rules <a href="../BusinessRules/#creating-a-proposal"><strong><em>Creating a proposal</em></strong></a>, <a href="../BusinessRules/#viewing-a-proposal"><strong><em>Viewing a proposal</em></strong></a> and <a href="../BusinessRules/#editing-a-proposal"><strong><em>Editing a proposal</em></strong></a></p>
+<p>See <a href="#maintain-observations"><strong><em>Maintain observations</em></strong></a></p>
+<h3 id="maintain-title-and-summary"><em>Maintain title and summary</em></h3>
+<p>This provides the means to create, view, and edit a proposal but see business rules <a href="../BusinessRules/#creating-a-proposal"><strong><em>Creating a proposal</em></strong></a>, <a href="../BusinessRules/#viewing-a-proposal"><strong><em>Viewing a proposal</em></strong></a> and <a href="../BusinessRules/#editing-a-proposal"><strong><em>Editing a proposal</em></strong></a></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Actor</td>
+<td>Viewer</td>
+</tr>
+<tr>
+<td>Preconditions</td>
+<td>A proposal exists</td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>Investigator selects Create title and summary while creating a proposal<br>Viewer selects View title and summary while viewing a proposal<br>Investigator selects Edit while viewing title and summary</td>
+</tr>
+<tr>
+<td>Main Success Scenario</td>
+<td>10 Polaris displays the title and summary panel<br>20 Investigator changes data and saves<br>30 Polaris confirms changes saved, executes <a href="../Components/#audit-activity"><strong><em>Audit activity</em></strong></a>, go to step 20</td>
+</tr>
+<tr>
+<td>Extensions</td>
+<td>20a Viewer ends request, Polaris follows next user request<br>20b Investigator discards, go to step 20<br></td>
+</tr>
+<tr>
+<td>Occurrence</td>
+<td></td>
+</tr>
+<tr>
+<td>Success Guarantee</td>
+<td>title and summary displayed, optionally edited by Investigator</td>
+</tr>
+<tr>
+<td>Minimal Guarantee</td>
+<td>Nothing happens</td>
+</tr>
+<tr>
+<td>Open Issues</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "content.action.edit", "toc.follow"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  </body>
+</html>
