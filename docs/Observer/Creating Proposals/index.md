@@ -7,7 +7,7 @@ Last updated **2025-10-21**
 
 ## First, Login
 
-If you haven't registered with and logged-in to Polaris please do so [now](https://kilburn.jb.man.ac.uk/pst/gui/tool/).
+If you haven't registered with and logged-in to Polaris please do so [now](https://proposal.e-merlin.ac.uk/pst/gui/tool/).
 In the following guide we are logged in as "John Flamsteed" as an obvious fake user.
 
 ##  **Create a new proposal**
